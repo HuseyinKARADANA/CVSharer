@@ -9,37 +9,29 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CVSharer
 build_property.RootNamespace = CVSharer
-build_property.ProjectDir = C:\Users\huseyinkaradana\source\repos\CVSharer\CVSharer\
+build_property.ProjectDir = C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\huseyinkaradana\source\repos\CVSharer\CVSharer
+build_property.MSBuildProjectDirectory = C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/huseyinkaradana/source/repos/CVSharer/CVSharer/Views/Home/Index.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Home/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/huseyinkaradana/source/repos/CVSharer/CVSharer/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Session/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/huseyinkaradana/source/repos/CVSharer/CVSharer/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Session/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/huseyinkaradana/source/repos/CVSharer/CVSharer/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/huseyinkaradana/source/repos/CVSharer/CVSharer/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/huseyinkaradana/source/repos/CVSharer/CVSharer/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/huseyinkaradana/source/repos/CVSharer/CVSharer/Views/Shared/_Layout.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-19lcc4cjhn
+build_metadata.AdditionalFiles.CssScope = 
