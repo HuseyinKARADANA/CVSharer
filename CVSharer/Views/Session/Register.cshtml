@@ -1,8 +1,8 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Register";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model EntityLayer.DTOs.RegisterDTO
 
 <div class="container">
 
@@ -12,13 +12,13 @@
                 <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
                     <div class="d-flex justify-content-center py-4">
-                        <a href="index.html" class="logo d-flex align-items-center w-auto">
+                        <a href="/Home/Index" class="logo d-flex align-items-center w-auto">
                             <img src="~/assets/img/logo.png" alt="">
                             <span class="d-none d-lg-block">CVSharer</span>
                         </a>
                     </div><!-- End Logo -->
 
-                    <div class="card mb-3">
+                    <div class="card mb-3" style="width: 600px;">
 
                         <div class="card-body">
 
@@ -27,31 +27,31 @@
                                 <p class="text-center small">Enter your personal details to create account</p>
                             </div>
 
-                            <form class="row g-3 needs-validation" novalidate>
+                            <form class="row g-3 needs-validation" novalidate method="post">
                                 <div class="col-12 form-floating">
-                                    <input type="text" class="form-control" id="floatingName" placeholder="Name" required>
+                                    <input type="text" class="form-control" id="floatingName" placeholder="Name" name="Name" required>
                                     <label for="floatingName">Name</label>
                                     <div class="invalid-feedback">Please, Enter Name!</div>
                                 </div>
                                 <div class="col-12 form-floating">
-                                    <input type="text" class="form-control" id="floatingSurname" placeholder="Surname" required>
+                                    <input type="text" class="form-control" id="floatingSurname" placeholder="Surname" name="Surname" required>
                                     <label for="floatingSurname">Surname</label>
                                     <div class="invalid-feedback">Please, Enter Surname!</div>
                                 </div>
 
                                 <div class="col-12 form-floating">
-                                    <input type="text" class="form-control" id="floatingEmail" placeholder="Email" required>
+                                    <input type="text" class="form-control" id="floatingEmail" placeholder="Email" name="Email" required>
                                     <label for="floatingEmail">Email</label>
                                     <div class="invalid-feedback">Please, Enter Email!</div>
                                 </div>
 
                                 <div class="col-12 form-floating">
-                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="Password" required>
                                     <label for="floatingPassword">Password</label>
                                     <div class="invalid-feedback">Please, Enter Password!</div>
                                 </div>
                                 <div class="col-12 form-floating">
-                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password Again" required>
+                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password Again" name="PasswordAgain" required>
                                     <label for="floatingPassword">Password Again</label>
                                     <div class="invalid-feedback">Please, Enter Password Again!</div>
                                 </div>

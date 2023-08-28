@@ -4,6 +4,7 @@ using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete.EntityFramework;
 using DataAccessLayer.Contexts;
 using Microsoft.EntityFrameworkCore;
+using NToastNotify;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,15 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlCon"));
 });
+
+//Add Toast Message Services to the container.
+builder.Services.AddControllersWithViews()
+    .AddNToastNotifyToastr(new ToastrOptions()
+    {
+        PositionClass = ToastPositions.TopRight,
+        TimeOut = 8000,
+        ProgressBar = true,
+    });
 
 //Certificate Dependency Injection
 builder.Services.AddScoped<ICertificateService, CertificateManager>();
@@ -56,6 +66,9 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+app.UseNToastNotify(); //toast 
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
