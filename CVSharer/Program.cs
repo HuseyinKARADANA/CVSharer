@@ -1,3 +1,7 @@
+using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
+using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete.EntityFramework;
 using DataAccessLayer.Contexts;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +14,38 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlCon"));
 });
+
+//Certificate Dependency Injection
+builder.Services.AddScoped<ICertificateService, CertificateManager>();
+builder.Services.AddScoped<ICertificateDal,EfCertificateDal>();
+
+//Education Dependency Injection
+builder.Services.AddScoped<IEducationService, EducationManager>();
+builder.Services.AddScoped<IEducationDal, EfEducationDal>();
+
+//Experience Dependency Injection
+builder.Services.AddScoped<IExperienceService, ExperienceManager>();
+builder.Services.AddScoped<IExperienceDal, EfExperienceDal>();
+
+//Hobby Dependency Injection
+builder.Services.AddScoped<IHobbyService, HobbyManager>();
+builder.Services.AddScoped<IHobbyDal, EfHobbyDal>();
+
+//Language Dependency Injection
+builder.Services.AddScoped<ILanguageService, LanguageManager>();
+builder.Services.AddScoped<ILanguageDal, EfLanguageDal>();
+
+//Link Dependency Injection
+builder.Services.AddScoped<ILinkService, LinkManager>();
+builder.Services.AddScoped<ILinkDal, EfLinkDal>();
+
+//Skill Dependency Injection
+builder.Services.AddScoped<ISkillService, SkillManager>();
+builder.Services.AddScoped<ISkillDal, EfSkillDal>();
+
+//User Dependency Injection
+builder.Services.AddScoped<IUserService,UserManager >();
+builder.Services.AddScoped<IUserDal, EfUserDal>();
 
 var app = builder.Build();
 
