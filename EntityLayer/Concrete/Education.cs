@@ -17,6 +17,6 @@ namespace EntityLayer.Concrete
         [Column(TypeName = "Date")]
         public DateTime StartDate { get; set; }
         [Column(TypeName = "Date")]
-        public DateTime EndDate { get; set; }
+        public DateTime? EndDate { get; set; }
     }
 }

@@ -13,6 +13,6 @@ namespace EntityLayer.Concrete
         public User? User { get; set; }
 
         public string SName { get; set; }
-        public string SPercentage { get; set; }
+        public int SPercentage { get; set; }
     }
 }
