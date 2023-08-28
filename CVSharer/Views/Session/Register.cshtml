@@ -28,32 +28,32 @@
                             </div>
 
                             <form class="row g-3 needs-validation" novalidate>
-                                <div class="col-6">
-                                    <label for="yourName" class="form-label">Name</label>
-                                    <input type="text" name="name" class="form-control" id="yourName" required>
-                                    <div class="invalid-feedback">Please, enter name!</div>
+                                <div class="col-6 form-floating">
+                                    <input type="text" class="form-control" id="floatingName" placeholder="Name" required>
+                                    <label for="floatingName">Name</label>
+                                    <div class="invalid-feedback">Please, Enter Name!</div>
                                 </div>
-                                <div class="col-6">
-                                    <label for="yourName" class="form-label">Surname</label>
-                                    <input type="text" name="name" class="form-control" id="yourName" required>
-                                    <div class="invalid-feedback">Please, enter surname!</div>
-                                </div>
-
-                                <div class="col-12">
-                                    <label for="yourEmail" class="form-label">Email</label>
-                                    <input type="email" name="email" class="form-control" id="yourEmail" required>
-                                    <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+                                <div class="col-6 form-floating">
+                                    <input type="text" class="form-control" id="floatingSurname" placeholder="Surname" required>
+                                    <label for="floatingSurname">Surname</label>
+                                    <div class="invalid-feedback">Please, Enter Surname!</div>
                                 </div>
 
-                                <div class="col-12">
-                                    <label for="yourPassword" class="form-label">Password</label>
-                                    <input type="password" name="password" class="form-control" id="yourPassword" required>
-                                    <div class="invalid-feedback">Please enter your password!</div>
+                                <div class="col-6 form-floating">
+                                    <input type="text" class="form-control" id="floatingEmail" placeholder="Email" required>
+                                    <label for="floatingEmail">Email</label>
+                                    <div class="invalid-feedback">Please, Enter Email!</div>
                                 </div>
-                                <div class="col-12">
-                                    <label for="yourPassword" class="form-label">Password Again</label>
-                                    <input type="password" name="password" class="form-control" id="yourPassword" required>
-                                    <div class="invalid-feedback">Please enter your password!</div>
+
+                                <div class="col-6 form-floating">
+                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                                    <label for="floatingPassword">Password</label>
+                                    <div class="invalid-feedback">Please, Enter Password!</div>
+                                </div>
+                                <div class="col-6 form-floating">
+                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password Again" required>
+                                    <label for="floatingPassword">Password</label>
+                                    <div class="invalid-feedback">Please, Enter Password Again!</div>
                                 </div>
 
                                 <div class="col-12">
@@ -64,7 +64,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100" type="submit">Create Account</button>
+                                    <button class="btn btn-primary w-100 rounded-pill" type="submit">Create Account</button>
                                 </div>
                                 <div class="col-12 text-center">
                                     <p class="small mb-0">Already have an account? <a href="pages-login.html">Log in</a></p>
