@@ -32,9 +32,6 @@
     <None Include="wwwroot\assets\img\product-4.jpg" />
     <None Include="wwwroot\assets\img\product-5.jpg" />
     <None Include="wwwroot\assets\img\profile-img.jpg" />
-    <None Include="wwwroot\assets\img\slides-1.jpg" />
-    <None Include="wwwroot\assets\img\slides-2.jpg" />
-    <None Include="wwwroot\assets\img\slides-3.jpg" />
     <None Include="wwwroot\assets\js\main.js" />
     <None Include="wwwroot\assets\vendor\apexcharts\apexcharts.amd.js" />
     <None Include="wwwroot\assets\vendor\apexcharts\apexcharts.common.js" />

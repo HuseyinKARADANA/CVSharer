@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LkMgeSi8NWcpxQ29C0TnG/lIPF1Zpp3iIEJtwqMzv2Q=",
+  "Hash": "SlNHF+0fDiUgO9CsFAoAbJ6jYwIV0REmBQoaqeEomdA=",
   "Source": "CVSharer",
   "BasePath": "_content/CVSharer",
   "Mode": "Default",
@@ -100,57 +100,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\css\\style.css"
-    },
-    {
-      "Identity": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\1.png",
-      "SourceId": "CVSharer",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\",
-      "BasePath": "_content/CVSharer",
-      "RelativePath": "assets/img/1.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\1.png"
-    },
-    {
-      "Identity": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\2.png",
-      "SourceId": "CVSharer",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\",
-      "BasePath": "_content/CVSharer",
-      "RelativePath": "assets/img/2.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\2.png"
-    },
-    {
-      "Identity": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\3.png",
-      "SourceId": "CVSharer",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\",
-      "BasePath": "_content/CVSharer",
-      "RelativePath": "assets/img/3.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\3.png"
     },
     {
       "Identity": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\apple-touch-icon.png",
@@ -476,12 +425,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\profile-img.jpg"
     },
     {
-      "Identity": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\slides-1.jpg",
+      "Identity": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\slides-1.png",
       "SourceId": "CVSharer",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\",
       "BasePath": "_content/CVSharer",
-      "RelativePath": "assets/img/slides-1.jpg",
+      "RelativePath": "assets/img/slides-1.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -490,15 +439,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\slides-1.jpg"
+      "OriginalItemSpec": "wwwroot\\assets\\img\\slides-1.png"
     },
     {
-      "Identity": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\slides-2.jpg",
+      "Identity": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\slides-2.png",
       "SourceId": "CVSharer",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\",
       "BasePath": "_content/CVSharer",
-      "RelativePath": "assets/img/slides-2.jpg",
+      "RelativePath": "assets/img/slides-2.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -507,15 +456,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\slides-2.jpg"
+      "OriginalItemSpec": "wwwroot\\assets\\img\\slides-2.png"
     },
     {
-      "Identity": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\slides-3.jpg",
+      "Identity": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\slides-3.png",
       "SourceId": "CVSharer",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\",
       "BasePath": "_content/CVSharer",
-      "RelativePath": "assets/img/slides-3.jpg",
+      "RelativePath": "assets/img/slides-3.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -524,7 +473,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\slides-3.jpg"
+      "OriginalItemSpec": "wwwroot\\assets\\img\\slides-3.png"
     },
     {
       "Identity": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\js\\main.js",

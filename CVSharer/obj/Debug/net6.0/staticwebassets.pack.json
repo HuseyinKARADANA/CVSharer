@@ -13,18 +13,6 @@
       "PackagePath": "staticwebassets\\assets\\css\\style.css"
     },
     {
-      "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\1.png",
-      "PackagePath": "staticwebassets\\assets\\img\\1.png"
-    },
-    {
-      "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\2.png",
-      "PackagePath": "staticwebassets\\assets\\img\\2.png"
-    },
-    {
-      "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\3.png",
-      "PackagePath": "staticwebassets\\assets\\img\\3.png"
-    },
-    {
       "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\apple-touch-icon.png",
       "PackagePath": "staticwebassets\\assets\\img\\apple-touch-icon.png"
     },
@@ -101,16 +89,16 @@
       "PackagePath": "staticwebassets\\assets\\img\\profile-img.jpg"
     },
     {
-      "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\slides-1.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\slides-1.jpg"
+      "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\slides-1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\slides-1.png"
     },
     {
-      "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\slides-2.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\slides-2.jpg"
+      "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\slides-2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\slides-2.png"
     },
     {
-      "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\slides-3.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\slides-3.jpg"
+      "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\slides-3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\slides-3.png"
     },
     {
       "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\js\\main.js",
