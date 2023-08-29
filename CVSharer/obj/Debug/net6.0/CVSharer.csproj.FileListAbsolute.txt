@@ -698,6 +698,7 @@ C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\
 C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Drawing.dll
 C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Drawing.Primitives.dll
 C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Dynamic.Runtime.dll
+C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Formats.Asn1.dll
 C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Globalization.Calendars.dll
 C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Globalization.dll
 C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Globalization.Extensions.dll
@@ -786,6 +787,7 @@ C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\
 C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Security.SecureString.dll
 C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.ServiceModel.Web.dll
 C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.ServiceProcess.dll
+C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Text.Encoding.CodePages.dll
 C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Text.Encoding.dll
 C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Text.Encoding.Extensions.dll
 C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Text.RegularExpressions.dll
@@ -980,7 +982,6 @@ C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\ref
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Drawing.dll
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Drawing.Primitives.dll
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Dynamic.Runtime.dll
-C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Formats.Asn1.dll
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Globalization.Calendars.dll
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Globalization.dll
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Globalization.Extensions.dll
@@ -1069,7 +1070,6 @@ C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\ref
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Security.SecureString.dll
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.ServiceModel.Web.dll
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.ServiceProcess.dll
-C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Text.Encoding.CodePages.dll
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Text.Encoding.dll
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Text.Encoding.Extensions.dll
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\refs\System.Text.RegularExpressions.dll
@@ -1106,11 +1106,11 @@ C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\Mic
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\NToastNotify.dll
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\obj\Debug\net6.0\CVSharer.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
-C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\MailKit.dll
-C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\MimeKit.dll
-C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\System.Formats.Asn1.dll
-C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
-C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
-C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
-C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\MailKit.dll
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\MimeKit.dll
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\System.Formats.Asn1.dll
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
