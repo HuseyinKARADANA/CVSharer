@@ -7,6 +7,14 @@ using Microsoft.EntityFrameworkCore;
 using NToastNotify;
 
 var builder = WebApplication.CreateBuilder(args);
+//Add Toast Message Services to the container.
+builder.Services.AddControllersWithViews()
+    .AddNToastNotifyToastr(new ToastrOptions()
+    {
+        PositionClass = ToastPositions.TopRight,
+        TimeOut = 8000,
+        ProgressBar = true,
+    });
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -16,14 +24,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlCon"));
 });
 
-//Add Toast Message Services to the container.
-builder.Services.AddControllersWithViews()
-    .AddNToastNotifyToastr(new ToastrOptions()
-    {
-        PositionClass = ToastPositions.TopRight,
-        TimeOut = 8000,
-        ProgressBar = true,
-    });
+
 
 //Certificate Dependency Injection
 builder.Services.AddScoped<ICertificateService, CertificateManager>();
