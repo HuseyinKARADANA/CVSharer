@@ -3,10 +3,29 @@ using BusinessLayer.Concrete;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete.EntityFramework;
 using DataAccessLayer.Contexts;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using NToastNotify;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+// Add other services to the container.
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SqlCon"));
+});
+
+builder.Services.AddAuthentication(
+    CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(option =>
+    {
+        option.LoginPath = "/Session/Login";
+        option.AccessDeniedPath = "/Session/Login";
+        option.ExpireTimeSpan = TimeSpan.FromHours(3);
+    });
+
 //Add Toast Message Services to the container.
 builder.Services.AddControllersWithViews()
     .AddNToastNotifyToastr(new ToastrOptions()
@@ -15,16 +34,6 @@ builder.Services.AddControllersWithViews()
         TimeOut = 8000,
         ProgressBar = true,
     });
-
-// Add services to the container.
-builder.Services.AddControllersWithViews();
-
-builder.Services.AddDbContext<AppDbContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("SqlCon"));
-});
-
-
 
 //Certificate Dependency Injection
 builder.Services.AddScoped<ICertificateService, CertificateManager>();
@@ -68,14 +77,14 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseNToastNotify(); //toast 
-
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseNToastNotify(); //toast 
+
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

@@ -3,6 +3,10 @@ using EntityLayer.Concrete;
 using EntityLayer.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using NToastNotify;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+
 
 namespace CVSharer.Controllers
 {
@@ -55,6 +59,7 @@ namespace CVSharer.Controllers
                 Surname = registerDTO.Surname,
                 Email = registerDTO.Email,
                 Password = hashedPassword,
+                IsActive = true
             });
 
             _toast.AddSuccessToastMessage("Register Successful.", new ToastrOptions { Title = "Successful" });
@@ -65,12 +70,84 @@ namespace CVSharer.Controllers
         [HttpGet]
         public IActionResult Login()
         {
+            ClaimsPrincipal claimUser = HttpContext.User;
+
+            if (claimUser.Identity.IsAuthenticated)
+                return RedirectToAction("Index", "Home");
+
             return View();
         }
+
         [HttpPost]
-        public IActionResult Login(LoginDTO loginDTO)
+        public async Task<IActionResult> Login(LoginDTO loginDTO)
         {
-            return RedirectToAction("Login");
+            var isCredentialsValid = false;
+            User validUser = new();
+
+            List<User> userList = _userService.GetListAll();
+
+            foreach (var user in userList)
+            {
+                try
+                {
+                    if (BCrypt.Net.BCrypt.Verify(loginDTO.Password, user.Password) && user.Email == loginDTO.Email)
+                    {
+                        isCredentialsValid = true;
+                        validUser = user;
+                        break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _toast.AddErrorToastMessage("An unexpected error is encountered. Please try again later.", new ToastrOptions { Title = "Error" });
+                    return View();
+                }
+            }
+
+            if (!isCredentialsValid)
+            {
+                _toast.AddErrorToastMessage("Email or password are incorrect, please try again.", new ToastrOptions { Title = "Error" });
+                return View();
+            }
+
+            if (!validUser.IsActive)
+            {
+                _toast.AddErrorToastMessage("This user is not active!", new ToastrOptions { Title = "Error" });
+                return View();
+            }
+
+            List<Claim> claims = new List<Claim>()
+            {
+                new Claim(ClaimTypes.NameIdentifier, loginDTO.Email),
+                new Claim(ClaimTypes.Name, validUser.Name +" "+ validUser.Surname),
+                new Claim(ClaimTypes.Role, "User")
+            };
+
+            ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims,
+                CookieAuthenticationDefaults.AuthenticationScheme);
+
+            AuthenticationProperties properties = new AuthenticationProperties()
+            {
+                AllowRefresh = true,
+                IsPersistent = loginDTO.KeepLoggedIn,
+            };
+
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                new ClaimsPrincipal(claimsIdentity), properties);
+
+            HttpContext.Response.Cookies.Append("UserId", validUser.UserId.ToString());
+
+            _toast.AddSuccessToastMessage("Login Successfully.", new ToastrOptions { Title = "Successful" });
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> LogOut()
+        {
+            HttpContext.Response.Cookies.Delete("UserId");
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index", "Home");
         }
     }
 }

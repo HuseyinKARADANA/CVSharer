@@ -3,6 +3,8 @@
     ViewData["Title"] = "Login";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model EntityLayer.DTOs.LoginDTO
+
 
 <div class="container">
 
@@ -27,26 +29,26 @@
                                 <p class="text-center small">Enter your email & password to login</p>
                             </div>
 
-                            <form class="row g-3 needs-validation" novalidate>
+                            <form class="row g-3 needs-validation" novalidate method="post">
 
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="floatingEmail" placeholder="Email" required>
+                                    <input type="text" class="form-control" id="floatingEmail" name="Email" placeholder="Email" required>
                                     <label for="floatingEmail">Email</label>
                                     <div class="invalid-feedback">Please Enter your Email!</div>
                                 </div>
                                 
                                 <div class="form-floating">
-                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                                    <input type="password" class="form-control" id="floatingPassword" name="Password" placeholder="Password" required>
                                     <label for="floatingPassword">Password</label>
                                     <div class="invalid-feedback">Please Enter Your Password!</div>
                                 </div>
 
-@*                                <div class="col-12">
+                                <div class="col-12">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
+                                        <input class="form-check-input" type="checkbox" name="KeepLoggedIn" value="true" id="rememberMe">
                                         <label class="form-check-label" for="rememberMe">Remember me</label>
                                     </div>
-                                </div>*@
+                                </div>
 
                                 <div class="col-12">
                                     <button class="btn btn-primary w-100 rounded-pill" type="submit">Login</button>

@@ -3531,24 +3531,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\huseyinkaradana\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\moral\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\DataAccessLayer\\DataAccessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\DataAccessLayer\\DataAccessLayer.csproj",
       "projectName": "DataAccessLayer",
-      "projectPath": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\DataAccessLayer\\DataAccessLayer.csproj",
-      "packagesPath": "C:\\Users\\huseyinkaradana\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\DataAccessLayer\\obj\\",
+      "projectPath": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\DataAccessLayer\\DataAccessLayer.csproj",
+      "packagesPath": "C:\\Users\\moral\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\DataAccessLayer\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\huseyinkaradana\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\moral\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3556,15 +3551,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\EntityLayer\\EntityLayer.csproj": {
-              "projectPath": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\EntityLayer\\EntityLayer.csproj"
+            "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\EntityLayer\\EntityLayer.csproj": {
+              "projectPath": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\EntityLayer\\EntityLayer.csproj"
             }
           }
         }
@@ -3611,12 +3605,26 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.19, 6.0.19]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.19, 6.0.19]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.19, 6.0.19]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
       }
     }
   }

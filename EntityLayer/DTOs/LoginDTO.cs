@@ -11,6 +11,7 @@ namespace EntityLayer.DTOs
     {
         public string Email { get; set; }
         public string Password { get; set; }
+        public bool KeepLoggedIn { get; set; }
         
         public static implicit operator User(LoginDTO loginDTO)
         {
