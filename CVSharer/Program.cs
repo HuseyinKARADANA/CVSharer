@@ -3,12 +3,19 @@ using BusinessLayer.Concrete;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete.EntityFramework;
 using DataAccessLayer.Contexts;
+using DinkToPdf.Contracts;
+using DinkToPdf;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using NToastNotify;
+using CVSharer.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add services to the container.
+builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+
+builder.Services.AddScoped<PdfGenerator>();
 
 // Add other services to the container.
 

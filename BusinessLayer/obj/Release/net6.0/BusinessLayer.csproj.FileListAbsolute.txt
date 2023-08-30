@@ -1,0 +1,17 @@
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\BusinessLayer\bin\Release\net6.0\BusinessLayer.deps.json
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\BusinessLayer\bin\Release\net6.0\BusinessLayer.dll
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\BusinessLayer\bin\Release\net6.0\BusinessLayer.pdb
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\BusinessLayer\bin\Release\net6.0\DataAccessLayer.dll
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\BusinessLayer\bin\Release\net6.0\EntityLayer.dll
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\BusinessLayer\bin\Release\net6.0\DataAccessLayer.pdb
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\BusinessLayer\bin\Release\net6.0\EntityLayer.pdb
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\BusinessLayer\obj\Release\net6.0\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\BusinessLayer\obj\Release\net6.0\BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\BusinessLayer\obj\Release\net6.0\BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\BusinessLayer\obj\Release\net6.0\BusinessLayer.AssemblyInfo.cs
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\BusinessLayer\obj\Release\net6.0\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\BusinessLayer\obj\Release\net6.0\BusinessLayer.csproj.CopyComplete
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\BusinessLayer\obj\Release\net6.0\BusinessLayer.dll
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\BusinessLayer\obj\Release\net6.0\refint\BusinessLayer.dll
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\BusinessLayer\obj\Release\net6.0\BusinessLayer.pdb
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\BusinessLayer\obj\Release\net6.0\ref\BusinessLayer.dll
