@@ -1,3 +1,5 @@
+using AspNetCoreHero.ToastNotification;
+using AspNetCoreHero.ToastNotification.Extensions;
 using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
 using DataAccessLayer.Abstract;
@@ -5,12 +7,15 @@ using DataAccessLayer.Concrete.EntityFramework;
 using DataAccessLayer.Contexts;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
-using NToastNotify;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//Add Toast Message Services to the container.
+builder.Services.AddControllersWithViews();
 
 // Add other services to the container.
+
+builder.Services.AddNotyf(config => { config.DurationInSeconds = 5; config.IsDismissable = true; config.Position = NotyfPosition.TopRight;});
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
@@ -24,15 +29,6 @@ builder.Services.AddAuthentication(
         option.LoginPath = "/Session/Login";
         option.AccessDeniedPath = "/Session/Login";
         option.ExpireTimeSpan = TimeSpan.FromHours(3);
-    });
-
-//Add Toast Message Services to the container.
-builder.Services.AddControllersWithViews()
-    .AddNToastNotifyToastr(new ToastrOptions()
-    {
-        PositionClass = ToastPositions.TopRight,
-        TimeOut = 8000,
-        ProgressBar = true,
     });
 
 //Certificate Dependency Injection
@@ -82,7 +78,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseNToastNotify(); //toast 
+app.UseNotyf(); //toast 
 
 app.UseAuthentication();
 app.UseAuthorization();

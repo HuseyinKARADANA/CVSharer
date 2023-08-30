@@ -1,5 +1,4 @@
 ﻿@using BusinessLayer.Abstract;
-@inject NToastNotify.IToastNotification _toast
 @inject IUserService _userService;
 
 <!DOCTYPE html>
@@ -200,13 +199,12 @@
     <script src="~/assets/vendor/tinymce/tinymce.min.js"></script>
     <script src="~/assets/vendor/php-email-form/validate.js"></script>
 
-    <!--Toastr JS Files-->
-    <script src="~/assets/js/noty.js"></script>
-    <script src="~/assets/js/toastr.js"></script>
-
     <!-- Template Main JS File -->
     <script src="~/assets/js/main.js"></script>
-    
+    <script src="~/assets/jquery/dist/jquery.js"></script>
+    <script src="~/assets/jquery/dist/jquery.min.js"></script>
+
+    @await Component.InvokeAsync("Notyf")
 
 </body>
 

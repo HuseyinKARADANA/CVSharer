@@ -5,21 +5,20 @@ using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Mvc;
 using MimeKit;
 using Newtonsoft.Json;
-using NToastNotify;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-
+using AspNetCoreHero.ToastNotification.Abstractions;
 
 namespace CVSharer.Controllers
 {
     public class SessionController : Controller
     {
         private readonly IUserService _userService;
-        private readonly IToastNotification _toast;
+        private readonly INotyfService _toast;
 
         private static Random random = new Random();
-        public SessionController(IUserService userService, IToastNotification toast)
+        public SessionController(IUserService userService, INotyfService toast)
         {
             _userService = userService;
             _toast = toast;
@@ -38,19 +37,19 @@ namespace CVSharer.Controllers
 
             if(users.Any(u => u.Email == registerDTO.Email))
             {
-                _toast.AddErrorToastMessage("There is a user with this email. Please try another email.", new ToastrOptions { Title = "Error" });
+                _toast.Error("There is a user with this email. Please try another email.");
                 return View();
             }
 
             if(!registerDTO.Password.Equals(registerDTO.PasswordAgain))
             {
-                _toast.AddErrorToastMessage("Passwords do not match!", new ToastrOptions { Title = "Error" });
+                _toast.Error("Passwords do not match!");
                 return View();
             }
 
             if(registerDTO.Password.Length < 8)
             {
-                _toast.AddErrorToastMessage("Your password can be minimum 8 characters!", new ToastrOptions { Title = "Error" });
+                _toast.Error("Your password can be minimum 8 characters!");
                 return View();
             }
 
@@ -99,20 +98,20 @@ namespace CVSharer.Controllers
                 }
                 catch (Exception ex)
                 {
-                    _toast.AddErrorToastMessage("An unexpected error is encountered. Please try again later.", new ToastrOptions { Title = "Error" });
+                    _toast.Error("An unexpected error is encountered. Please try again later.");
                     return View();
                 }
             }
 
             if (!isCredentialsValid)
             {
-                _toast.AddErrorToastMessage("Email or password are incorrect, please try again.", new ToastrOptions { Title = "Error" });
+                _toast.Error("Email or password are incorrect, please try again.");
                 return View();
             }
 
             if (!validUser.IsActive)
             {
-                _toast.AddErrorToastMessage("This user is not active!", new ToastrOptions { Title = "Error" });
+                _toast.Error("This user is not active!");
                 return View();
             }
 
@@ -137,7 +136,7 @@ namespace CVSharer.Controllers
 
             HttpContext.Response.Cookies.Append("UserId", validUser.UserId.ToString());
 
-            _toast.AddSuccessToastMessage("Login Successfully.", new ToastrOptions { Title = "Successful" });
+            _toast.Success("Login Successfully.");
 
             return RedirectToAction("Index", "Home");
         }
@@ -147,6 +146,8 @@ namespace CVSharer.Controllers
         {
             HttpContext.Response.Cookies.Delete("UserId");
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            _toast.Custom("Logged Out",5,"orange", "ri-logout-box-r-line");
             return RedirectToAction("Index", "Home");
         }
 
@@ -171,13 +172,13 @@ namespace CVSharer.Controllers
                     IsActive = true
                 });
 
-                _toast.AddSuccessToastMessage("Register Successful.", new ToastrOptions { Title = "Successful" });
+                _toast.Success("Register Successful.");
 
                 return RedirectToAction("Login");
             }
             else
             {
-                _toast.AddErrorToastMessage("Codes do not match.", new ToastrOptions { Title = "Error" });
+                _toast.Error("Codes do not match.");
                 //TempData["MyUser"] = null;
                 return RedirectToAction("Register","Session");
             }

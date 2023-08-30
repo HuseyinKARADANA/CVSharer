@@ -1,14 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\moral\\.nuget\\packages\\ntoastnotify\\8.0.0\\contentFiles\\any\\net6.0\\wwwroot\\noty.js",
-      "PackagePath": "staticwebassets\\noty.js"
-    },
-    {
-      "Id": "C:\\Users\\moral\\.nuget\\packages\\ntoastnotify\\8.0.0\\contentFiles\\any\\net6.0\\wwwroot\\toastr.js",
-      "PackagePath": "staticwebassets\\toastr.js"
-    },
-    {
       "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\css\\style.css",
       "PackagePath": "staticwebassets\\assets\\css\\style.css"
     },
@@ -99,6 +91,22 @@
     {
       "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\slides-3.png",
       "PackagePath": "staticwebassets\\assets\\img\\slides-3.png"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\assets\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\assets\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\assets\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\assets\\jquery\\dist\\jquery.min.map"
     },
     {
       "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\js\\main.js",
