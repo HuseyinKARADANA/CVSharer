@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Cv/BaseTemplate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3ZcQmFzZVRlbXBsYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
