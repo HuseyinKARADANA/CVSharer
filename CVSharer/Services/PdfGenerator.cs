@@ -20,17 +20,18 @@ namespace CVSharer.Services
                 ColorMode = ColorMode.Color,
                 Orientation = Orientation.Portrait,
                 PaperSize = PaperKind.A4,
-                Margins = new MarginSettings { Top = 10, Bottom = 10, Left = 10, Right = 10 },
                 DocumentTitle = "Personal CV"
             };
 
             var objectSettings = new ObjectSettings
             {
+                
                 PagesCount = true,
                 HtmlContent = htmlContent,
                 //Page = "https://www.google.com/",
                 WebSettings = { DefaultEncoding = "utf-8" },
-                FooterSettings = { FontSize = 12, Line = true, Right = "© CVSharer"  }
+                
+                FooterSettings = { FontSize = 12, Line = true, Center = "Created By ©CVSharer"  }
             };
 
             var document = new HtmlToPdfDocument()
