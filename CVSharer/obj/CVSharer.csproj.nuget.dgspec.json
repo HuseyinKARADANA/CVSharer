@@ -132,6 +132,14 @@
               "target": "Package",
               "version": "[4.0.3, )"
             },
+            "DinkToPdf": {
+              "target": "Package",
+              "version": "[1.0.8, )"
+            },
+            "DinkToPdfCopy": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "MailKit": {
               "target": "Package",
               "version": "[4.1.0, )"

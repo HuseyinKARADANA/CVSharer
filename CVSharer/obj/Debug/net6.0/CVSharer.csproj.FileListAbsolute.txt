@@ -842,3 +842,10 @@ C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\runti
 C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
 C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\AspNetCoreHero.ToastNotification.Views.dll
 C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\AspNetCoreHero.ToastNotification.dll
+C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\DinkToPdf.dll
+C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\runtimes\linux-x64\native\libwkhtmltox.so
+C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\runtimes\linux-x86\native\libwkhtmltox.so
+C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\runtimes\osx-x64\native\libwkhtmltox.dylib
+C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\runtimes\osx-x86\native\libwkhtmltox.dylib
+C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\runtimes\win7-x64\native\libwkhtmltox.dll
+C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\runtimes\win7-x86\native\libwkhtmltox.dll

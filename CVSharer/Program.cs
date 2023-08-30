@@ -2,18 +2,19 @@ using AspNetCoreHero.ToastNotification;
 using AspNetCoreHero.ToastNotification.Extensions;
 using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
+using CVSharer.Services;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete.EntityFramework;
 using DataAccessLayer.Contexts;
+using DinkToPdf;
+using DinkToPdf.Contracts;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//Add Toast Message Services to the container.
+// Add services to the container.
 builder.Services.AddControllersWithViews();
-
-// Add other services to the container.
 
 builder.Services.AddNotyf(config => { config.DurationInSeconds = 5; config.IsDismissable = true; config.Position = NotyfPosition.TopRight;});
 
@@ -30,6 +31,10 @@ builder.Services.AddAuthentication(
         option.AccessDeniedPath = "/Session/Login";
         option.ExpireTimeSpan = TimeSpan.FromHours(3);
     });
+
+//PDF Dependency Injection
+builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+builder.Services.AddScoped<PdfGenerator>();
 
 //Certificate Dependency Injection
 builder.Services.AddScoped<ICertificateService, CertificateManager>();
