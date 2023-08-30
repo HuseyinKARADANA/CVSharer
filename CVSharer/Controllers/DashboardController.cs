@@ -1,8 +1,10 @@
-﻿using BusinessLayer.Abstract;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
+using BusinessLayer.Abstract;
 using CVSharer.Services;
+using EntityLayer.Concrete;
+using EntityLayer.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-
 
 
 namespace CVSharer.Controllers
@@ -12,11 +14,13 @@ namespace CVSharer.Controllers
     {
         private readonly PdfGenerator _pdfGenerator;
         private readonly IUserService _userService;
+        private readonly INotyfService _toast;
 
-        public DashboardController(PdfGenerator pdfGenerator, IUserService userService)
+        public DashboardController(PdfGenerator pdfGenerator, IUserService userService,INotyfService toast)
         {
             _pdfGenerator = pdfGenerator;
             _userService = userService;
+            _toast = toast;
         }
 
         [HttpGet]
@@ -24,8 +28,45 @@ namespace CVSharer.Controllers
         {
             return View();
         }
+
         [HttpPost]
-        public IActionResult Index(string s)
+        public IActionResult UpdateUser(UpdateUserDTO dto)
+        {
+            if(dto.Name == null)
+            {
+                _toast.Error("Name cannot be blank.");
+                return RedirectToAction("Index", "Dashboard");
+            }
+            if (dto.Surname == null)
+            {
+                _toast.Error("Surname cannot be blank.");
+                return RedirectToAction("Index", "Dashboard");
+            }
+
+            var userId = HttpContext.Request.Cookies["UserId"];
+            dto.UserId = int.Parse(userId);
+
+            User userForUpdate = _userService.GetElementById(dto.UserId);
+
+            userForUpdate.Photo = dto.Photo;
+            userForUpdate.Name = dto.Name;
+            userForUpdate.Surname = dto.Surname;
+            userForUpdate.Description = dto.Description;
+            userForUpdate.Position = dto.Position;
+            userForUpdate.Phone = dto.Phone;
+            userForUpdate.Address = dto.Address;
+            userForUpdate.Linkedin = dto.Linkedin;
+            userForUpdate.Instagram = dto.Instagram;
+            userForUpdate.GitHub = dto.GitHub;
+            userForUpdate.YouTube = dto.YouTube;
+
+            _userService.Update(userForUpdate);
+
+            return RedirectToAction("Index","Dashboard");
+        }
+
+        [HttpPost]
+        public IActionResult DownloadPdf()
         {
             var userId = HttpContext.Request.Cookies["UserId"];
             var user = _userService.GetElementById(int.Parse(userId));
@@ -37,9 +78,5 @@ namespace CVSharer.Controllers
 
             return File(pdfBytes, "application/pdf", fileName);
         }
-
-
-        
-        
     }
 }
