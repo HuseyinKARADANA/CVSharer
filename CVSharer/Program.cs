@@ -29,7 +29,7 @@ builder.Services.AddAuthentication(
     {
         option.LoginPath = "/Session/Login";
         option.AccessDeniedPath = "/Session/Login";
-        option.ExpireTimeSpan = TimeSpan.FromHours(3);
+        option.ExpireTimeSpan = TimeSpan.FromHours(2);
     });
 
 //PDF Dependency Injection

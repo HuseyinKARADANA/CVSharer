@@ -126,11 +126,22 @@ namespace CVSharer.Controllers
             ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims,
                 CookieAuthenticationDefaults.AuthenticationScheme);
 
+            
+
             AuthenticationProperties properties = new AuthenticationProperties()
             {
                 AllowRefresh = true,
                 IsPersistent = loginDTO.KeepLoggedIn,
             };
+
+            if (loginDTO.KeepLoggedIn)
+            {
+                properties.ExpiresUtc = DateTime.UtcNow.AddDays(7); // Keep logged in for 7 days
+            }
+            else
+            {
+                properties.ExpiresUtc = DateTime.UtcNow.AddHours(2); // Keep logged in for 2 hours
+            }
 
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                 new ClaimsPrincipal(claimsIdentity), properties);
