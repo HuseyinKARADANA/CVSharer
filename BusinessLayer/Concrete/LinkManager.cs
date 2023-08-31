@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,13 @@ namespace BusinessLayer.Concrete
         public void Update(Link t)
         {
             _linkDal.Update(t);
+        }
+
+        public List<Link> GetLinksByUserId(int userId)
+        {
+            List<Link> links = _linkDal.GetLinksByUserId(userId);
+
+            return links;
         }
     }
 }

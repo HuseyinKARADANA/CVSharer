@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,13 @@ namespace BusinessLayer.Concrete
         public void Update(Experience t)
         {
             _experienceDal.Update(t);
+        }
+
+        public List<Experience> GetExperiencesByUserId(int userId)
+        {
+            List<Experience> experiences = _experienceDal.GetExperiencesByUserId(userId);
+
+            return experiences;
         }
     }
 }

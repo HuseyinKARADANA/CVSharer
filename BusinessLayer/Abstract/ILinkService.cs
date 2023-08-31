@@ -9,5 +9,6 @@ namespace BusinessLayer.Abstract
 {
     public interface ILinkService : IGenericService<Link>
     {
+        List<Link> GetLinksByUserId(int userId);
     }
 }

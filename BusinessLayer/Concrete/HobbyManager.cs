@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,13 @@ namespace BusinessLayer.Concrete
         public void Update(Hobby t)
         {
             _hobbyDal.Update(t);
+        }
+
+        public List<Hobby> GetHobbiesByUserId(int userId)
+        {
+            List<Hobby> hobbies = _hobbyDal.GetHobbiesByUserId(userId);
+
+            return hobbies;
         }
     }
 }

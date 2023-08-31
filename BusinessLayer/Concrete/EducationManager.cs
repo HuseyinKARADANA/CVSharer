@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,13 @@ namespace BusinessLayer.Concrete
         public void Update(Education t)
         {
             _educationDal.Update(t);
+        }
+
+        public List<Education> GetEducationsByUserId(int userId)
+        {
+            List<Education> educations = _educationDal.GetEducationsByUserId(userId);
+
+            return educations;
         }
     }
 }

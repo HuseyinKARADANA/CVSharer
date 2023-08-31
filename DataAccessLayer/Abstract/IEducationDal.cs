@@ -9,6 +9,7 @@ namespace DataAccessLayer.Abstract
 {
     public interface IEducationDal: IGenericDal<Education>
     {
+        List<Education> GetEducationsByUserId(int userId);
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,13 @@ namespace BusinessLayer.Concrete
         public void Update(Certificate t)
         {
             _certificateDal.Update(t);
+        }
+
+        public List<Certificate> GetCertificatesByUserId(int userId)
+        {
+            List<Certificate> certificates = _certificateDal.GetCertificatesByUserId(userId);
+
+            return certificates;
         }
     }
 }
