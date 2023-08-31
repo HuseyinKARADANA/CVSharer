@@ -20,7 +20,7 @@
             <div class="card">
                 <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-                    <img src="~/assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+                    <img src="~/ProfileImg/@user.Photo" alt="Profile" class="rounded-circle">
                     <h2>@user.Name @user.Surname</h2>
                     <h3>@user.Position</h3>
                     <div class="social-links mt-2">
@@ -135,24 +135,31 @@
                         <!--Profile Edit Tab-->
                         <div class="tab-pane fade  profile-edit pt-3" id="profile-edit">
 
-                            <form method="post" action="/Dashboard/UpdateUser">
+                           
                                 <div class="row mb-3">
                                     <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <img src="~/assets/img/profile-img.jpg" alt="Profile">
+                                        <img src="~/ProfileImg/@user.Photo" alt="Profile">
                                         <div class="pt-2">
                                             
 
                                             <!-- Buton ile dosya seçimi -->
-                                            <label for="file-input" class="btn btn-primary btn-sm" title="Upload new profile image">
-                                                <i class="bi bi-upload" style="color:#ffffff"></i>
-                                            </label>
-                                            <input type="file" id="file-input" name="Photo" style="display:none" />
-                                            <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
+                                        <form action="/Dashboard/AddProfile" method="post">
+                                            <input class="form-control" name="Photo" type="file" id="formFile">
+                                              
+                                            <button type="submit" class="btn btn-primary rounded-pill">Save Profile Image</button>
+                                         </form>
+
+                                           <form action="/Dashboard/DeleteProfile" method="post">
+                                            
+
+                                                <button type="submit" class="btn btn-danger rounded-pill"><i class="bi bi-trash"></i></button>
+                                            </form>
+                                 
                                         </div>
                                     </div>
                                 </div>
-
+                            <form method="post" action="/Dashboard/UpdateUser" enctype="multipart/form-data">
                                 <div class="row mb-3">
                                     <label for="Name" class="col-md-4 col-lg-3 col-form-label">Name</label>
                                     <div class="col-md-8 col-lg-9">
@@ -235,7 +242,7 @@
                             <form method="post" action="/Dashboard/AddSkill">
                                 @{
                                     List<Skill> skillsOfUser = _skillService.GetSkillsByUserId(user.UserId);
-
+                                 
                                     foreach (var skill in skillsOfUser)
                                     {
                                         string barColor;
@@ -260,7 +267,7 @@
                                                 <div class="progress-bar @barColor" role="progressbar" style="width: @skill.SPercentage%"
                                                      aria-valuenow="@skill.SPercentage" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
-
+                                            
                                             @*Buttons*@
                                             <div class="col-lg-3 col-md-4 d-flex justify-content-center">
                                                 <button type="button" class="btn btn-warning rounded-pill m-1">Edit Skill</button>
@@ -322,6 +329,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
+    
+
     $(document).ready(function () {
         // Check if there's a stored selected tab value in local storage
         var selectedTabValue = sessionStorage.getItem("selectedTabValue");

@@ -1,6 +1,46 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\ProfileImg\\0023f8e7-543a-47d8-8ab1-8a8a4e866f3b.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\0023f8e7-543a-47d8-8ab1-8a8a4e866f3b.png"
+    },
+    {
+      "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\ProfileImg\\295e885f-2d3d-4d30-b264-af9e36f58570.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\295e885f-2d3d-4d30-b264-af9e36f58570.png"
+    },
+    {
+      "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\ProfileImg\\3cf8e98a-6639-4f23-8750-4ba4c9151414.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\3cf8e98a-6639-4f23-8750-4ba4c9151414.png"
+    },
+    {
+      "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\ProfileImg\\5fa5b40b-690b-4540-8faa-de53f21cd026.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\5fa5b40b-690b-4540-8faa-de53f21cd026.png"
+    },
+    {
+      "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\ProfileImg\\6dc9360d-8a97-46d4-a35a-c80b2e2a53ba.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\6dc9360d-8a97-46d4-a35a-c80b2e2a53ba.png"
+    },
+    {
+      "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\ProfileImg\\717ea7ab-aaf3-4081-89cb-51f4c8068308.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\717ea7ab-aaf3-4081-89cb-51f4c8068308.png"
+    },
+    {
+      "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\ProfileImg\\a623f054-26fd-46c6-8ee5-1408e9385d6d.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\a623f054-26fd-46c6-8ee5-1408e9385d6d.png"
+    },
+    {
+      "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\ProfileImg\\e1bc66c7-5811-4a20-a447-7113dfd52939.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\e1bc66c7-5811-4a20-a447-7113dfd52939.png"
+    },
+    {
+      "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\ProfileImg\\e35afb74-03fc-4b65-852c-04aec694dcdf.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\e35afb74-03fc-4b65-852c-04aec694dcdf.png"
+    },
+    {
+      "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\ProfileImg\\e393e3d8-d3a9-4736-ba39-abea0fb1cf22.png",
+      "PackagePath": "staticwebassets\\ProfileImg\\e393e3d8-d3a9-4736-ba39-abea0fb1cf22.png"
+    },
+    {
       "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\css\\style.css",
       "PackagePath": "staticwebassets\\assets\\css\\style.css"
     },

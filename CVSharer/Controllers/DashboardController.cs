@@ -3,6 +3,7 @@ using BusinessLayer.Abstract;
 using CVSharer.Services;
 using EntityLayer.Concrete;
 using EntityLayer.DTOs;
+using Humanizer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -28,7 +29,40 @@ namespace CVSharer.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult DeleteProfile()
+        {
+            var usersId = HttpContext.Request.Cookies["UserId"];
+            var UserId = int.Parse(usersId);
+            User userForDeletePhoto = _userService.GetElementById(UserId);
 
+            //veritabanı img silme-default resime geçiş
+            userForDeletePhoto.Photo = "717ea7ab-aaf3-4081-89cb-51f4c8068308.png";
+            _userService.Update(userForDeletePhoto);
+            
+         
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public IActionResult AddProfile(UpdateUserDTO dto)
+        {
+            var userId = HttpContext.Request.Cookies["UserId"];
+            dto.UserId = int.Parse(userId);
+
+            User userForUpdate = _userService.GetElementById(dto.UserId);
+            if (dto.Photo != null)
+            {
+                var extention = Path.GetExtension(dto.Photo.FileName);
+                var newImageName = Guid.NewGuid() + extention;
+                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ProfileImg/", newImageName);
+                var stream = new FileStream(location, FileMode.Create);
+                dto.Photo.CopyTo(stream);
+                userForUpdate.Photo = newImageName;
+            }
+            _userService.Update(userForUpdate);
+
+            return RedirectToAction("Index", "Dashboard");
+        }
         [HttpPost]
         public IActionResult UpdateUser(UpdateUserDTO dto)
         {
@@ -51,7 +85,7 @@ namespace CVSharer.Controllers
             {
                 var extention=Path.GetExtension(dto.Photo.FileName);
                 var newImageName = Guid.NewGuid() + extention;
-                var location=Path.Combine(Directory.GetCurrentDirectory(),"~/wwwroot/ProfileImg/",newImageName);
+                var location=Path.Combine(Directory.GetCurrentDirectory(),"wwwroot/ProfileImg/",newImageName);
                 var stream=new FileStream(location, FileMode.Create);
                 dto.Photo.CopyTo(stream);
                 userForUpdate.Photo = newImageName;
