@@ -24,7 +24,7 @@ namespace CVSharer.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(string? pages)
         {
             return View();
         }
@@ -63,6 +63,12 @@ namespace CVSharer.Controllers
             _userService.Update(userForUpdate);
 
             return RedirectToAction("Index","Dashboard");
+        }
+
+        [HttpPost]
+        public IActionResult AddSkill()
+        {
+            return View();
         }
 
         [HttpPost]

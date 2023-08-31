@@ -42,5 +42,12 @@ namespace BusinessLayer.Concrete
         {
             _skillDal.Update(t);
         }
+
+        public List<Skill> GetSkillsByUserId(int userId)
+        {
+            List<Skill> skills = _skillDal.GetSkillsByUserId(userId);
+
+            return skills;
+        }
     }
 }

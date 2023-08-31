@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Abstract;
 using DataAccessLayer.Contexts;
+using EntityLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -52,6 +53,12 @@ namespace DataAccessLayer.Concrete.Repository
             using var context = new AppDbContext(options);
             context.Update(t);
             context.SaveChanges();
+        }
+
+        public List<Skill> GetSkillsByUserId(int userId)
+        {
+            using var context = new AppDbContext(options);
+            return context.Set<Skill>().Where(x => x.UserId == userId).ToList();
         }
     }
 }
