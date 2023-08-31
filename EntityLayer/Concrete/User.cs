@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace EntityLayer.Concrete
         public string Surname { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public byte[]? Photo { get; set; }
+        public string? Photo { get; set; }
         public string? Address  { get; set; }
         public string? Position { get; set; }
         public string? Description { get; set; }
@@ -22,7 +23,7 @@ namespace EntityLayer.Concrete
         public string? Instagram { get; set; }
         public string? GitHub { get; set; }
         public string? YouTube { get; set; }
-        
+        public string? ShareCode { get; set; }
         public bool IsActive { get; set; }
 
         public List<Skill> Skills { get; set; }

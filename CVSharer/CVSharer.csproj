@@ -450,6 +450,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\ProfileImg\" />
     <Folder Include="Services\" />
   </ItemGroup>
 

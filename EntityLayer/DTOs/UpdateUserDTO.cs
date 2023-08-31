@@ -1,4 +1,5 @@
 ﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace EntityLayer.DTOs
     public class UpdateUserDTO
     {
         public int UserId { get; set; }
-        public byte[]? Photo { get; set; }
+        public IFormFile? Photo { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string? Description { get; set; }
@@ -24,10 +25,13 @@ namespace EntityLayer.DTOs
 
         public static implicit operator User(UpdateUserDTO dto)
         {
-            return new User
+            
+            var userImplict= new User
             {
                 UserId = dto.UserId,
-                Photo = dto.Photo,
+
+
+                
                 Name = dto.Name,
                 Surname = dto.Surname,
                 Description = dto.Description,
@@ -39,6 +43,17 @@ namespace EntityLayer.DTOs
                 GitHub = dto.GitHub,
                 YouTube = dto.YouTube,
             };
+
+            if (dto.Photo != null)
+            {
+                var extention = Path.GetExtension(dto.Photo.FileName);
+                var newImageName = Guid.NewGuid() + extention;
+                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ProfileImg/", newImageName);
+                var stream = new FileStream(location, FileMode.Create);
+                dto.Photo.CopyTo(stream);
+                userImplict.Photo = newImageName;
+            }
+            return userImplict; 
         }
     }
 }

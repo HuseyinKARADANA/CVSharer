@@ -47,8 +47,17 @@ namespace CVSharer.Controllers
             dto.UserId = int.Parse(userId);
 
             User userForUpdate = _userService.GetElementById(dto.UserId);
-
-            userForUpdate.Photo = dto.Photo;
+            if(dto.Photo != null)
+            {
+                var extention=Path.GetExtension(dto.Photo.FileName);
+                var newImageName = Guid.NewGuid() + extention;
+                var location=Path.Combine(Directory.GetCurrentDirectory(),"~/wwwroot/ProfileImg/",newImageName);
+                var stream=new FileStream(location, FileMode.Create);
+                dto.Photo.CopyTo(stream);
+                userForUpdate.Photo = newImageName;
+            }
+			
+           
             userForUpdate.Name = dto.Name;
             userForUpdate.Surname = dto.Surname;
             userForUpdate.Description = dto.Description;
