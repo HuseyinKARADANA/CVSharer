@@ -9,5 +9,6 @@ namespace BusinessLayer.Abstract
 {
     public interface ISkillService : IGenericService<Skill>
     {
+        List<Skill> GetSkillsByUserId(int userId);
     }
 }
