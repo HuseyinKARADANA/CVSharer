@@ -1,0 +1,73 @@
+﻿@model EntityLayer.Concrete.Skill
+
+@{
+    ViewData["Title"] = "AddSkill";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var userId = Context.Request.Cookies["UserId"];
+}
+
+<div class="container">
+
+    <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                    <div class="d-flex justify-content-center py-4">
+                        <a href="/Home/Index" class="logo d-flex align-items-center w-auto">
+                            <img src="~/assets/img/logo.png" alt="">
+                            <span class="d-none d-lg-block">CVSharer</span>
+                        </a>
+                    </div><!-- End Logo -->
+
+                    <div class="card mb-3">
+
+                        <div class="card-body">
+
+                            <div class="pt-4 pb-2">
+                                <h5 class="card-title text-center pb-0 fs-4">Add Skill</h5>
+                                <p class="text-center small">Add a new skill for your CV</p>
+                            </div>
+
+                            <form class="row g-3 needs-validation" novalidate method="post">
+
+                                <input hidden value="@int.Parse(userId)" name="UserId" />
+
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="SName" name="SName" placeholder="Skill Name" required>
+                                    <label for="SName">Skill Name</label>
+                                    <div class="invalid-feedback">Please Enter a Skill Name!</div>
+                                </div>
+
+                                <div class="form-floating">
+                                    <input class="form-control" type="text" id="textInput" value="Skill Percentage (%)" disabled="false">
+                                    <input type="range" class="form-range" id="SPercentage" name="SPercentage"
+                                    placeholder="Skill Percentage (%)" min="0" max="100" required onchange="updateTextInput(this.value);">
+                                    <div class="invalid-feedback">Please Enter a Skill Percentage!</div>
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 rounded-pill" type="submit">Add Skill</button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+<script>
+    function updateTextInput(val) {
+        document.getElementById('textInput').value = "Skill Percentage(" + val + "%)";
+    }
+</script>
+

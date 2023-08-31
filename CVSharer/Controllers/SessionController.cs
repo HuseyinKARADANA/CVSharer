@@ -160,7 +160,7 @@ namespace CVSharer.Controllers
             HttpContext.Response.Cookies.Delete("UserId");
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
-            _toast.Custom("Logged Out",5,"orange", "ri-logout-box-r-line");
+            _toast.Custom("Logged Out",3,"orange", "ri-logout-box-r-line");
             return RedirectToAction("Index", "Home");
         }
 

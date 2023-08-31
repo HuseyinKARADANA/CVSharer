@@ -15,12 +15,28 @@ namespace CVSharer.Controllers
         private readonly PdfGenerator _pdfGenerator;
         private readonly IUserService _userService;
         private readonly INotyfService _toast;
+        private readonly ISkillService _skillService;
+        private readonly ICertificateService _certificateService;
+        private readonly IEducationService _educationService;
+        private readonly IExperienceService _experienceService;
+        private readonly IHobbyService _hobbyService;
+        private readonly ILanguageService _languageService;
+        private readonly ILinkService _linkService;
 
-        public DashboardController(PdfGenerator pdfGenerator, IUserService userService,INotyfService toast)
+        public DashboardController(PdfGenerator pdfGenerator, IUserService userService,INotyfService toast,ISkillService skillService,
+            ICertificateService certificateService, IEducationService educationService, IExperienceService experienceService,
+            IHobbyService hobbyService, ILanguageService languageService, ILinkService linkService)
         {
             _pdfGenerator = pdfGenerator;
             _userService = userService;
             _toast = toast;
+            _skillService = skillService;
+            _certificateService = certificateService;
+            _educationService = educationService;
+            _experienceService = experienceService;
+            _hobbyService = hobbyService;
+            _languageService = languageService;
+            _linkService = linkService;
         }
 
         [HttpGet]
@@ -74,11 +90,48 @@ namespace CVSharer.Controllers
             return RedirectToAction("Index","Dashboard");
         }
 
-        [HttpPost]
+        [HttpGet]
         public IActionResult AddSkill()
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult AddSkill(Skill skill)
+        {
+            if(skill.SPercentage < 0 || skill.SPercentage > 100)
+            {
+                _toast.Error("Invalid Skill Percentage Value!");
+                return View();
+            }
+
+            _skillService.Insert(new Skill()
+            {
+                UserId = skill.UserId,
+                SName = skill.SName,
+                SPercentage = skill.SPercentage,
+            });
+
+            return RedirectToAction("Index", "Dashboard");
+        }
+
+        [HttpGet]
+        public IActionResult DeleteSkill(int skillId)
+        {
+            Skill skill = _skillService.GetElementById(skillId);
+
+            if(skill == null)
+            {
+                _toast.Error("Skill Not Found!");
+                return RedirectToAction("Index", "Dashboard");
+            }
+
+            _skillService.Delete(skill);
+
+            _toast.Custom("Skill Deleted", 3, "orange", "bi bi-trash-fill");
+            return RedirectToAction("Index","Dashboard");
+        }
+
 
         [HttpPost]
         public IActionResult DownloadPdf()

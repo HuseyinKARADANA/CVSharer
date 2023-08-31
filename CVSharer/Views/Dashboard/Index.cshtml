@@ -3,6 +3,12 @@
 @using EntityLayer.DTOs;
 @inject IUserService _userService;
 @inject ISkillService _skillService;
+@inject ICertificateService _certificateService;
+@inject IEducationService _educationService;
+@inject IExperienceService _experienceService;
+@inject IHobbyService _hobbyService;
+@inject ILanguageService _languageService;
+@inject ILinkService _linkService;
 @model UpdateUserDTO;
 
 @{
@@ -11,6 +17,14 @@
 
     var userId = Context.Request.Cookies["UserId"];
     var user = _userService.GetElementById(int.Parse(userId));
+
+    var skills = _skillService.GetSkillsByUserId(int.Parse(userId));
+    var certificates = _certificateService.GetCertificatesByUserId(int.Parse(userId));
+    var educations = _educationService.GetEducationsByUserId(int.Parse(userId));
+    var experiences = _experienceService.GetExperiencesByUserId(int.Parse(userId));
+    var hobbies = _hobbyService.GetHobbiesByUserId(int.Parse(userId));
+    var languages = _languageService.GetLanguagesByUserId(int.Parse(userId));
+    var links = _linkService.GetLinksByUserId(int.Parse(userId));
 }
 
 <section class="section profile min-vh-100">
@@ -76,6 +90,30 @@
 
                         <li class="nav-item">
                             <button class="nav-link " data-bs-toggle="tab" data-bs-target="#profile-skills" name="pages" value="skills">Skills</button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="nav-link " data-bs-toggle="tab" data-bs-target="#profile-hobbies" name="pages" value="hobbies">Hobbies</button>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <button class="nav-link " data-bs-toggle="tab" data-bs-target="#profile-languages" name="pages" value="languages">Languages</button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="nav-link " data-bs-toggle="tab" data-bs-target="#profile-certificates" name="pages" value="certificates">Certificates</button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="nav-link " data-bs-toggle="tab" data-bs-target="#profile-educations" name="pages" value="educations">Educations</button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="nav-link " data-bs-toggle="tab" data-bs-target="#profile-experiences" name="pages" value="experiences">Experiences</button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="nav-link " data-bs-toggle="tab" data-bs-target="#profile-links" name="pages" value="links">Additional Links</button>
                         </li>
 
                         <li class="nav-item">
@@ -232,11 +270,8 @@
 
                         <!--Skills Tab-->
                         <div class="tab-pane fade pt-3" id="profile-skills">
-                            <form method="post" action="/Dashboard/AddSkill">
                                 @{
-                                    List<Skill> skillsOfUser = _skillService.GetSkillsByUserId(user.UserId);
-
-                                    foreach (var skill in skillsOfUser)
+                                    foreach (var skill in skills)
                                     {
                                         string barColor;
 
@@ -263,8 +298,9 @@
 
                                             @*Buttons*@
                                             <div class="col-lg-3 col-md-4 d-flex justify-content-center">
-                                                <button type="button" class="btn btn-warning rounded-pill m-1">Edit Skill</button>
-                                                <button type="button" class="btn btn-danger rounded-pill m-1">Delete Skill</button>
+                                                <a type="button" href="/Dashboard/EditSkill/@skill.SkillId" class="btn btn-warning rounded-pill m-1">Edit Skill</a>
+
+                                            <a href="/Dashboard/DeleteSkill?skillId=@skill.SkillId" class="btn btn-danger rounded-pill m-1">Delete Skill</a>
                                             </div>
                                         </div>
                                     }
@@ -272,7 +308,203 @@
                                 }
 
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-success rounded-pill">Add Skill</button>
+                                    <a type="submit" class="btn btn-success rounded-pill" href="/Dashboard/AddSkill">Add Skill</a>
+                                </div>
+                        </div>
+                        
+                        <!--Hobbies Tab-->
+                        <div class="tab-pane fade pt-3" id="profile-hobbies">
+                            <form method="post" action="/Dashboard/AddSkill">
+                                @{
+                                    foreach (var hobby in hobbies)
+                                    {
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-6 col-md-4 label ">@hobby.HName</div>
+
+                                            @*Buttons*@
+                                            <div class="col-lg-6 col-md-4 d-flex justify-content-center">
+                                                <button type="button" class="btn btn-warning rounded-pill m-1">Edit Hobby</button>
+                                                <button type="button" class="btn btn-danger rounded-pill m-1">Delete Hobby</button>
+                                            </div>
+                                        </div>
+                                    }
+
+                                }
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-success rounded-pill">Add Hobby</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!--Languages Tab-->
+                        <div class="tab-pane fade pt-3" id="profile-languages">
+                            <form method="post" action="/Dashboard/AddSkill">
+                                @{
+                                    foreach (var language in languages)
+                                    {
+                                        string barColor;
+
+                                        if (language.LangPercentage < 25)
+                                            barColor = "bg-danger";
+
+                                        else if (language.LangPercentage < 50)
+                                            barColor = "bg-warning";
+
+                                        else if (language.LangPercentage < 75)
+                                            barColor = "bg-info";
+
+                                        else
+                                            barColor = "bg-success";
+
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-4 col-md-4 label ">@language.LangName</div>
+
+                                            @*Progress bar*@
+                                            <div class="col-lg-4 col-md-4 progress">
+                                                <div class="progress-bar @barColor" role="progressbar" style="width: @language.LangPercentage%"
+                                                     aria-valuenow="@language.LangPercentage" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+
+                                            @*Buttons*@
+                                            <div class="col-lg-4 col-md-4 d-flex justify-content-center">
+                                                <button type="button" class="btn btn-warning rounded-pill m-1">Edit Language</button>
+                                                <button type="button" class="btn btn-danger rounded-pill m-1">Delete Language</button>
+                                            </div>
+                                        </div>
+                                    }
+
+                                }
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-success rounded-pill">Add Language</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!--Certificates Tab-->
+                        <div class="tab-pane fade pt-3" id="profile-certificates">
+                            <form method="post" action="/Dashboard/AddSkill">
+                                @{
+                                    foreach (var certificate in certificates)
+                                    {
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-2 col-md-4 label ">@certificate.CName</div>
+                                            <div class="col-lg-2 col-md-4 label ">@certificate.Institution</div>
+                                            <div class="col-lg-2 col-md-4 label ">@certificate.Url</div>
+                                            <div class="col-lg-1 col-md-4 label ">@certificate.StartDate.ToShortDateString()</div>
+                                            
+                                            @if(certificate.EndDate != null) {
+                                                <div class="col-lg-1 col-md-4 label ">@certificate.EndDate.Value.ToShortDateString()</div>
+                                            }
+                                            else
+                                            {
+                                                <div class="col-lg-1 col-md-4 label ">------</div>
+                                            }
+
+                                            @*Buttons*@
+                                            <div class="col-lg-4 col-md-4 d-flex justify-content-center">
+                                                <button type="button" class="btn btn-warning rounded-pill m-1">Edit Certificate</button>
+                                                <button type="button" class="btn btn-danger rounded-pill m-1">Delete Certificate</button>
+                                            </div>
+                                        </div>
+                                    }
+
+                                }
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-success rounded-pill">Add Certificate</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!--Educations Tab-->
+                        <div class="tab-pane fade pt-3" id="profile-educations">
+                            <form method="post" action="/Dashboard/AddSkill">
+                                @{
+                                    foreach (var education in educations)
+                                    {
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-3 col-md-4 label ">@education.EName</div>
+                                            <div class="col-lg-2 col-md-4 label ">@education.StartDate.ToShortDateString()</div>
+
+                                            @if (education.EndDate != null)
+                                            {
+                                                <div class="col-lg-2 col-md-4 label ">@education.EndDate.Value.ToShortDateString()</div>
+                                            }
+                                            else
+                                            {
+                                                <div class="col-lg-2 col-md-4 label ">------</div>
+                                            }
+
+                                            @*Buttons*@
+                                            <div class="col-lg-5 col-md-4 d-flex justify-content-center">
+                                                <button type="button" class="btn btn-warning rounded-pill m-1">Edit Education</button>
+                                                <button type="button" class="btn btn-danger rounded-pill m-1">Delete Education</button>
+                                            </div>
+                                        </div>
+                                    }
+
+                                }
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-success rounded-pill">Add Education</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!--Experiences Tab-->
+                        <div class="tab-pane fade pt-3" id="profile-experiences">
+                            <form method="post" action="/Dashboard/AddSkill">
+                                @{
+                                    foreach (var experience in experiences)
+                                    {
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-3 col-md-4 label ">@experience.ExName</div>
+                                            <div class="col-lg-2 col-md-4 label ">@experience.StartDate.ToShortDateString()</div>
+
+                                            @if (experience.EndDate != null)
+                                            {
+                                                <div class="col-lg-2 col-md-4 label ">@experience.EndDate.Value.ToShortDateString()</div>
+                                            }
+                                            else
+                                            {
+                                                <div class="col-lg-2 col-md-4 label ">------</div>
+                                            }
+
+                                            @*Buttons*@
+                                            <div class="col-lg-5 col-md-4 d-flex justify-content-center">
+                                                <button type="button" class="btn btn-warning rounded-pill m-1">Edit Experience</button>
+                                                <button type="button" class="btn btn-danger rounded-pill m-1">Delete Experience</button>
+                                            </div>
+                                        </div>
+                                    }
+
+                                }
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-success rounded-pill">Add Experience</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!--Links Tab-->
+                        <div class="tab-pane fade pt-3" id="profile-links">
+                            <form method="post" action="/Dashboard/AddSkill">
+                                @{
+                                    foreach (var link in links)
+                                    {
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-4 col-md-4 label ">@link.LName</div>
+
+                                            <a class="col-lg-4 col-md-4 label" href="@link.LUrl" target="_blank">@link.LUrl</a>
+
+                                            @*Buttons*@
+                                            <div class="col-lg-4 col-md-4 d-flex justify-content-center">
+                                                <button type="button" class="btn btn-warning rounded-pill m-1">Edit Link</button>
+                                                <button type="button" class="btn btn-danger rounded-pill m-1">Delete Link</button>
+                                            </div>
+                                        </div>
+                                    }
+
+                                }
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-success rounded-pill">Add Additional Link</button>
                                 </div>
                             </form>
                         </div>
