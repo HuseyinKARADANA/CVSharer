@@ -9,5 +9,7 @@ namespace DataAccessLayer.Abstract
 {
     public interface ILinkDal: IGenericDal<Link>
     {
+        List<Link> GetLinksByUserId(int userId);
+
     }
 }

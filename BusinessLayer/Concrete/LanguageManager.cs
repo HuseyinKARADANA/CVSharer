@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,13 @@ namespace BusinessLayer.Concrete
         public void Update(Language t)
         {
             _languageDal.Update(t);
+        }
+
+        public List<Language> GetLanguagesByUserId(int userId)
+        {
+            List<Language> languages = _languageDal.GetLanguagesByUserId(userId);
+
+            return languages;
         }
     }
 }

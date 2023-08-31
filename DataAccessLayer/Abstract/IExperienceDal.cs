@@ -9,5 +9,7 @@ namespace DataAccessLayer.Abstract
 {
     public interface IExperienceDal: IGenericDal<Experience>
     {
+        List<Experience> GetExperiencesByUserId(int userId);
+
     }
 }

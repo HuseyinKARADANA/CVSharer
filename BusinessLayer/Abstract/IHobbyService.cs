@@ -9,5 +9,6 @@ namespace BusinessLayer.Abstract
 {
     public interface IHobbyService : IGenericService<Hobby>
     {
+        List<Hobby> GetHobbiesByUserId(int userId);
     }
 }

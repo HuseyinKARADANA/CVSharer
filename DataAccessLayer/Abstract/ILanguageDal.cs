@@ -9,5 +9,7 @@ namespace DataAccessLayer.Abstract
 {
     public interface ILanguageDal: IGenericDal<Language>
     {
+        List<Language> GetLanguagesByUserId(int userId);
+
     }
 }

@@ -9,5 +9,6 @@ namespace BusinessLayer.Abstract
 {
     public interface ILanguageService : IGenericService<Language>
     {
+        List<Language> GetLanguagesByUserId(int userId);
     }
 }

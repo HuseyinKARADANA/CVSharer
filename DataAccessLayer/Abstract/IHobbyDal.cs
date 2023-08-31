@@ -9,5 +9,7 @@ namespace DataAccessLayer.Abstract
 {
     public interface IHobbyDal: IGenericDal<Hobby>
     {
+        List<Hobby> GetHobbiesByUserId(int userId);
+
     }
 }

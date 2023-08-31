@@ -9,5 +9,6 @@ namespace BusinessLayer.Abstract
 {
     public interface IEducationService : IGenericService<Education>
     {
+        List<Education> GetEducationsByUserId(int userId);
     }
 }

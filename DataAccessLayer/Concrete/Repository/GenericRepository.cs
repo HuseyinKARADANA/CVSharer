@@ -60,5 +60,40 @@ namespace DataAccessLayer.Concrete.Repository
             using var context = new AppDbContext(options);
             return context.Set<Skill>().Where(x => x.UserId == userId).ToList();
         }
+
+        public List<Certificate> GetCertificatesByUserId(int userId)
+        {
+            using var context = new AppDbContext(options);
+            return context.Set<Certificate>().Where(x => x.UserId == userId).ToList();
+        }
+
+        public List<Education> GetEducationsByUserId(int userId)
+        {
+            using var context = new AppDbContext(options);
+            return context.Set<Education>().Where(x => x.UserId == userId).ToList();
+        }
+
+        public List<Experience> GetExperiencesByUserId(int userId)
+        {
+            using var context = new AppDbContext(options);
+            return context.Set<Experience>().Where(x => x.UserId == userId).ToList();
+        }
+        public List<Hobby> GetHobbiesByUserId(int userId)
+        {
+            using var context = new AppDbContext(options);
+            return context.Set<Hobby>().Where(x => x.UserId == userId).ToList();
+        }
+
+        public List<Language> GetLanguagesByUserId(int userId)
+        {
+            using var context = new AppDbContext(options);
+            return context.Set<Language>().Where(x => x.UserId == userId).ToList();
+        }
+
+        public List<Link> GetLinksByUserId(int userId)
+        {
+            using var context = new AppDbContext(options);
+            return context.Set<Link>().Where(x => x.UserId == userId).ToList();
+        }
     }
 }
