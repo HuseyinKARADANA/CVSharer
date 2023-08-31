@@ -22,6 +22,7 @@ namespace EntityLayer.Concrete
         public string? Instagram { get; set; }
         public string? GitHub { get; set; }
         public string? YouTube { get; set; }
+        
         public bool IsActive { get; set; }
 
         public List<Skill> Skills { get; set; }
