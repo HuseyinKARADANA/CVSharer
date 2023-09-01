@@ -11,8 +11,7 @@
 @inject ILinkService _linkService;
 @model User
 @{
-	ViewData["Title"] = "BaseTemplate";
-	Layout = "~/Views/Shared/_Layout.cshtml";
+	
 	var userId = Model.UserId;
 
 	var user = _userService.GetElementById(userId);
@@ -26,7 +25,7 @@
 	var links = _linkService.GetLinksByUserId(userId);
 }
 
-				<html>
+<html>
 
 <section class='section dashboard'>
 	<div class='row'>
@@ -38,7 +37,7 @@
 				<html>
 
 
-			
+
 
 				<head>
 					<title></title>
@@ -287,7 +286,7 @@
 																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
 																		<tr>
 																			<td class='pad' style='padding-bottom:10px;padding-left:20px;padding-right:20px;padding-top:10px;'>
-																				<div style='color:#784a3b;direction:ltr;font-family:Georgia, Times, 'Times New Roman', serif;font-size:35px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:42px;'>
+																				<div style='color:#784a3b;direction:ltr;font-family:Georgia, Times, ' Times New Roman', serif;font-size:35px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:42px;'>
 																					<h2 style='margin: 0;'><em>@user.Name @user.Surname</em></h2>
 																				</div>
 																			</td>
@@ -417,7 +416,7 @@
 																			</tr>
 																		</table>
 
-																		
+
 																		<table class='list_block block-8' id='list-r3c1m7' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
 																			<tr>
 																				<td class='pad'>
@@ -504,36 +503,13 @@
 				</body>
 
 			</html>
-				
-
-				
-			
-		</div>
-	</div><!-- End Left side columns -->
-	<!-- Right side columns -->
-	<div class='col-lg-3'>
 
 
-
-
-
-
-
-		<div class='pt-4 d-flex flex-column align-items-center'>
-			<form method='post' action='/Dashboard/DownloadPdf'>
-
-				<button class='btn btn-success rounded-pill' style='width:15rem;'>Download CV</button>
-			</form>
 
 
 		</div>
-
-
-
-
-
-
-	</div><!-- End Right side columns -->
+	</div><!-- End Left side columns -->
+	
 
 </div>
 </section>
