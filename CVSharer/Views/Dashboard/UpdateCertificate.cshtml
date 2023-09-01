@@ -53,12 +53,14 @@
                                 </div>
 
                                 <div class="form-floating">
-                                    <input type="date" class="form-control" id="StartDate" name="StartDate" value="@Model.StartDate" placeholder="Certificate Date" required>
+                                    <input type="text" class="form-control" id="StartDate" name="StartDate" value="@Model.StartDate.ToShortDateString()" placeholder="Certificate Date" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                                    <label for="StartDate">Certificate Date</label>
                                     <div class="invalid-feedback">Please Enter a Certificate Date!</div>
                                 </div>
 
                                 <div class="form-floating">
-                                    <input type="date" class="form-control" id="EndDate" name="EndDate" value="@Model.EndDate" placeholder="Certificate Expire Date (Optional)">
+                                    <input type="text" class="form-control" id="EndDate" name="EndDate" value="@(Model.EndDate != null ? Model.EndDate.Value.ToShortDateString() : Model.EndDate)" placeholder="Certificate Expire Date (Optional)" onfocus="(this.type='date')" onblur="(this.type='text')">
+                                    <label for="EndDate">Certificate Expire Date (Optional)</label>
                                 </div>
 
                                 <div class="col-12">

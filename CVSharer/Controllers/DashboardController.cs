@@ -469,6 +469,236 @@ namespace CVSharer.Controllers
         }
         #endregion
 
+        #region EducationCRUD
+        //Education CRUD Operations
+
+        [HttpGet]
+        public IActionResult AddEducation()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddEducation(Education education)
+        {
+            _educationService.Insert(new Education()
+            {
+                UserId = education.UserId,
+                EName = education.EName,
+                StartDate = education.StartDate,
+                EndDate = education.EndDate,
+            });
+
+            _toast.Success("Education Added");
+
+            return RedirectToAction("Index", "Dashboard");
+        }
+
+        [HttpGet]
+        public IActionResult DeleteEducation(int educationId)
+        {
+            var education = _educationService.GetElementById(educationId);
+
+            var userIdString = HttpContext.Request.Cookies["UserId"];
+            var userId = int.Parse(userIdString);
+
+            if (userId != education.UserId)
+            {
+                return RedirectToAction("Error401", "Error");
+            }
+
+            if (education == null)
+            {
+                _toast.Error("Education Not Found!");
+                return RedirectToAction("Index", "Dashboard");
+            }
+
+            _educationService.Delete(education);
+
+            _toast.Custom("Education Deleted", 3, "orange", "bi bi-trash-fill");
+            return RedirectToAction("Index", "Dashboard");
+        }
+
+        [HttpGet]
+        public IActionResult UpdateEducation(int educationId)
+        {
+            var education = _educationService.GetElementById(educationId);
+
+            var userIdString = HttpContext.Request.Cookies["UserId"];
+            var userId = int.Parse(userIdString);
+
+            if (userId != education.UserId)
+            {
+                return RedirectToAction("Error401", "Error");
+            }
+
+            return View(education);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateEducation(Education education)
+        {
+            _educationService.Update(education);
+
+            _toast.Success("Education Updated");
+
+            return RedirectToAction("Index", "Dashboard");
+        }
+        #endregion
+
+        #region ExperienceCRUD
+        //Experience CRUD Operations
+
+        [HttpGet]
+        public IActionResult AddExperience()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddExperience(Experience experience)
+        {
+            _experienceService.Insert(new Experience()
+            {
+                UserId = experience.UserId,
+                ExName = experience.ExName,
+                StartDate = experience.StartDate,
+                EndDate = experience.EndDate,
+            });
+
+            _toast.Success("Experience Added");
+
+            return RedirectToAction("Index", "Dashboard");
+        }
+
+        [HttpGet]
+        public IActionResult DeleteExperience(int experienceId)
+        {
+            var experience = _experienceService.GetElementById(experienceId);
+
+            var userIdString = HttpContext.Request.Cookies["UserId"];
+            var userId = int.Parse(userIdString);
+
+            if (userId != experience.UserId)
+            {
+                return RedirectToAction("Error401", "Error");
+            }
+
+            if (experience == null)
+            {
+                _toast.Error("Experience Not Found!");
+                return RedirectToAction("Index", "Dashboard");
+            }
+
+            _experienceService.Delete(experience);
+
+            _toast.Custom("Experience Deleted", 3, "orange", "bi bi-trash-fill");
+            return RedirectToAction("Index", "Dashboard");
+        }
+
+        [HttpGet]
+        public IActionResult UpdateExperience(int experienceId)
+        {
+            var experience = _experienceService.GetElementById(experienceId);
+
+            var userIdString = HttpContext.Request.Cookies["UserId"];
+            var userId = int.Parse(userIdString);
+
+            if (userId != experience.UserId)
+            {
+                return RedirectToAction("Error401", "Error");
+            }
+
+            return View(experience);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateExperience(Experience experience)
+        {
+            _experienceService.Update(experience);
+
+            _toast.Success("Experience Updated");
+
+            return RedirectToAction("Index", "Dashboard");
+        }
+        #endregion
+
+        #region LinkCRUD
+        //Link CRUD Operations
+
+        [HttpGet]
+        public IActionResult AddLink()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddLink(Link link)
+        {
+            _linkService.Insert(new Link()
+            {
+                UserId = link.UserId,
+                LName = link.LName,
+                LUrl = link.LUrl,
+            });
+
+            _toast.Success("Link Added");
+
+            return RedirectToAction("Index", "Dashboard");
+        }
+
+        [HttpGet]
+        public IActionResult DeleteLink(int linkId)
+        {
+            var link = _linkService.GetElementById(linkId);
+
+            var userIdString = HttpContext.Request.Cookies["UserId"];
+            var userId = int.Parse(userIdString);
+
+            if (userId != link.UserId)
+            {
+                return RedirectToAction("Error401", "Error");
+            }
+
+            if (link == null)
+            {
+                _toast.Error("Link Not Found!");
+                return RedirectToAction("Index", "Dashboard");
+            }
+
+            _linkService.Delete(link);
+
+            _toast.Custom("Link Deleted", 3, "orange", "bi bi-trash-fill");
+            return RedirectToAction("Index", "Dashboard");
+        }
+
+        [HttpGet]
+        public IActionResult UpdateLink(int linkId)
+        {
+            var link = _linkService.GetElementById(linkId);
+
+            var userIdString = HttpContext.Request.Cookies["UserId"];
+            var userId = int.Parse(userIdString);
+
+            if (userId != link.UserId)
+            {
+                return RedirectToAction("Error401", "Error");
+            }
+
+            return View(link);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateLink(Link link)
+        {
+            _linkService.Update(link);
+
+            _toast.Success("Link Updated");
+
+            return RedirectToAction("Index", "Dashboard");
+        }
+        #endregion
+
         [HttpPost]
         public async Task<IActionResult> DownloadPdf()
         {

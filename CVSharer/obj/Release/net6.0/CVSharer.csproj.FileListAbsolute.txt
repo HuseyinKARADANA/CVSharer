@@ -579,3 +579,4 @@ C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\obj\Release\net6.0\C
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\obj\Release\net6.0\CVSharer.genruntimeconfig.cache
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\obj\Release\net6.0\ref\CVSharer.dll
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Release\net6.0\HtmlAgilityPack.dll
+C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\bin\Release\net6.0\HtmlAgilityPack.dll
