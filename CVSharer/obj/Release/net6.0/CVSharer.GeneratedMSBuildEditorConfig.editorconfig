@@ -9,89 +9,89 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CVSharer
 build_property.RootNamespace = CVSharer
-build_property.ProjectDir = C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer\
+build_property.ProjectDir = C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\moral\OneDrive\Belgeler\GitHub\CVSharer\CVSharer
+build_property.MSBuildProjectDirectory = C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Cv/BaseTemplate.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Cv/BaseTemplate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3ZcQmFzZVRlbXBsYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Dashboard/AddCertificate.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Dashboard/AddCertificate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEFkZENlcnRpZmljYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Dashboard/AddHobby.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Dashboard/AddHobby.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEFkZEhvYmJ5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Dashboard/AddLanguage.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Dashboard/AddLanguage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEFkZExhbmd1YWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Dashboard/AddSkill.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Dashboard/AddSkill.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEFkZFNraWxsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Dashboard/Index.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Dashboard/UpdateCertificate.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Dashboard/UpdateCertificate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFVwZGF0ZUNlcnRpZmljYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Dashboard/UpdateHobby.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Dashboard/UpdateHobby.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFVwZGF0ZUhvYmJ5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Dashboard/UpdateLanguage.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Dashboard/UpdateLanguage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFVwZGF0ZUxhbmd1YWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Dashboard/UpdateSkill.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Dashboard/UpdateSkill.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFVwZGF0ZVNraWxsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Error/Error401.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Error/Error401.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3I0MDEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Home/Contact.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Home/Index.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Home/Privacy.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Home/Terms.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Home/Terms.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZXJtcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Session/Login.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Session/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Session/Register.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Session/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Session/VerifyAccount.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Session/VerifyAccount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblxWZXJpZnlBY2NvdW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Shared/_Layout.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moral/OneDrive/Belgeler/GitHub/CVSharer/CVSharer/Views/Shop/Index.cshtml]
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Shop/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

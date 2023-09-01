@@ -70,7 +70,7 @@ namespace CVSharer.Controllers
             if (dto.Photo != null)
             {
                 var extention = Path.GetExtension(dto.Photo.FileName);
-                if(extention==".jpeg" || extention == ".png")
+                if(extention==".jpeg" || extention == ".png" || extention==".jpg")
                 {
 					var newImageName = Guid.NewGuid() + extention;
 					var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ProfileImg/", newImageName);

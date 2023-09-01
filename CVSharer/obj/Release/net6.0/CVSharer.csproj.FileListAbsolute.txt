@@ -578,3 +578,4 @@ C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\obj\Release\net6.0\r
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\obj\Release\net6.0\CVSharer.pdb
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\obj\Release\net6.0\CVSharer.genruntimeconfig.cache
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\obj\Release\net6.0\ref\CVSharer.dll
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Release\net6.0\HtmlAgilityPack.dll

@@ -11,6 +11,7 @@ C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\obj\Release\net6.0\P
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\obj\Release\net6.0\PubTmp\Out\BCrypt.Net-Next.dll
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\obj\Release\net6.0\PubTmp\Out\BouncyCastle.Cryptography.dll
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\obj\Release\net6.0\PubTmp\Out\DinkToPdf.dll
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\obj\Release\net6.0\PubTmp\Out\HtmlAgilityPack.dll
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\obj\Release\net6.0\PubTmp\Out\Humanizer.dll
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\obj\Release\net6.0\PubTmp\Out\MailKit.dll
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\obj\Release\net6.0\PubTmp\Out\MessagePack.dll
