@@ -578,3 +578,4 @@ C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\run
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\runtimes\osx-x86\native\libwkhtmltox.dylib
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\runtimes\win7-x64\native\libwkhtmltox.dll
 C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\runtimes\win7-x86\native\libwkhtmltox.dll
+C:\Users\huseyinkaradana\Documents\GitHub\CVSharer\CVSharer\bin\Debug\net6.0\HtmlAgilityPack.dll

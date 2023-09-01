@@ -9,5 +9,7 @@ namespace BusinessLayer.Abstract
 {
     public interface IUserService : IGenericService<User>
     {
-    }
+        public User GetUserByShareCode(string shareCode);
+
+	}
 }

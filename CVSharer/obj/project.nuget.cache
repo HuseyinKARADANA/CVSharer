@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ta6zduJXx3CcIqkI+rBW+lshn7Uy7J4smXLoLfVCxJ/Fgl1WlyEPcxA/w8t7n2Ir715Co59ce9hAhwkchzADig==",
+  "dgSpecHash": "MRczPoWbHvsZ+hfmOOSVagR95Iq7ck/2Q4VOCFJhrpE7Q3fe1B4ensRIuXHgQkYOQiZ7gKWag+0iLrmKW9UTjg==",
   "success": true,
   "projectFilePath": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\CVSharer.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\huseyinkaradana\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\huseyinkaradana\\.nuget\\packages\\dinktopdf\\1.0.8\\dinktopdf.1.0.8.nupkg.sha512",
     "C:\\Users\\huseyinkaradana\\.nuget\\packages\\dinktopdfcopy\\1.0.0\\dinktopdfcopy.1.0.0.nupkg.sha512",
+    "C:\\Users\\huseyinkaradana\\.nuget\\packages\\htmlagilitypack\\1.11.52\\htmlagilitypack.1.11.52.nupkg.sha512",
     "C:\\Users\\huseyinkaradana\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\huseyinkaradana\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\huseyinkaradana\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

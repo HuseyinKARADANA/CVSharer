@@ -1,13 +1,23 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+using BusinessLayer.Abstract;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CVSharer.Controllers
 {
     public class CvController : Controller
     {
-        [HttpGet]
-        public IActionResult BaseTemplate()
+        private readonly IUserService _userService;
+
+        public CvController(IUserService userService)
         {
-            return View();
+            _userService = userService;
+        }
+
+        [HttpGet]
+        public IActionResult BaseTemplate(string sharecode)
+        {
+            var user=_userService.GetUserByShareCode(sharecode);
+            return View(user);
         }
     }
 }

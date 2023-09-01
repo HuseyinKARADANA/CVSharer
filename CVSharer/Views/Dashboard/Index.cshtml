@@ -65,9 +65,10 @@
                         <button class="btn btn-success rounded-pill" style="width:20rem;">Download Customized CV</button>
                     </form>
                     <br />
-                    <form method="get" action="/Cv/BaseTemplate?=shareCode">
-                        <button class="btn btn-info rounded-pill" style="width:20rem;">Go To Personal CV</button>
-                    </form>
+                   
+                    
+                        <a class="btn btn-info rounded-pill" href="/Cv/BaseTemplate?shareCode=@user.ShareCode" style="width:20rem;">Go To Personal CV</a>
+                    
                 </div>
             </div>
 
@@ -176,26 +177,37 @@
                            
                                 <div class="row mb-3">
                                     <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
-                                    <div class="col-md-8 col-lg-9">
-                                        <img src="~/ProfileImg/@user.Photo" alt="Profile">
-                                        <div class="pt-2">
-                                            
+                                    <div class="col-lg-9">
+                                        <div class="row">
+                                        <div class="col-lg-9 ">
+                                            <form action="/Dashboard/AddProfile" method="post" enctype="multipart/form-data">
 
-                                            <!-- Buton ile dosya seçimi -->
-                                        <form action="/Dashboard/AddProfile" method="post">
-                                            <input class="form-control" name="Photo" type="file" id="formFile">
-                                              
-                                            <button type="submit" class="btn btn-primary rounded-pill">Save Profile Image</button>
-                                         </form>
 
-                                           <form action="/Dashboard/DeleteProfile" method="post">
-                                            
+                                             
+                                                    <img src="~/ProfileImg/@user.Photo" alt="Profile">
+                                                    <div class="pt-2">
+                                                        <!-- Buton ile dosya seçimi -->
+                                                        <input class="form-control" name="Photo" type="file"><br />
+                                                        <button type="submit" class="btn btn-primary rounded-pill">Save Profile Image</button>
+                                                    </div>
+                                               
 
-                                                <button type="submit" class="btn btn-danger rounded-pill"><i class="bi bi-trash"></i></button>
                                             </form>
-                                 
+                                        </div>
+                                        <div class="col-3 ">
+                                           
+                                                <form action="/Dashboard/DeleteProfile" method="post">
+
+
+                                                    <button type="submit" class="btn btn-danger rounded-pill"><i class="bi bi-trash"></i></button>
+                                                </form>
+                                           
                                         </div>
                                     </div>
+                                            
+                                            
+                                    </div>
+                                    
                                 </div>
                             <form method="post" action="/Dashboard/UpdateUser" enctype="multipart/form-data">
                                 <div class="row mb-3">

@@ -95,5 +95,11 @@ namespace DataAccessLayer.Concrete.Repository
             using var context = new AppDbContext(options);
             return context.Set<Link>().Where(x => x.UserId == userId).ToList();
         }
+        public User GetUserByShareCode(string shareCode)
+        {
+			using var context = new AppDbContext(options);
+            return context.Set<User>().FirstOrDefault(x=>x.ShareCode==shareCode);
+
+		}
     }
 }

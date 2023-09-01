@@ -9,35 +9,40 @@
 @inject IHobbyService _hobbyService;
 @inject ILanguageService _languageService;
 @inject ILinkService _linkService;
-
+@model User
 @{
 	ViewData["Title"] = "BaseTemplate";
 	Layout = "~/Views/Shared/_Layout.cshtml";
-	var userId = Context.Request.Cookies["UserId"];
+	var userId = Model.UserId;
 
-	var user = _userService.GetElementById(int.Parse(userId));
+	var user = _userService.GetElementById(userId);
 
-	var skills = _skillService.GetSkillsByUserId(int.Parse(userId));
-	var certificates = _certificateService.GetCertificatesByUserId(int.Parse(userId));
-	var educations = _educationService.GetEducationsByUserId(int.Parse(userId));
-	var experiences = _experienceService.GetExperiencesByUserId(int.Parse(userId));
-	var hobbies = _hobbyService.GetHobbiesByUserId(int.Parse(userId));
-	var languages = _languageService.GetLanguagesByUserId(int.Parse(userId));
-	var links = _linkService.GetLinksByUserId(int.Parse(userId));
+	var skills = _skillService.GetSkillsByUserId(userId);
+	var certificates = _certificateService.GetCertificatesByUserId(userId);
+	var educations = _educationService.GetEducationsByUserId(userId);
+	var experiences = _experienceService.GetExperiencesByUserId(userId);
+	var hobbies = _hobbyService.GetHobbiesByUserId(userId);
+	var languages = _languageService.GetLanguagesByUserId(userId);
+	var links = _linkService.GetLinksByUserId(userId);
 }
 
 				<html>
 
-<section class="section dashboard">
-	<div class="row">
-		<div class="col-lg-3"></div>
+<section class='section dashboard'>
+	<div class='row'>
+		<div class='col-lg-3'></div>
 		<!-- Left side columns -->
-		<div class="col-lg-6">
-			<div class="row">
+		<div class='col-lg-6'>
+			<div class='row'>
 
 				<html>
 
+
+			
+
 				<head>
+					<title></title>
+
 					<style>
 						* {
 							box-sizing: border-box;
@@ -147,61 +152,15 @@
 													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f4f1eb; border-radius: 0; color: #000; width: 680px; margin: 0 auto;' width='680'>
 														<tbody>
 															<tr>
-																<td class='column column-1' width='33.333333333333336%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																<td class='column column-1' width='33.333333333333336%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; background-color: #ffd188; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
 																	<table class='image_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
 																		<tr>
 																			<td class='pad' style='width:100%;padding-right:0px;padding-left:0px;'>
-																				<div class='alignment' align='center' style='line-height:10px'><img src='https://d1oco4z2z1fhwp.cloudfront.net/templates/default/7331/woman-10.png' style='display: block; height: auto; border: 0; max-width: 226.66666666666666px; width: 100%;' width='226.66666666666666' alt='Woman image' title='Woman image'></div>
+																				<div class='alignment' align='center' style='line-height:10px'><img src='~/ProfileImg/@user.Photo' style='display: block; height: auto; border: 0; max-width: 226.66666666666666px; width: 100%;' width='226.66666666666666' alt='Profile' title='Woman image'></div>
 																			</td>
 																		</tr>
 																	</table>
-																</td>
-																<td class='column column-2' width='66.66666666666667%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 20px; padding-left: 20px; padding-right: 20px; padding-top: 20px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
-																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
-																		<tr>
-																			<td class='pad' style='padding-bottom:10px;padding-left:20px;padding-right:20px;padding-top:10px;'>
-																				<div style='color:#784a3b;direction:ltr;font-family:Georgia, Times, ' Times New Roman', serif;font-size:35px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:42px;'>
-																					<h2 style='margin: 0;'><em>@user.Name @user.Surname</em></h2>
-																				</div>
-																			</td>
-																		</tr>
-																	</table>
-																	<table class='paragraph_block block-2' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
-																		<tr>
-																			<td class='pad'>
-																				<div style='color:#d56533;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:20px;font-weight:400;letter-spacing:5px;line-height:120%;text-align:left;mso-line-height-alt:24px;'>
-																					<p style='margin: 0;'>@user.Position</p>
-																				</div>
-																			</td>
-																		</tr>
-																	</table>
-																	<div class='spacer_block block-3' style='height:20px;line-height:20px;font-size:1px;'>&#8202;</div>
-																	<table class='paragraph_block block-4' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
-																		<tr>
-																			<td class='pad' style='padding-top:10px;'>
-																				<div style='color:#393d47;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:14px;font-weight:400;letter-spacing:0px;line-height:150%;text-align:left;mso-line-height-alt:21px;'>
-																					<p style='margin: 0;'>&nbsp; &nbsp;@user.Description &nbsp;</p>
-																				</div>
-																			</td>
-																		</tr>
-																	</table>
-																</td>
-															</tr>
-														</tbody>
-													</table>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-									<table class='row row-4' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
-										<tbody>
-											<tr>
-												<td>
-													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f4f1eb; border-radius: 0; color: #000; width: 680px; margin: 0 auto;' width='680'>
-														<tbody>
-															<tr>
-																<td class='column column-1' width='33.333333333333336%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; background-color: #ffd188; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
-																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																	<table class='paragraph_block block-2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
 																		<tr>
 																			<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:15px;'>
 																				<div style='color:#101112;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:16px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:center;mso-line-height-alt:19.2px;'>
@@ -232,7 +191,7 @@
 																			</td>
 																		</tr>
 																	</table>
-																	
+
 																	@if (languages.Count > 0)
 																	{
 																		<table class='paragraph_block block-3' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
@@ -293,8 +252,7 @@
 																				</td>
 																			</tr>
 																		</table>
-																	}
-																	@if (skills.Count > 0)
+																	}@if (skills.Count > 0)
 																	{
 																		<table class='paragraph_block block-7' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
 																			<tr>
@@ -325,8 +283,34 @@
 																		</table>
 																	}
 																</td>
-
 																<td class='column column-2' width='66.66666666666667%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad' style='padding-bottom:10px;padding-left:20px;padding-right:20px;padding-top:10px;'>
+																				<div style='color:#784a3b;direction:ltr;font-family:Georgia, Times, 'Times New Roman', serif;font-size:35px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:42px;'>
+																					<h2 style='margin: 0;'><em>@user.Name @user.Surname</em></h2>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<table class='paragraph_block block-2' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#d56533;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:20px;font-weight:400;letter-spacing:5px;line-height:120%;text-align:left;mso-line-height-alt:24px;'>
+																					<p style='margin: 0;'>@user.Position</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<table class='paragraph_block block-3' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad' style='padding-bottom:30px;padding-left:10px;padding-top:10px;'>
+																				<div style='color:#393d47;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:14px;font-weight:400;letter-spacing:0px;line-height:150%;text-align:left;mso-line-height-alt:21px;'>
+																					<p style='margin: 0;'>&nbsp; &nbsp;@user.Description &nbsp;</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
 																	@if (educations.Count > 0)
 																	{
 																		<table class='heading_block block-1' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
@@ -353,6 +337,7 @@
 																			</tr>
 																		</table>
 																	}
+
 																	@if (experiences.Count > 0)
 																	{
 																		<table class='heading_block block-3' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
@@ -378,6 +363,7 @@
 																			</tr>
 																		</table>
 																	}
+
 																	@if (user.Instagram != null || user.Linkedin != null || user.YouTube != null || user.GitHub != null || links.Count > 0)
 																	{
 																		<table class='heading_block block-5' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
@@ -420,6 +406,7 @@
 																			</tr>
 																		</table>
 																	}
+
 																	@if (certificates.Count > 0)
 																	{
 																		<table class='heading_block block-7' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
@@ -430,7 +417,7 @@
 																			</tr>
 																		</table>
 
-																		<!--[if mso]><style>#list-r3c1m7 ul{margin: 0 !important; padding: 0 !important;} #list-r3c1m7 ul li{mso-special-format: bullet;}#list-r3c1m7 .levelOne li {margin-top: 0 !important;} #list-r3c1m7 .levelOne {margin-left: -20px !important;}#list-r3c1m7 .levelTwo li {margin-top: 0 !important;} #list-r3c1m7 .levelTwo {margin-left: 10px !important;}#list-r3c1m7 .levelThree li {margin-top: 0 !important;} #list-r3c1m7 .levelThree {margin-left: 40px !important;}</style><![endif]-->
+																		
 																		<table class='list_block block-8' id='list-r3c1m7' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
 																			<tr>
 																				<td class='pad'>
@@ -454,7 +441,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<table class='row row-5' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+									<table class='row row-4' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
 										<tbody>
 											<tr>
 												<td>
@@ -492,7 +479,7 @@
 											</tr>
 										</tbody>
 									</table>
-									<table class='row row-6' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+									<table class='row row-5' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
 										<tbody>
 											<tr>
 												<td>
@@ -513,14 +500,18 @@
 								</td>
 							</tr>
 						</tbody>
-					</table><!-- End -->
+					</table>
 				</body>
 
 			</html>
+				
+
+				
+			
 		</div>
 	</div><!-- End Left side columns -->
 	<!-- Right side columns -->
-	<div class="col-lg-3">
+	<div class='col-lg-3'>
 
 
 
@@ -528,9 +519,10 @@
 
 
 
-		<div class="pt-4 d-flex flex-column align-items-center">
-			<form method="post" action="/Dashboard/DownloadPdf">
-				<button class="btn btn-success rounded-pill" style="width:15rem;">Download CV</button>
+		<div class='pt-4 d-flex flex-column align-items-center'>
+			<form method='post' action='/Dashboard/DownloadPdf'>
+
+				<button class='btn btn-success rounded-pill' style='width:15rem;'>Download CV</button>
 			</form>
 
 

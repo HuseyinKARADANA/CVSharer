@@ -33,7 +33,12 @@ namespace BusinessLayer.Concrete
             return _userDal.GetListAll();
         }
 
-        public void Insert(User t)
+		public User GetUserByShareCode(string shareCode)
+		{
+            return _userDal.GetUserByShareCode(shareCode);
+		}
+
+		public void Insert(User t)
         {
             _userDal.Insert(t);
         }
@@ -42,5 +47,6 @@ namespace BusinessLayer.Concrete
         {
             _userDal.Update(t);
         }
+        
     }
 }
