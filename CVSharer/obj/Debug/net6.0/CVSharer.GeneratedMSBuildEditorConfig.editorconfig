@@ -24,12 +24,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEFkZENlcnRpZmljYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Dashboard/AddEducation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEFkZEVkdWNhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Dashboard/AddExperience.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEFkZEV4cGVyaWVuY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Dashboard/AddHobby.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEFkZEhvYmJ5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Dashboard/AddLanguage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEFkZExhbmd1YWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Dashboard/AddLink.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEFkZExpbmsuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Dashboard/AddSkill.cshtml]
@@ -44,12 +56,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFVwZGF0ZUNlcnRpZmljYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Dashboard/UpdateEducation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFVwZGF0ZUVkdWNhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Dashboard/UpdateExperience.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFVwZGF0ZUV4cGVyaWVuY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Dashboard/UpdateHobby.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFVwZGF0ZUhvYmJ5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Dashboard/UpdateLanguage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFVwZGF0ZUxhbmd1YWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Dashboard/UpdateLink.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFVwZGF0ZUxpbmsuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/huseyinkaradana/Documents/GitHub/CVSharer/CVSharer/Views/Dashboard/UpdateSkill.cshtml]
