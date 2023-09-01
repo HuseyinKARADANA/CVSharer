@@ -402,7 +402,7 @@
                                         <div class="row align-items-center">
                                             <div class="col-lg-2 col-md-4 label ">@certificate.CName</div>
                                             <div class="col-lg-2 col-md-4 label ">@certificate.Institution</div>
-                                            <div class="col-lg-2 col-md-4 label href=" @certificate.Url" target="_blank" ">@certificate.Url</div>
+                                            <a class="col-lg-2 col-md-4 label" href=" @certificate.Url" target="_blank">@certificate.Url</a>
                                             <div class="col-lg-2 col-md-4 label ">@certificate.StartDate.ToShortDateString()</div>
                                             
                                             @if(certificate.EndDate != null) {
