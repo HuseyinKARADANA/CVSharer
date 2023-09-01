@@ -181,6 +181,7 @@ namespace CVSharer.Controllers
                     Name = model.registerDTO.Name,
                     Surname = model.registerDTO.Surname,
                     Email = model.registerDTO.Email,
+                    Photo= "717ea7ab-aaf3-4081-89cb-51f4c8068308.png",
                     Password = hashedPassword,
                     IsActive = true
                 });
