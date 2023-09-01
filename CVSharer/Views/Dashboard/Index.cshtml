@@ -317,9 +317,8 @@
                                             
                                             @*Buttons*@
                                             <div class="col-lg-3 col-md-4 d-flex justify-content-center">
-                                                <a type="button" href="/Dashboard/EditSkill/@skill.SkillId" class="btn btn-warning rounded-pill m-1">Edit Skill</a>
-
-                                            <a href="/Dashboard/DeleteSkill?skillId=@skill.SkillId" class="btn btn-danger rounded-pill m-1">Delete Skill</a>
+                                                <a type="button" href="/Dashboard/UpdateSkill?skillId=@skill.SkillId" class="btn btn-warning rounded-pill m-1">Edit Skill</a>
+                                                <a href="/Dashboard/DeleteSkill?skillId=@skill.SkillId" class="btn btn-danger rounded-pill m-1">Delete Skill</a>
                                             </div>
                                         </div>
                                     }
@@ -333,7 +332,6 @@
                         
                         <!--Hobbies Tab-->
                         <div class="tab-pane fade pt-3" id="profile-hobbies">
-                            <form method="post" action="/Dashboard/AddSkill">
                                 @{
                                     foreach (var hobby in hobbies)
                                     {
@@ -342,22 +340,20 @@
 
                                             @*Buttons*@
                                             <div class="col-lg-6 col-md-4 d-flex justify-content-center">
-                                                <button type="button" class="btn btn-warning rounded-pill m-1">Edit Hobby</button>
-                                                <button type="button" class="btn btn-danger rounded-pill m-1">Delete Hobby</button>
+                                                <a type="button" href="/Dashboard/UpdateHobby?hobbyId=@hobby.HobbyId" class="btn btn-warning rounded-pill m-1">Edit Hobby</a>
+                                                <a type="button" href="/Dashboard/DeleteHobby?hobbyId=@hobby.HobbyId" class="btn btn-danger rounded-pill m-1">Delete Hobby</a>
                                             </div>
                                         </div>
                                     }
 
                                 }
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-success rounded-pill">Add Hobby</button>
+                                    <a type="submit" class="btn btn-success rounded-pill" href="/Dashboard/AddHobby">Add Hobby</a>
                                 </div>
-                            </form>
                         </div>
                         
                         <!--Languages Tab-->
                         <div class="tab-pane fade pt-3" id="profile-languages">
-                            <form method="post" action="/Dashboard/AddSkill">
                                 @{
                                     foreach (var language in languages)
                                     {
@@ -386,22 +382,20 @@
 
                                             @*Buttons*@
                                             <div class="col-lg-4 col-md-4 d-flex justify-content-center">
-                                                <button type="button" class="btn btn-warning rounded-pill m-1">Edit Language</button>
-                                                <button type="button" class="btn btn-danger rounded-pill m-1">Delete Language</button>
+                                                <a type="button" href="/Dashboard/UpdateLanguage?languageId=@language.LanguageId" class="btn btn-warning rounded-pill m-1">Edit Language</a>
+                                                <a type="button" href="/Dashboard/DeleteLanguage?languageId=@language.LanguageId" class="btn btn-danger rounded-pill m-1">Delete Language</a>
                                             </div>
                                         </div>
                                     }
 
                                 }
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-success rounded-pill">Add Language</button>
+                                    <a type="submit" class="btn btn-success rounded-pill" href="/Dashboard/AddLanguage">Add Language</a>
                                 </div>
-                            </form>
                         </div>
 
                         <!--Certificates Tab-->
                         <div class="tab-pane fade pt-3" id="profile-certificates">
-                            <form method="post" action="/Dashboard/AddSkill">
                                 @{
                                     foreach (var certificate in certificates)
                                     {
@@ -421,17 +415,16 @@
 
                                             @*Buttons*@
                                             <div class="col-lg-4 col-md-4 d-flex justify-content-center">
-                                                <button type="button" class="btn btn-warning rounded-pill m-1">Edit Certificate</button>
-                                                <button type="button" class="btn btn-danger rounded-pill m-1">Delete Certificate</button>
+                                            <a type="button" href="/Dashboard/UpdateCertificate?certificateId=@certificate.CertificateId" class="btn btn-warning rounded-pill m-1">Edit Certificate</a>
+                                            <a type="button" href="/Dashboard/DeleteCertificate?certificateId=@certificate.CertificateId" class="btn btn-danger rounded-pill m-1">Delete Certificate</a>
                                             </div>
                                         </div>
                                     }
 
                                 }
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-success rounded-pill">Add Certificate</button>
+                                    <a type="submit" class="btn btn-success rounded-pill" href="/Dashboard/AddCertificate">Add Certificate</a>
                                 </div>
-                            </form>
                         </div>
 
                         <!--Educations Tab-->
