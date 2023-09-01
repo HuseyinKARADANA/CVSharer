@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GhxGbNpzQK1ydy+vVpq2NvDF5yWEdO/HYTIZQj9LRQE=",
+  "Hash": "R2RDzwHTZ6yWqIuuoGpOBCKkQy/F9WvoPh9ofT2BCFo=",
   "Source": "CVSharer",
   "BasePath": "_content/CVSharer",
   "Mode": "Default",
@@ -8124,6 +8124,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ProfileImg\\831eb061-fdef-4cf2-80be-02e8f8fc3964.png"
+    },
+    {
+      "Identity": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\ProfileImg\\8e7ccd51-a375-4e44-a00e-519cace911ed.png",
+      "SourceId": "CVSharer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\",
+      "BasePath": "_content/CVSharer",
+      "RelativePath": "ProfileImg/8e7ccd51-a375-4e44-a00e-519cace911ed.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProfileImg\\8e7ccd51-a375-4e44-a00e-519cace911ed.png"
     },
     {
       "Identity": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\ProfileImg\\abb7e6fd-1370-469e-9977-279154543901.png",
