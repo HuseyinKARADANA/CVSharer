@@ -172,6 +172,8 @@ namespace CVSharer.Controllers
         [HttpPost]
         public IActionResult VerifyAccount(VerifyDTO verifyDTO)
         {
+            string shareCode = RandomString(6);
+
             var model = JsonConvert.DeserializeObject<VerifyDTO>(TempData["MyUser"] as string);
             if (model.verifyCode == verifyDTO.userCode)
             {
@@ -183,7 +185,8 @@ namespace CVSharer.Controllers
                     Email = model.registerDTO.Email,
                     Photo= "717ea7ab-aaf3-4081-89cb-51f4c8068308.png",
                     Password = hashedPassword,
-                    IsActive = true
+                    IsActive = true,
+                    ShareCode = shareCode,
                 });
 
                 _toast.Success("Register Successful.");
