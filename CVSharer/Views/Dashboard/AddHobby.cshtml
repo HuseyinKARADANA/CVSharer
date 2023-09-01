@@ -1,0 +1,59 @@
+﻿@model EntityLayer.Concrete.Hobby
+
+@{
+    ViewData["Title"] = "AddHobby";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var userId = Context.Request.Cookies["UserId"];
+}
+
+<div class="container">
+
+    <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                    <div class="d-flex justify-content-center py-4">
+                        <a href="/Home/Index" class="logo d-flex align-items-center w-auto">
+                            <img src="~/assets/img/logo.png" alt="">
+                            <span class="d-none d-lg-block">CVSharer</span>
+                        </a>
+                    </div><!-- End Logo -->
+
+                    <div class="card mb-3">
+
+                        <div class="card-body">
+
+                            <div class="pt-4 pb-2">
+                                <h5 class="card-title text-center pb-0 fs-4">Add Hobby</h5>
+                                <p class="text-center small">Add a new hobby for your CV</p>
+                            </div>
+
+                            <form class="row g-3 needs-validation" novalidate method="post">
+
+                                <input hidden value="@int.Parse(userId)" name="UserId" />
+
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="HName" name="HName" placeholder="Hobby Name" required>
+                                    <label for="HName">Hobby Name</label>
+                                    <div class="invalid-feedback">Please Enter a Hobby Name!</div>
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 rounded-pill" type="submit">Add Hobby</button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</div>

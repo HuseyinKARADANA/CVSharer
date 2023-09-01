@@ -79,6 +79,7 @@ namespace CVSharer.Controllers
 
             return RedirectToAction("Index", "Dashboard");
         }
+
         [HttpPost]
         public IActionResult UpdateUser(UpdateUserDTO dto)
         {
@@ -124,6 +125,9 @@ namespace CVSharer.Controllers
             return RedirectToAction("Index","Dashboard");
         }
 
+        #region SkillCRUD
+        //Skill CRUD Operations
+
         [HttpGet]
         public IActionResult AddSkill()
         {
@@ -146,6 +150,8 @@ namespace CVSharer.Controllers
                 SPercentage = skill.SPercentage,
             });
 
+            _toast.Success("Skill Added");
+
             return RedirectToAction("Index", "Dashboard");
         }
 
@@ -153,6 +159,14 @@ namespace CVSharer.Controllers
         public IActionResult DeleteSkill(int skillId)
         {
             Skill skill = _skillService.GetElementById(skillId);
+
+            var userIdString = HttpContext.Request.Cookies["UserId"];
+            var userId = int.Parse(userIdString);
+
+            if (userId != skill.UserId)
+            {
+                return RedirectToAction("Error401", "Error");
+            }
 
             if(skill == null)
             {
@@ -166,6 +180,283 @@ namespace CVSharer.Controllers
             return RedirectToAction("Index","Dashboard");
         }
 
+        [HttpGet]
+        public IActionResult UpdateSkill(int skillId)
+        {
+            var skill = _skillService.GetElementById(skillId);
+
+            var userIdString = HttpContext.Request.Cookies["UserId"];
+            var userId = int.Parse(userIdString);
+
+            if (userId != skill.UserId)
+            {
+                return RedirectToAction("Error401", "Error");
+            }
+
+            return View(skill);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateSkill(Skill skill)
+        {
+            if (skill.SPercentage < 0 || skill.SPercentage > 100)
+            {
+                _toast.Error("Invalid Skill Percentage Value!");
+                return View();
+            }
+
+            _skillService.Update(skill);
+
+            _toast.Success("Skill Updated");
+
+            return RedirectToAction("Index", "Dashboard");
+        }
+
+        #endregion
+
+        #region HobbyCRUD
+        //Hobby CRUD Operations
+
+        [HttpGet]
+        public IActionResult AddHobby()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddHobby(Hobby hobby)
+        {
+            _hobbyService.Insert(new Hobby()
+            {
+                UserId = hobby.UserId,
+                HName = hobby.HName
+            });
+
+            _toast.Success("Hobby Added");
+
+            return RedirectToAction("Index", "Dashboard");
+        }
+
+        [HttpGet]
+        public IActionResult DeleteHobby(int hobbyId)
+        {
+            var hobby = _hobbyService.GetElementById(hobbyId);
+
+            var userIdString = HttpContext.Request.Cookies["UserId"];
+            var userId = int.Parse(userIdString);
+
+            if (userId != hobby.UserId)
+            {
+                return RedirectToAction("Error401", "Error");
+            }
+
+            if (hobby == null)
+            {
+                _toast.Error("Hobby Not Found!");
+                return RedirectToAction("Index", "Dashboard");
+            }
+
+            _hobbyService.Delete(hobby);
+
+            _toast.Custom("Hobby Deleted", 3, "orange", "bi bi-trash-fill");
+            return RedirectToAction("Index", "Dashboard");
+        }
+
+        [HttpGet]
+        public IActionResult UpdateHobby(int hobbyId)
+        {
+            var hobby = _hobbyService.GetElementById(hobbyId);
+
+            var userIdString = HttpContext.Request.Cookies["UserId"];
+            var userId = int.Parse(userIdString);
+
+            if (userId != hobby.UserId)
+            {
+                return RedirectToAction("Error401", "Error");
+            }
+
+            return View(hobby);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateHobby(Hobby hobby)
+        {
+            _hobbyService.Update(hobby);
+
+            _toast.Success("Hobby Updated");
+
+            return RedirectToAction("Index", "Dashboard");
+        }
+        #endregion
+
+        #region LanguageCRUD
+        //Language CRUD Operations
+
+        [HttpGet]
+        public IActionResult AddLanguage()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddLanguage(Language language)
+        {
+            if (language.LangPercentage < 0 || language.LangPercentage> 100)
+            {
+                _toast.Error("Invalid Language Percentage Value!");
+                return View();
+            }
+
+            _languageService.Insert(new Language()
+            {
+                UserId = language.UserId,
+                LangName = language.LangName,
+                LangPercentage = language.LangPercentage,
+            });
+
+            _toast.Success("Language Added");
+
+            return RedirectToAction("Index", "Dashboard");
+        }
+
+        [HttpGet]
+        public IActionResult DeleteLanguage(int languageId)
+        {
+            Language language = _languageService.GetElementById(languageId);
+
+            var userIdString = HttpContext.Request.Cookies["UserId"];
+            var userId = int.Parse(userIdString);
+
+            if (userId != language.UserId)
+            {
+                return RedirectToAction("Error401", "Error");
+            }
+
+            if (language == null)
+            {
+                _toast.Error("Language Not Found!");
+                return RedirectToAction("Index", "Dashboard");
+            }
+
+            _languageService.Delete(language);
+
+            _toast.Custom("Language Deleted", 3, "orange", "bi bi-trash-fill");
+            return RedirectToAction("Index", "Dashboard");
+        }
+
+        [HttpGet]
+        public IActionResult UpdateLanguage(int languageId)
+        {
+            var language = _languageService.GetElementById(languageId);
+
+            var userIdString = HttpContext.Request.Cookies["UserId"];
+            var userId = int.Parse(userIdString);
+
+            if (userId != language.UserId)
+            {
+                return RedirectToAction("Error401", "Error");
+            }
+
+            return View(language);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateLanguage(Language language)
+        {
+            if (language.LangPercentage< 0 || language.LangPercentage> 100)
+            {
+                _toast.Error("Invalid Language Percentage Value!");
+                return View();
+            }
+
+            _languageService.Update(language);
+            _languageService.Update(language);
+
+            _toast.Success("Language Updated");
+
+            return RedirectToAction("Index", "Dashboard");
+        }
+
+        #endregion
+
+        #region CerticifateCRUD
+        //Certificate CRUD Operations
+
+        [HttpGet]
+        public IActionResult AddCertificate()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddCertificate(Certificate certificate)
+        {
+            _certificateService.Insert(new Certificate()
+            {
+                UserId = certificate.UserId,
+                CName = certificate.CName,
+                Institution = certificate.Institution,
+                Url = certificate.Url,
+                StartDate = certificate.StartDate,
+                EndDate = certificate.EndDate,
+            });
+
+            _toast.Success("Certificate Added");
+
+            return RedirectToAction("Index", "Dashboard");
+        }
+
+        [HttpGet]
+        public IActionResult DeleteCertificate(int certificateId)
+        {
+            var certificate = _certificateService.GetElementById(certificateId);
+
+            var userIdString = HttpContext.Request.Cookies["UserId"];
+            var userId = int.Parse(userIdString);
+
+            if (userId != certificate.UserId)
+            {
+                return RedirectToAction("Error401", "Error");
+            }
+
+            if (certificate == null)
+            {
+                _toast.Error("Certificate Not Found!");
+                return RedirectToAction("Index", "Dashboard");
+            }
+
+            _certificateService.Delete(certificate);
+
+            _toast.Custom("Certificate Deleted", 3, "orange", "bi bi-trash-fill");
+            return RedirectToAction("Index", "Dashboard");
+        }
+
+        [HttpGet]
+        public IActionResult UpdateCertificate(int certificateId)
+        {
+            var certificate = _certificateService.GetElementById(certificateId);
+
+            var userIdString = HttpContext.Request.Cookies["UserId"];
+            var userId = int.Parse(userIdString);
+
+            if (userId != certificate.UserId)
+            {
+                return RedirectToAction("Error401", "Error");
+            }
+
+            return View(certificate);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateCertificate(Certificate certificate)
+        {
+            _certificateService.Update(certificate);
+
+            _toast.Success("Certificate Updated");
+
+            return RedirectToAction("Index", "Dashboard");
+        }
+        #endregion
 
         [HttpPost]
         public IActionResult DownloadPdf()
