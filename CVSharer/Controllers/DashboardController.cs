@@ -699,19 +699,20 @@ namespace CVSharer.Controllers
         }
         #endregion
 
+        [AllowAnonymous]
         [HttpPost]
-        public async Task<IActionResult> DownloadPdf()
+        public async Task<IActionResult> DownloadPdf(string shareCode)
         {
-            var userId = HttpContext.Request.Cookies["UserId"];
-            var user = _userService.GetElementById(int.Parse(userId));
+            var user = _userService.GetUserByShareCode(shareCode);
+            var userId = user.UserId;
 
-			var skills = _skillService.GetSkillsByUserId(int.Parse(userId));
-			var certificates = _certificateService.GetCertificatesByUserId(int.Parse(userId));
-			var educations = _educationService.GetEducationsByUserId(int.Parse(userId));
-			var experiences = _experienceService.GetExperiencesByUserId(int.Parse(userId));
-			var hobbies = _hobbyService.GetHobbiesByUserId(int.Parse(userId));
-			var languages = _languageService.GetLanguagesByUserId(int.Parse(userId));
-			var links = _linkService.GetLinksByUserId(int.Parse(userId));
+			var skills = _skillService.GetSkillsByUserId(userId);
+			var certificates = _certificateService.GetCertificatesByUserId(userId);
+			var educations = _educationService.GetEducationsByUserId(userId);
+			var experiences = _experienceService.GetExperiencesByUserId(userId);
+			var hobbies = _hobbyService.GetHobbiesByUserId(userId);
+			var languages = _languageService.GetLanguagesByUserId(userId);
+			var links = _linkService.GetLinksByUserId(userId);
 
 			var fileName = user.Name + " " + user.Surname + " CV.pdf";
 			string url = "https://www.cvsharer.com/Pdf/BaseTemplate?ShareCode=" + user.ShareCode;

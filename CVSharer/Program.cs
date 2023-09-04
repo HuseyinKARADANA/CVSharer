@@ -27,9 +27,10 @@ builder.Services.AddAuthentication(
     CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(option =>
     {
+        option.Cookie.Name = "CVSharerCookie";
         option.LoginPath = "/Session/Login";
         option.AccessDeniedPath = "/Session/Login";
-        option.ExpireTimeSpan = TimeSpan.FromHours(2);
+        //option.ExpireTimeSpan = TimeSpan.FromHours(2);
     });
 
 //PDF Dependency Injection

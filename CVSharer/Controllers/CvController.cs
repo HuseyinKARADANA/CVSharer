@@ -1,9 +1,10 @@
-﻿
-using BusinessLayer.Abstract;
+﻿using BusinessLayer.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CVSharer.Controllers
 {
+    [AllowAnonymous]
     public class CvController : Controller
     {
         private readonly IUserService _userService;

@@ -1,8 +1,10 @@
 ﻿using BusinessLayer.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CVSharer.Controllers
 {
+	[AllowAnonymous]
     public class PdfController : Controller
     {
 		private readonly IUserService _userService;

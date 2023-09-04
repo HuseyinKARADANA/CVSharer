@@ -15,11 +15,19 @@ namespace CVSharer.Controllers
         {
             return View();
         }
+
         [HttpGet]
         public IActionResult Contact() 
         { 
             return View();
         }
+
+        [HttpGet]
+        public IActionResult HowToBegin()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Contact(MailDTO dto)
         {

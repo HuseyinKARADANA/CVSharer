@@ -13,11 +13,11 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>CVSharer</title>
-    
+
     <meta content="" name="description">
     <meta content="CV Share" name="keywords">
 
-   
+
 
     <!-- Favicons -->
     <link href="~/assets/img/logo.png" rel="icon">
@@ -29,9 +29,9 @@
 
     <!-- Vendor CSS Files -->
 
-    
+
     <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    
+
     <link href="~/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="~/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="~/assets/vendor/quill/quill.snow.css" rel="stylesheet">
@@ -58,19 +58,21 @@
 
         <div class=" align-items-center ">
             <a href="/Home/Index" class="logo align-items-center">
-                <img src="~/assets/img/logo.png" alt="" >
+                <img src="~/assets/img/logo.png" alt="">
                 <span class="">CVSharer</span>
             </a>
         </div><!-- End Logo -->
 
-
-
         <nav class="header-nav ms-auto">
             <ul class="d-flex align-items-center">
                 <a href="/Home/Index" class="btn btn-light rounded-pill m-1">Homepage</a>
-                <a href="/Shop/Index" class="btn btn-light rounded-pill m-1">Shop</a>
+                @if (!Context.User.Identity.IsAuthenticated)
+                {
+                    <a href="/Home/HowToBegin" class="btn btn-light rounded-pill m-1">How To Begin?</a>
+                }
+                <a href="/Template/Index" class="btn btn-light rounded-pill m-1">Templates</a>
                 <a href="/Home/Contact" class="btn btn-light rounded-pill m-1">Contact</a>
-                @if(Context.User.Identity.IsAuthenticated)
+                @if (Context.User.Identity.IsAuthenticated)
                 {
                     var userId = Context.Request.Cookies["UserId"];
                     var user = _userService.GetElementById(int.Parse(userId));
@@ -103,20 +105,20 @@
                                         <hr class="dropdown-divider">
                                     </li>
 
-                                    @*<li>
-                                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                    <li>
+                                        <a class="dropdown-item d-flex align-items-center" href="/Settings/Index">
                                             <i class="bi bi-gear"></i>
-                                            <span>Account Settings</span>
+                                            <span>Settings</span>
                                         </a>
                                     </li>
                                     <li>
                                         <hr class="dropdown-divider">
-                                    </li>*@
+                                    </li>
 
                                     <li>
-                                        <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                                        <a class="dropdown-item d-flex align-items-center" href="/Home/HowToBegin">
                                             <i class="bi bi-question-circle"></i>
-                                            <span>Need Help?</span>
+                                            <span>How To Begin?</span>
                                         </a>
                                     </li>
                                     <li>
@@ -136,7 +138,8 @@
                         </ul>
                     </nav>
                 }
-                else{
+                else
+                {
                     <a href="/Session/Login" class="btn btn-outline-primary rounded-pill m-1">Login</a>
                     <a href="/Session/Register" class="btn btn-outline-warning rounded-pill m-1">Register</a>
                 }
@@ -147,7 +150,6 @@
 
             </ul>
         </nav><!-- End Icons Navigation -->
-
     </header><!-- End Header -->
 
     <main id="main" class="main">
@@ -158,8 +160,8 @@
         <div class="row px-xl-5 pt-5">
             <div class="col-lg-2">
                 <img src="~/assets/img/logo.png" width="80rem" />
-                    <h1 class=" font-weight-semi-bold ">CVSharer</h1>
-                <p class=""><a href="mailto:sharercv@gmail.com" >sharercv@gmail.com</a></p>
+                <h1 class=" font-weight-semi-bold ">CVSharer</h1>
+                <p class=""><a href="mailto:sharercv@gmail.com">sharercv@gmail.com</a></p>
             </div>
             <br />
             <div class="col-lg-8 ">
@@ -168,7 +170,7 @@
                         <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-dark mb-2" href="/Home/Index"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-dark mb-2" href="/Shop/Index"><i class="fa fa-angle-right mr-2"></i>Shop</a>
+                            <a class="text-dark mb-2" href="/Template/Index"><i class="fa fa-angle-right mr-2"></i>Templates</a>
                             <a class="text-dark mb-2" href="/Home/Privacy" target="_blank"><i class="fa fa-angle-right mr-2"></i>Privacy Policy</a>
                             <a class="text-dark" href="/Home/Terms" target="_blank"><i class="fa fa-angle-right mr-2"></i>Terms and Conditions</a>
                         </div>
@@ -183,12 +185,12 @@
 
                         </p>
                     </div>
-                    
+
 
                 </div>
             </div>
             <div class="col-lg-2 icon">
-               
+
                 <h1 class=" font-weight-semi-bold ">Developers</h1>
                 <a href="https://www.linkedin.com/in/emir-morali-267a5b242/" target="_blank" class=" d-flex align-items-center">  <i class="ri-linkedin-box-fill m-1" style="font-size:2rem"></i><b>Emir Moralı</b></a>
                 <a href="https://www.linkedin.com/in/huseyin-karadana/" target="_blank" class=" d-flex align-items-center">  <i class="ri-linkedin-box-fill m-1" style="font-size:2rem"></i><b>Hüseyin Karadana</b></a>
@@ -200,9 +202,8 @@
             <br />
         </div>
     </div>
-    
-    <!-- End Footer -->
 
+    <!-- End Footer -->
     <!-- Vendor JS Files -->
     <script src="~/assets/vendor/apexcharts/apexcharts.min.js"></script>
     <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
