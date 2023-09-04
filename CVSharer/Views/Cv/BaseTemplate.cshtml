@@ -428,7 +428,10 @@
 																						<ul class='leftList' start='1' style='margin-top: 0; margin-bottom: 0; padding: 0; padding-left: 20px; color: #101112; direction: ltr; font-family: Arial,Helvetica Neue,Helvetica,sans-serif; font-size: 16px; font-weight: 400; letter-spacing: 0; line-height: 120%; text-align: left; mso-line-height-alt: 19.2px; list-style-type: disc;'>
 																							@foreach (var certificate in certificates)
 																							{
-																								<li style='margin-bottom: 0; text-align: left;'><a href='@certificate.Url' target='_blank' style='text-decoration: underline; color: #6133d5;' rel='noopener'>@certificate.StartDate.ToShortDateString() @(certificate.EndDate != null ? "- " + certificate.EndDate.Value.ToShortDateString() : "") <br> @certificate.Institution @certificate.CName</a></li>
+
+																								<li style='margin-bottom: 0; text-align: left;'><p>@certificate.StartDate.ToShortDateString() @(certificate.EndDate != null ? "- " + certificate.EndDate.Value.ToShortDateString() : "")<br /><a href='@certificate.Url' target='_blank' style='text-decoration: underline; color: #6133d5;' rel='noopener'>@certificate.Institution @certificate.CName</a> </p>
+
+																								</li>
 																							}
 																						</ul>
 																					</div>
@@ -527,7 +530,7 @@
 
 				<button class='btn btn-success rounded-pill' style='width:15rem;'>Download CV</button>
 			</form>
-
+			<a id="copyLinkButton" class="btn"><i class="ri-file-2-fillri-file-copy-fill"></i></a>
 
 		</div>
 
@@ -546,3 +549,22 @@
 
 
 
+<script>
+	var currentPageLink;
+	document.addEventListener("DOMContentLoaded", function () {
+		var copyLinkButton = document.getElementById("copyLinkButton");
+
+		copyLinkButton.addEventListener("click", function () {
+			currentPageLink = window.location.href;
+
+			var tempInput = document.createElement("input");
+			tempInput.value = currentPageLink;
+			document.body.appendChild(tempInput);
+			tempInput.select();
+			document.execCommand("copy");
+			document.body.removeChild(tempInput);
+
+			alert("Sayfa Linki Kopyalandı: " + currentPageLink);
+		});
+	});
+</script>
