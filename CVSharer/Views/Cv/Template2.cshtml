@@ -117,7 +117,7 @@
 
         .page {
             width: 90%;
-            max-width: 1200px;
+            min-height:1300px;
             margin: 80px auto;
             background-color: #fff;
             box-shadow: 6px 10px 28px 0px rgba(0,0,0,0.4);
@@ -161,6 +161,8 @@
             width: 350px;
             background-color: #f7e0c1;
             padding: 320px 30px 50px;
+            
+
         }
 
         .mugshot {
@@ -171,7 +173,7 @@
             left: 70px;
             right: false;
             bottom: false;
-            height: 210px;
+           
             width: 210px;
         }
 
@@ -303,7 +305,7 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
     <!-- PAGE STUFF -->
-    <div class="rela-block page">
+    <div class="rela-block page" >
         <div class="rela-block top-bar">
             <div class="caps name"><div class="abs-center">@user.Name @user.Surname</div></div>
         </div>
@@ -357,7 +359,7 @@
             
          
             @if (skills.Count > 0)
-                {
+            {
                     <p class="rela-block caps side-header">Skills</p>
                     @foreach (var skill in skills)
                     {
@@ -372,31 +374,71 @@
                          </div>
                     }
                    
+            }
+            @if (languages.Count > 0)
+            {
+                <p class="rela-block caps side-header">Languages</p>
+                @foreach (var language in languages)
+                {
+                    <div class="rela-block list-thing align-items-center">
+
+                        <div class="col-lg-12 col-md-4 progress" style="height:2rem">
+                            <div class="progress-bar " role="progressbar" style="width: @language.LangPercentage%"
+                                 aria-valuenow="@language.LangPercentage" aria-valuemin="0" aria-valuemax="100">
+                                @language.LangName
+                            </div>
+                        </div>
+                    </div>
+                   
                 }
-            <p class="rela-block caps side-header">Education</p>
-            <p class="rela-block list-thing">Advanced potion making</p>
-            <p class="rela-block list-thing">Degree in popping and locking</p>
-            <p class="rela-block list-thing">Knitting game on point</p>
-            <p class="rela-block list-thing">Culinary af</p>
+            }
+            @if (hobbies.Count > 0)
+            {
+                <p class="rela-block caps side-header">Hobbies</p>
+                @foreach (var hobby in hobbies)
+                {
+                    <p class="rela-block list-thing">@hobby.HName</p>
+                  
+                }
+            }
+																														
+          
         </div>
         <div class="rela-block content-container">
-            <h2 class="rela-block caps title">Jr Front-End Developer</h2>
+            <h2 class="rela-block caps title">@user.Position</h2>
             <div class="rela-block separator"></div>
             <div class="rela-block caps greyed">Profile</div>
-            <p class="long-margin">Retro DIY quinoa, mixtape williamsburg master cleanse bushwick tumblr chillwave dreamcatcher hella wolf paleo. Knausgaard semiotics truffaut cornhole hoodie, YOLO meggings gochujang tofu. Locavore ugh kale chips iPhone biodiesel typewriter freegan, kinfolk brooklyn kitsch man bun. Austin neutra etsy, lumbersexual paleo cornhole sriracha kinfolk meggings kickstarter. </p>
-            <div class="rela-block caps greyed">Experience</div>
+            <p class="long-margin">@user.Description </p>
+            @if (educations.Count > 0)
+            {
+                <div class="rela-block caps greyed">Education</div>
+                @foreach (var education in educations)
+                {
+                    <h3>@education.EName</h3>
+                    <p class="light">@education.StartDate.ToShortDateString() @(education.EndDate != null ? "- " + education.EndDate.Value.ToShortDateString() : "")</p>
+               
+                }
+            }
+            @if (experiences.Count > 0)
+            {
+                <div class="rela-block caps greyed">Experience</div>
+                @foreach (var experience in experiences)
+                {
+                    <h3>@experience.ExName</h3>
+                    <p class="light">@experience.StartDate.ToShortDateString() @(experience.EndDate != null ? "- " + experience.EndDate.Value.ToShortDateString() : "")</p>
 
-            <h3>Job #1</h3>
-            <p class="light">First job description</p>
-            <p class="justified">Plaid gentrify put a bird on it, pickled XOXO farm-to-table irony raw denim messenger bag leggings. Hoodie PBR&B photo booth, vegan chillwave meh paleo freegan ramps. Letterpress shabby chic fixie semiotics. Meditation sriracha banjo pour-over. Gochujang pickled hashtag mixtape cred chambray. Freegan microdosing VHS, 90's bicycle rights aesthetic hella PBR&B. </p>
+                }
+            }
+            @if (certificates.Count > 0)
+            {
+                <div class="rela-block caps greyed">Certificates</div>
+                @foreach (var certificate in certificates)
+                {
+                    <p class="light">@certificate.StartDate.ToShortDateString() @(certificate.EndDate != null ? "- " + certificate.EndDate.Value.ToShortDateString() : "")<br /><a href='@certificate.Url' target='_blank' style='text-decoration: underline; color: #6133d5;' rel='noopener'>@certificate.Institution @certificate.CName</a> </p>
 
-            <h3>Job #2</h3>
-            <p class="light">Second Job Description</p>
-            <p class="justified">Beard before they sold out photo booth distillery health goth. Hammock franzen green juice meggings, ethical sriracha tattooed schlitz mixtape man bun stumptown swag whatever distillery blog. Affogato iPhone normcore, meggings actually direct trade lomo plaid franzen shoreditch. Photo booth pug paleo austin, pour-over banh mi scenester vice food truck slow-carb. Street art kogi normcore, vice everyday carry crucifix thundercats man bun raw denim echo park pork belly helvetica vinyl. </p>
-
-            <h3>Job #3</h3>
-            <p class="light">Third Job Description</p>
-            <p class="justified">Next level roof party lo-fi fingerstache skateboard, kogi tumblr. Shabby chic put a bird on it chambray, 3 wolf moon swag beard brooklyn post-ironic taxidermy art party microdosing keffiyeh marfa. Put a bird on it 3 wolf moon cliche helvetica knausgaard. Mumblecore fingerstache lomo, artisan freegan keffiyeh paleo kinfolk kale chips street art blog flannel.</p>
+                  
+                }
+            }
         </div>
     </div>
    

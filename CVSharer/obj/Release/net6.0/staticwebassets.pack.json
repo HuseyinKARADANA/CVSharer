@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\card.jpg"
     },
     {
+      "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\default_template.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\default_template.jpg"
+    },
+    {
       "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\favicon.png",
       "PackagePath": "staticwebassets\\assets\\img\\favicon.png"
     },
@@ -85,6 +89,26 @@
       "PackagePath": "staticwebassets\\assets\\img\\profile-img.jpg"
     },
     {
+      "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\profile_ss.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profile_ss.jpg"
+    },
+    {
+      "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\profile_ss2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profile_ss2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\register_ss.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\register_ss.jpg"
+    },
+    {
+      "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\register_ss2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\register_ss2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\register_ss3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\register_ss3.jpg"
+    },
+    {
       "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\slides-1.png",
       "PackagePath": "staticwebassets\\assets\\img\\slides-1.png"
     },
@@ -95,6 +119,10 @@
     {
       "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\slides-3.png",
       "PackagePath": "staticwebassets\\assets\\img\\slides-3.png"
+    },
+    {
+      "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\template2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\template2.jpg"
     },
     {
       "Id": "C:\\Users\\huseyinkaradana\\Documents\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\jquery\\LICENSE.txt",
