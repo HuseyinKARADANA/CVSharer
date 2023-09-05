@@ -186,6 +186,7 @@ namespace CVSharer.Controllers
                     Photo= "717ea7ab-aaf3-4081-89cb-51f4c8068308.png",
                     Password = hashedPassword,
                     IsActive = true,
+                    MainTemplate = "BaseTemplate",
                     ShareCode = shareCode,
                 });
 

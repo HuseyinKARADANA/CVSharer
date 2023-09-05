@@ -344,7 +344,7 @@
                 }
                 @if (user.YouTube != null)
                 {
-                    <h6><a href="@user.YouTube" style="color:black"><i class="ri-github-fill"></i>@user.YouTube</a></h6>
+                    <h6><a href="@user.YouTube" style="color:black"><i class="ri-youtube-fill"></i>@user.YouTube</a></h6>
                 }
                 @if (links != null)
                 {
@@ -434,14 +434,54 @@
                 <div class="rela-block caps greyed">Certificates</div>
                 @foreach (var certificate in certificates)
                 {
-                    <p class="light">@certificate.StartDate.ToShortDateString() @(certificate.EndDate != null ? "- " + certificate.EndDate.Value.ToShortDateString() : "")<br /><a href='@certificate.Url' target='_blank' style='text-decoration: underline; color: #6133d5;' rel='noopener'>@certificate.Institution @certificate.CName</a> </p>
+                    <p class="light">@certificate.StartDate.ToShortDateString() @(certificate.EndDate != null ? "- " + certificate.EndDate.Value.ToShortDateString() : "")<br /><a href='@certificate.Url' target='_blank' style='text-decoration: underline; color: #6133d5;' rel='noopener'>@certificate.Institution - @certificate.CName</a> </p>
 
                   
                 }
             }
+
+
+            
+            @{
+                var shareCode = user.ShareCode;
+            }
+
+            <div class='pt-4 d-flex flex-column align-items-center'>
+                <form method='post' action='/Dashboard/DownloadPdf?shareCode=@shareCode'>
+
+                    <button class='btn btn-success rounded-pill btn-lg m-1' style='width:15rem;'>Download CV</button>
+                </form>
+
+                <a class='btn btn-warning rounded-pill btn-lg m-1' id="copyLinkButton" style='width:15rem;'>
+                    <i class="ri-file-copy-fill"></i> Copy Link
+                </a>
+            </div>
+            
+
+
+
         </div>
     </div>
    
+    <script>
+        var currentPageLink;
+        document.addEventListener("DOMContentLoaded", function () {
+            var copyLinkButton = document.getElementById("copyLinkButton");
+
+            copyLinkButton.addEventListener("click", function () {
+                currentPageLink = window.location.href;
+
+                var tempInput = document.createElement("input");
+                tempInput.value = currentPageLink;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand("copy");
+                document.body.removeChild(tempInput);
+
+                alert("Page Link Copied: " + currentPageLink);
+            });
+        });
+    </script>
 
 </body>
 </html>

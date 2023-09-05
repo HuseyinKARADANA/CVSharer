@@ -24,6 +24,7 @@ namespace EntityLayer.Concrete
         public string? GitHub { get; set; }
         public string? YouTube { get; set; }
         public string? ShareCode { get; set; }
+        public string MainTemplate {  get; set; }
         public bool IsActive { get; set; }
 
         public List<Skill> Skills { get; set; }

@@ -363,7 +363,7 @@
                 }
                 @if (user.YouTube != null)
                 {
-                    <h6><a href="@user.YouTube" style="color:black"><i class="ri-github-fill"></i>@user.YouTube</a></h6>
+                    <h6><a href="@user.YouTube" style="color:black"><i class="ri-youtube-fill"></i>@user.YouTube</a></h6>
                 }
                 @if (links != null)
                 {
@@ -453,7 +453,7 @@
                 <div class="rela-block caps greyed">Certificates</div>
                 @foreach (var certificate in certificates)
                 {
-                    <p class="light">@certificate.StartDate.ToShortDateString() @(certificate.EndDate != null ? "- " + certificate.EndDate.Value.ToShortDateString() : "")<br /><a href='@certificate.Url' target='_blank' style='text-decoration: underline; color: #6133d5;' rel='noopener'>@certificate.Institution @certificate.CName</a> </p>
+                    <p class="light">@certificate.StartDate.ToShortDateString() @(certificate.EndDate != null ? "- " + certificate.EndDate.Value.ToShortDateString() : "")<br /><a href='@certificate.Url' target='_blank' style='text-decoration: underline; color: #6133d5;' rel='noopener'>@certificate.Institution - @certificate.CName</a> </p>
 
 
                 }

@@ -242,6 +242,10 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Linkedin")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("MainTemplate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

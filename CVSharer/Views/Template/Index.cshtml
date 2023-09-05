@@ -1,7 +1,13 @@
-﻿
+﻿@using BusinessLayer.Abstract;
+@using EntityLayer.Concrete;
+@inject IUserService _userService;
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var userId = Context.Request.Cookies["UserId"];
+    var user = _userService.GetElementById(int.Parse(userId));
 }
 
 <section class="section dashboard min-vh-100 d-flex flex-column align-items-center justify-content-center">
@@ -22,6 +28,22 @@
                             <h5 class="card-title">Default Template</h5>
                             <p class="card-text">This is the default template for your CV. A basic template that will meet your expectations. Ideal for the users that looks for simple designs.</p>
                         </div>
+
+                        <!-- Select Button -->
+
+                        @if(user.MainTemplate == "BaseTemplate")
+                        {
+                            <div class="card-footer d-flex justify-content-end">
+                                <button href="" class="btn btn-success" disabled>Selected</button> 
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="card-footer d-flex justify-content-end">
+                                <a href="/Template/SelectTemplate?template=BaseTemplate" class="btn btn-primary">Select Template</a>
+                            </div>
+                        }
+
                     </div>
                 </div>
             </div>
@@ -38,7 +60,23 @@
                         <div class="card-body">
                             <h5 class="card-title">Second Template</h5>
                             <p class="card-text">This is the second template. More elegant than the default template. Ideal for users that looks for fancier designs.</p>
+                            <p class="card-text" style="color:red">Warning: This template is still under development stage. The downloaded PDF of this template may be corrupted. This will be updated soon.</p>
                         </div>
+
+                        <!-- Select Button -->
+                        @if (user.MainTemplate == "Template2")
+                        {
+                            <div class="card-footer d-flex justify-content-end">
+                                <button href="" class="btn btn-success" disabled>Selected</button>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="card-footer d-flex justify-content-end">
+                                <a href="/Template/SelectTemplate?template=Template2" class="btn btn-primary">Select Template</a>
+                            </div>
+                        }
+
                     </div>
                 </div>
             </div>
