@@ -6,8 +6,16 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    var userId = Context.Request.Cookies["UserId"];
-    var user = _userService.GetElementById(int.Parse(userId));
+    string userId;
+    User user = new();
+    bool isAuthenticated = Context.User.Identity.IsAuthenticated;
+
+    if (isAuthenticated)
+    {
+        userId = Context.Request.Cookies["UserId"];
+        user = _userService.GetElementById(int.Parse(userId));
+    }
+
 }
 
 <section class="section dashboard min-vh-100 d-flex flex-column align-items-center justify-content-center">
@@ -31,7 +39,7 @@
 
                         <!-- Select Button -->
 
-                        @if(user.MainTemplate == "BaseTemplate")
+                        @if(isAuthenticated && user.MainTemplate == "BaseTemplate")
                         {
                             <div class="card-footer d-flex justify-content-end">
                                 <button href="" class="btn btn-success" disabled>Selected</button> 
@@ -64,7 +72,7 @@
                         </div>
 
                         <!-- Select Button -->
-                        @if (user.MainTemplate == "Template2")
+                        @if (isAuthenticated && user.MainTemplate == "Template2")
                         {
                             <div class="card-footer d-flex justify-content-end">
                                 <button href="" class="btn btn-success" disabled>Selected</button>

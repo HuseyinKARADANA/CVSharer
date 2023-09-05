@@ -2,6 +2,7 @@
 using BusinessLayer.Abstract;
 using EntityLayer.Concrete;
 using Humanizer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CVSharer.Controllers
@@ -23,6 +24,7 @@ namespace CVSharer.Controllers
             return View();
         }
 
+        [Authorize]
         [HttpGet]
         public IActionResult SelectTemplate(string template)
         {
