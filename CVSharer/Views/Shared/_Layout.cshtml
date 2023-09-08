@@ -61,17 +61,18 @@
                 <img src="~/assets/img/logo.png" alt="">
                 <span class="">CVSharer</span>
             </a>
+            <i class="bi bi-list toggle-sidebar-btn show-on-mobile"></i>
         </div><!-- End Logo -->
 
         <nav class="header-nav ms-auto">
             <ul class="d-flex align-items-center">
-                <a href="/Home/Index" class="btn btn-light rounded-pill m-1">Homepage</a>
+                <a href="/Home/Index" class="btn btn-light rounded-pill m-1 hide-on-mobile">Homepage</a>
                 @if (!Context.User.Identity.IsAuthenticated)
                 {
-                    <a href="/Home/HowToBegin" class="btn btn-light rounded-pill m-1">How To Begin?</a>
+                    <a href="/Home/HowToBegin" class="btn btn-light rounded-pill m-1 hide-on-mobile">How To Begin?</a>
                 }
-                <a href="/Template/Index" class="btn btn-light rounded-pill m-1">Templates</a>
-                <a href="/Home/Contact" class="btn btn-light rounded-pill m-1">Contact</a>
+                <a href="/Template/Index" class="btn btn-light rounded-pill m-1 hide-on-mobile">Templates</a>
+                <a href="/Home/Contact" class="btn btn-light rounded-pill m-1 hide-on-mobile">Contact</a>
                 @if (Context.User.Identity.IsAuthenticated)
                 {
                     var userId = Context.Request.Cookies["UserId"];
@@ -152,6 +153,41 @@
         </nav><!-- End Icons Navigation -->
     </header><!-- End Header -->
 
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/Home/Index">
+                    <i class="ri-home-2-line"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/Home/HowToBegin">
+                    <i class="ri-question-line"></i><span>How To Begin?</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/Template/Index">
+                    <i class="ri-bank-card-line"></i><span>Templates</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/Home/Contact">
+                    <i class="ri-share-line"></i>
+                    <span>Contact</span>
+                </a>
+            </li>
+
+        </ul>
+
+    </aside><!-- End Sidebar-->
+
     <main id="main" class="main">
         @RenderBody()
     </main><!-- End #main -->
@@ -204,6 +240,10 @@
     </div>
 
     <!-- End Footer -->
+
+    <!--Back To Top-->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
     <!-- Vendor JS Files -->
     <script src="~/assets/vendor/apexcharts/apexcharts.min.js"></script>
     <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -220,6 +260,31 @@
     <script src="~/assets/jquery/dist/jquery.min.js"></script>
 
     @await Component.InvokeAsync("Notyf")
+
+    <script>
+        // Function to handle showing or hiding the sidebar
+        function toggleScreenSize() {
+            if ($(window).width() < 700) {
+                $('.sidebar').show();
+                $('.show-on-mobile').show();
+                $('.hide-on-mobile').hide();
+            } else {
+                $('.sidebar').hide();
+                $('.show-on-mobile').hide();
+                $('.hide-on-mobile').show();
+            }
+        }
+
+        // Run the function on page load
+        $(document).ready(function () {
+            toggleScreenSize();
+        });
+
+        // Run the function on window resize
+        $(window).resize(function () {
+            toggleScreenSize();
+        });
+    </script>
 
 </body>
 
