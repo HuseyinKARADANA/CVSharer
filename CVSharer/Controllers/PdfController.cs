@@ -29,6 +29,10 @@ namespace CVSharer.Controllers
         {
             var user = _userService.GetUserByShareCode(sharecode);
             return View(user);
+        }  public IActionResult Template4(string sharecode)
+        {
+            var user = _userService.GetUserByShareCode(sharecode);
+            return View(user);
         }
     }
 }
