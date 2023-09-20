@@ -84,7 +84,7 @@
 											</tr>
 										</tbody>
 									</table>
-									
+
 									<table class='row row-2' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
 										<tbody>
 											<tr>
@@ -169,8 +169,8 @@
 													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f4f2f3; color: #000; width: 1100px; margin: 0 auto;' width='680'>
 														<tbody>
 															<tr>
-																
-																	<td class='column column-1' width='58.333333333333336%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; border-left: 10px solid #FFFFFF; border-right: 10px solid #FFFFFF; vertical-align: top; border-top: 0px; border-bottom: 0px;'>
+
+																<td class='column column-1' width='58.333333333333336%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; border-left: 10px solid #FFFFFF; border-right: 10px solid #FFFFFF; vertical-align: top; border-top: 0px; border-bottom: 0px;'>
 																	@if (educations.Count > 0)
 																	{
 																		<div class='spacer_block block-1' style='height:55px;line-height:55px;font-size:1px;'>&#8202;</div>
@@ -192,7 +192,7 @@
 																						{
 																							<p style='margin: 0; margin-bottom: 16px;color:#e53c49'><strong>@education.EName</strong></p>
 																							<p style='margin: 0; margin-bottom: 16px;'>@education.StartDate.ToShortDateString() @(education.EndDate != null ? "- " + education.EndDate.Value.ToShortDateString() : "")</p>
-																							
+
 																							<p style='margin: 0;'>&nbsp;</p>
 																						}
 																					</div>
@@ -200,7 +200,7 @@
 																			</tr>
 																		</table>
 																	}
-																		<div class='spacer_block block-6' style='height:55px;line-height:55px;font-size:1px;'>&#8202;</div>
+																	<div class='spacer_block block-6' style='height:55px;line-height:55px;font-size:1px;'>&#8202;</div>
 																	@if (experiences.Count > 0)
 																	{
 																		<table class='paragraph_block block-7' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
@@ -221,19 +221,19 @@
 																						{
 																							<p style='margin: 0; margin-bottom: 16px;color:#e53c49'><strong>@experience.ExName</strong></p>
 																							<p style='margin: 0; margin-bottom: 16px;'>@experience.StartDate.ToShortDateString() @(experience.EndDate != null ? "- " + experience.EndDate.Value.ToShortDateString() : "")</p>
-																							
+
 																							<p style='margin: 0;'>&nbsp;</p>
 																						}
 																					</div>
 																				</td>
 																			</tr>
 																		</table>
-																		
+
 																	}
 																	<div class='spacer_block block-17' style='height:55px;line-height:55px;font-size:1px;'>&#8202;</div>
 
-																	</td>
-																
+																</td>
+
 																<td class='column column-2' width='41.666666666666664%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; border-left: 10px solid #FFFFFF; border-right: 10px solid #FFFFFF; vertical-align: top; border-top: 0px; border-bottom: 0px;'>
 																	<div class='spacer_block block-1' style='height:55px;line-height:55px;font-size:1px;'>&#8202;</div>
 																	<table class='paragraph_block block-2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
@@ -307,10 +307,58 @@
 																				</td>
 																			</tr>
 																		</table>
+																	}<div class='spacer_block block-6' style='height:10px;line-height:10px;font-size:1px;'>&#8202;</div>
+																	@if (user.Linkedin != null || user.GitHub != null || user.Instagram != null)
+																	{
+																		<table class='paragraph_block block-10' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																			<tr>
+																				<td class='pad' style='padding-left:30px;padding-right:30px;'>
+																					<div style='color:#e53c49;font-family:Lato, Tahoma, Verdana, Segoe, sans-serif;font-size:20px;line-height:120%;text-align:left;mso-line-height-alt:24px;'>
+																						<p style='margin: 0; word-break: break-word;'><span><strong>Links</strong></span></p>
+																					</div>
+																				</td>
+																			</tr>
+																		</table>
+																		@if (user.Linkedin != null)
+																		{
+																			<table class='paragraph_block block-11' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																				<tr>
+																					<td class='pad' style='padding-left:30px;padding-right:30px;padding-top:5px;'>
+																						<div style='color:#393d47;font-family:Lato, Tahoma, Verdana, Segoe, sans-serif;font-size:14px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;'>
+																							<p style='margin: 0; word-break: break-word;'><a href='@user.Linkedin' target='_blank' style='text-decoration: none; color: #7747FF;' rel='noopener'>@user.Linkedin</a></p>
+																						</div>
+																					</td>
+																				</tr>
+																			</table>
+
+																		}
+																		@if (user.GitHub != null)
+																		{
+																			<table class='paragraph_block block-11' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																				<tr>
+																					<td class='pad' style='padding-left:30px;padding-right:30px;padding-top:5px;'>
+																						<div style='color:#393d47;font-family:Lato, Tahoma, Verdana, Segoe, sans-serif;font-size:14px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;'>
+																							<p style='margin: 0; word-break: break-word;'><a href='@user.GitHub' target='_blank' style='text-decoration: none; color: #7747FF;' rel='noopener'>@user.GitHub</a></p>
+																						</div>
+																					</td>
+																				</tr>
+																			</table>
+																		}
+																		@if (user.Instagram != null)
+																		{
+																			<table class='paragraph_block block-11' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																				<tr>
+																					<td class='pad' style='padding-left:30px;padding-right:30px;padding-top:5px;'>
+																						<div style='color:#393d47;font-family:Lato, Tahoma, Verdana, Segoe, sans-serif;font-size:14px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;'>
+																							<p style='margin: 0; word-break: break-word;'><a href='@user.Instagram' target='_blank' style='text-decoration: none; color: #7747FF;' rel='noopener'>@user.Instagram</a></p>
+																						</div>
+																					</td>
+																				</tr>
+																			</table>
+																		}
 																	}
 																	<div class='spacer_block block-12' style='height:20px;line-height:20px;font-size:1px;'>&#8202;</div>
-																	<div class='spacer_block block-13' style='height:10px;line-height:10px;font-size:1px;'>&#8202;</div>
-																	<div class='spacer_block block-14' style='height:55px;line-height:55px;font-size:1px;'>&#8202;</div>
+																	
 																</td>
 															</tr>
 														</tbody>
@@ -382,9 +430,9 @@
 																				</tr>
 																			</table>
 																		}
-																		
-																	
-																		
+
+
+
 																	}
 																	<div class='spacer_block block-15' style='height:55px;line-height:55px;font-size:1px;'>&#8202;</div>
 																</td>
@@ -427,8 +475,8 @@
 																				</tr>
 																			</table>
 																		}
-																		
-																		
+
+
 																	}
 																	<div class='spacer_block block-9' style='height:40px;line-height:40px;font-size:1px;'>&#8202;</div>
 																	@if (hobbies.Count > 0)
@@ -455,7 +503,7 @@
 																				</tr>
 																			</table>
 																		}
-																		
+
 																	}
 																	<div class='spacer_block block-6' style='height:55px;line-height:55px;font-size:1px;'>&#8202;</div>
 																</td>
@@ -475,87 +523,6 @@
 															<tr>
 																<td class='column column-1' width='100%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
 																	<div class='spacer_block block-1' style='height:10px;line-height:10px;font-size:1px;'>&#8202;</div>
-																</td>
-															</tr>
-														</tbody>
-													</table>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-									<table class='row row-8' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
-										<tbody>
-											<tr>
-												<td>
-													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f4f2f3; color: #000; width: 1100px; margin: 0 auto;' width='680'>
-														<tbody>
-															<tr>
-																@if (user.Instagram != null || user.Linkedin != null || user.YouTube != null || user.GitHub != null || links.Count > 0)
-																{
-																	<td class='column column-1' width='100%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; background-color: #f4f2f3; border-left: 10px solid #FFFFFF; border-right: 10px solid #FFFFFF; vertical-align: top; border-top: 0px; border-bottom: 0px;'>
-																		<div class='spacer_block block-1' style='height:55px;line-height:55px;font-size:1px;'>&#8202;</div>
-																		<table class='paragraph_block block-2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
-																			<tr>
-																				<td class='pad' style='padding-left:30px;padding-right:30px;'>
-																					<div style='color:#393d47;font-family:Lato, Tahoma, Verdana, Segoe, sans-serif;font-size:34px;line-height:120%;text-align:left;mso-line-height-alt:40.8px;'>
-																						<p style='margin: 0; word-break: break-word;'><span><strong>Contact</strong></span></p>
-																					</div>
-																				</td>
-																			</tr>
-																		</table>
-																		<div class='spacer_block block-3' style='height:21px;line-height:21px;font-size:1px;'>&#8202;</div>
-																		<table class='paragraph_block block-4' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
-																			<tr>
-																				<td class='pad' style='padding-left:30px;padding-right:30px;'>
-																					<div style='color:#393d47;font-family:Lato, Tahoma, Verdana, Segoe, sans-serif;font-size:20px;line-height:120%;text-align:left;mso-line-height-alt:24px;'>
-																						@if (user.Linkedin != null)
-																						{
-																							<p style='margin: 0; margin-bottom: 16px;'><a href='@user.Linkedin' target='_blank' style='text-decoration: underline; color: #7747FF;' rel='noopener'>@user.Linkedin</a></p>
-																						}
-																						@if (user.GitHub != null)
-																						{
-																							<p style='margin: 0; margin-bottom: 16px;'><a href='@user.GitHub' target='_blank' style='text-decoration: underline; color: #7747FF;' rel='noopener'>@user.GitHub</a></p>
-																						}
-																						@if (user.Instagram != null)
-																						{
-																							<p style='margin: 0; margin-bottom: 16px;'><a href='@user.Instagram' target='_blank' style='text-decoration: underline; color: #7747FF;' rel='noopener'>@user.Instagram</a></p>
-																						}
-																						@if (user.YouTube != null)
-																						{
-																							<p style='margin: 0; margin-bottom: 16px;'><a href='@user.YouTube' target='_blank' style='text-decoration: underline; color: #7747FF;' rel='noopener'>@user.YouTube</a></p>
-																						}
-																						@if (links != null)
-																						{
-																							@foreach (var link in links)
-																							{
-																								<p style='margin: 0; margin-bottom: 16px;'><a href='@link.LUrl' target='_blank' style='text-decoration: underline; color: #7747FF;' rel='noopener'>@link.LUrl</a></p>
-																							}
-																						}
-																						
-																						
-																					</div>
-																				</td>
-																			</tr>
-																		</table>
-																		<div class='spacer_block block-5' style='height:40px;line-height:40px;font-size:1px;'>&#8202;</div>
-																	</td>
-																}
-															</tr>
-														</tbody>
-													</table>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-									<table class='row row-9' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
-										<tbody>
-											<tr>
-												<td>
-													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000; width: 1100px; margin: 0 auto;' width='680'>
-														<tbody>
-															<tr>
-																<td class='column column-1' width='100%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
-																	<div class='spacer_block block-1' style='height:50px;line-height:50px;font-size:1px;'>&#8202;</div>
 																</td>
 															</tr>
 														</tbody>
