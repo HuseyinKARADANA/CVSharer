@@ -20,7 +20,7 @@
 
 <section class="section dashboard min-vh-100 d-flex flex-column align-items-center justify-content-center">
 
-    <div class="row">
+    <div class="row align-items-center">
         <!--TEMPLATES-->
 
         <!--Base Template-->
@@ -55,12 +55,11 @@
         <div class="col-lg-4">
             <div class="card mb-3 align-items-center justify-content-center">
                 <a href="/Cv/Template2?shareCode=aaaaaaaa" target="_blank">
-                    <img src="~/assets/img/template2_new.jpg" class="img-fluid rounded-start">
+                    <img src="~/assets/img/template2_red.jpg" class="img-fluid rounded-start">
                 </a>
                 <div class="card-body">
-                    <h5 class="card-title">Second Template</h5>
-                    <p class="card-text">This is the second template. More elegant than the default template. Ideal for users that looks for fancier designs.</p>
-                    <p class="card-text" style="color:red">Warning: This template is still under development stage. The downloaded PDF of this template may be corrupted. This will be updated soon.</p>
+                    <h5 class="card-title">Red Template</h5>
+                    <p class="card-text">This is the red template. More elegant than the default template. Try this out if you like red :).</p>
                 </div>
 
                 <!-- Select Button -->
@@ -85,12 +84,11 @@
         <div class="col-lg-4">
             <div class="card mb-3 align-items-center justify-content-center">
                 <a href="/Cv/Template2?shareCode=aaaaaaaa" target="_blank">
-                    <img src="~/assets/img/template2_new.jpg" class="img-fluid rounded-start">
+                    <img src="~/assets/img/template3.jpg" class="img-fluid rounded-start">
                 </a>
                 <div class="card-body">
-                    <h5 class="card-title">Second Template</h5>
-                    <p class="card-text">This is the second template. More elegant than the default template. Ideal for users that looks for fancier designs.</p>
-                    <p class="card-text" style="color:red">Warning: This template is still under development stage. The downloaded PDF of this template may be corrupted. This will be updated soon.</p>
+                    <h5 class="card-title">Categorized Template</h5>
+                    <p class="card-text">This is the categorized template. All information parts are categorized. </p>
                 </div>
 
                 <!-- Select Button -->
@@ -110,9 +108,7 @@
 
             </div>
         </div>
-    </div>
 
-    <div class="row">
         <!--Fourth Template-->
         <div class="col-lg-4">
             <div class="card mb-3 align-items-center justify-content-center">
@@ -120,54 +116,30 @@
                     <img src="~/assets/img/template4.jpg" class="img-fluid rounded-start">
                 </a>
                 <div class="card-body">
-                    <h5 class="card-title">Second Template</h5>
-                    <p class="card-text">This is the second template. More elegant than the default template. Ideal for users that looks for fancier designs.</p>
+                    <h5 class="card-title">Fourth Template</h5>
+                    <p class="card-text">This is the fourth template. A professional template. Still on design stage. Soon will be available.</p>
                 </div>
-
-                <!-- Select Button -->
-                @if (isAuthenticated && user.MainTemplate == "Template4")
-                {
-                    <div class="card-footer d-flex justify-content-end">
-                        <button href="" class="btn btn-success" disabled>Selected</button>
-                    </div>
-                }
-                else
-                {
-                    <div class="card-footer d-flex justify-content-end">
-                        <a href="/Template/SelectTemplate?template=Template4" class="btn btn-primary">Select Template</a>
-                    </div>
-                }
+                <div class="card-footer d-flex justify-content-end">
+                    <button href="" class="btn btn-warning" disabled>Coming Soon</button>
+                </div>
 
 
             </div>
         </div>
 
-        <!--Fourth Template-->
+        <!--Fifth Template-->
         <div class="col-lg-4">
             <div class="card mb-3 align-items-center justify-content-center">
-                <a href="/Cv/Template4?shareCode=aaaaaaaa" target="_blank">
-                    <img src="~/assets/img/template4.jpg" class="img-fluid rounded-start">
+                <a>
+                    <img src="~/assets/img/template_soon.jpg" class="img-fluid rounded-start">
                 </a>
                 <div class="card-body">
-                    <h5 class="card-title">Second Template</h5>
-                    <p class="card-text">This is the second template. More elegant than the default template. Ideal for users that looks for fancier designs.</p>
+                    <h5 class="card-title">Coming Soon</h5>
+                    <p class="card-text">New Templates Are Coming Soon !!!</p>
                 </div>
-
-                <!-- Select Button -->
-                @if (isAuthenticated && user.MainTemplate == "Template4")
-                {
                     <div class="card-footer d-flex justify-content-end">
-                        <button href="" class="btn btn-success" disabled>Selected</button>
+                        <button href="" class="btn btn-warning" disabled>Coming Soon</button>
                     </div>
-                }
-                else
-                {
-                    <div class="card-footer d-flex justify-content-end">
-                        <a href="/Template/SelectTemplate?template=Template4" class="btn btn-primary">Select Template</a>
-                    </div>
-                }
-
-
             </div>
         </div>
     </div>
