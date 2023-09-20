@@ -1,0 +1,1058 @@
+﻿@using BusinessLayer.Abstract;
+@using EntityLayer.Concrete;
+@using EntityLayer.DTOs;
+@inject IUserService _userService;
+@inject ISkillService _skillService;
+@inject ICertificateService _certificateService;
+@inject IEducationService _educationService;
+@inject IExperienceService _experienceService;
+@inject IHobbyService _hobbyService;
+@inject ILanguageService _languageService;
+@inject ILinkService _linkService;
+@model User;
+@{
+    ViewData["Title"] = "Template2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var userId = Model.UserId;
+
+    var user = _userService.GetElementById(userId);
+
+    var skills = _skillService.GetSkillsByUserId(userId);
+    var certificates = _certificateService.GetCertificatesByUserId(userId);
+    var educations = _educationService.GetEducationsByUserId(userId);
+    var experiences = _experienceService.GetExperiencesByUserId(userId);
+    var hobbies = _hobbyService.GetHobbiesByUserId(userId);
+    var languages = _languageService.GetLanguagesByUserId(userId);
+    var links = _linkService.GetLinksByUserId(userId);
+}
+
+<section class='section dashboard'>
+    <div class='row'>
+        <div class='col-lg-3'></div>
+        <!-- Left side columns -->
+        <div class='col-lg-6'>
+            <div class='row'>
+
+
+				<html xmlns:v='urn:schemas-microsoft-com:vml' xmlns:o='urn:schemas-microsoft-com:office:office' lang='en'>
+
+				<head>
+					<title></title>
+					<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+					<meta name='viewport' content='width=device-width, initial-scale=1.0'><!--[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]--><!--[if !mso]><!-->
+					<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'><!--<![endif]-->
+					<style>
+
+
+					</style>
+				</head>
+
+				<body style='background-color: #f0f2f3; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;'>
+					<table class='nl-container' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f0f2f3;'>
+						<tbody>
+							<tr>
+								<td>
+									<table class='row row-1' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000; width: 1100px; margin: 0 auto;' width='1100'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='50%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='empty_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																		<tr>
+																			<td class='pad'>
+																				<div></div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+																<td class='column column-2' width='50%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='image_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																		<tr>
+																			<td class='pad' style='width:100%;padding-right:0px;padding-left:0px;'>
+																				<div class='alignment' align='center' style='line-height:10px'><img src='https://bed5056053a446.imgdist.com/public/users/Integrators/BeeProAgency/1049370_1034542/imported/10f5c5-20230920-100810/1_logo%5B1%5D.png' style='display: block; height: auto; border: 0; max-width: 70px; width: 100%;' width='70'></div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-2' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='700'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='50%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='image_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																		<tr>
+																			<td class='pad' style='width:100%;padding-right:0px;padding-left:0px;'>
+																				<div class='alignment' align='center' style='line-height:10px'><img src='https://bed5056053a446.imgdist.com/public/users/Integrators/BeeProAgency/1049370_1034542/imported/10f5c5-20230920-100810/2_717ea7ab-aaf3-4081-89cb-51f4c8068308%5B1%5D.png' style='display: block; height: auto; border: 0; max-width: 263px; width: 100%;' width='263'></div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+																<td class='column column-2' width='50%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<div class='spacer_block block-1' style='height:20px;line-height:20px;font-size:1px;'>&#8202;</div>
+																	<table class='paragraph_block block-2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad' style='padding-left:10px;padding-right:10px;padding-top:10px;'>
+																				<div style='color:#2c3547;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:50px;line-height:150%;text-align:center;mso-line-height-alt:75px;'>
+																					<p style='margin: 0; word-break: break-word;'><span>Hi, I'm </span></p>
+																					<p style='margin: 0; word-break: break-word;'><span>John Doe</span></p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<div class='spacer_block block-3' style='height:10px;line-height:10px;font-size:1px;'>&#8202;</div>
+																	<table class='paragraph_block block-4' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad' style='padding-left:10px;padding-right:10px;padding-top:10px;'>
+																				<div style='color:#5438ee;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:16px;line-height:120%;text-align:center;mso-line-height-alt:19.2px;'>
+																					<p style='margin: 0; word-break: break-word;'><span>UX/UI Designer</span></p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<div class='spacer_block block-5 mobile_hide' style='height:20px;line-height:20px;font-size:1px;'>&#8202;</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-3' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; background-image: url(' https: //d1oco4z2z1fhwp.cloudfront.net/templates/default/1226/Testimonial_Final_1.png'); background-repeat: no-repeat; color: #000; width: 1100px; margin: 0 auto;' width='1100'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='100%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; background-color: #ffffff; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='text_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='font-family: sans-serif'>
+																					<div class style='font-size: 14px; font-family: Roboto, Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 21px; color: #555555; line-height: 1.5;'>
+																						<p style='margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 21px;'>&nbsp;This is the description of your CV. It's a snapshot of your professional background, qualifications, and accomplishments. It aims to present your education, work experience, skills, and achievements in a clear and concise manner to potential employers or collaborators. Explain your accomplishments here briefly. &nbsp;</p>
+																						<p style='margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 21px;'>&nbsp;</p>
+																					</div>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-4' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='700'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='100%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<div class='spacer_block block-1' style='height:25px;line-height:25px;font-size:1px;'>&#8202;</div>
+																	<table class='paragraph_block block-2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad' style='padding-bottom:5px;padding-left:10px;padding-right:10px;padding-top:10px;'>
+																				<div style='color:#2c3547;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:30px;line-height:120%;text-align:center;mso-line-height-alt:36px;'>
+																					<p style='margin: 0; word-break: break-word;'><span>Education</span></p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<table class='divider_block block-3' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																		<tr>
+																			<td class='pad'>
+																				<div class='alignment' align='center'>
+																					<table border='0' cellpadding='0' cellspacing='0' role='presentation' width='10%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																						<tr>
+																							<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 2px solid #7179F6;'><span>&#8202;</span></td>
+																						</tr>
+																					</table>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<div class='spacer_block block-4' style='height:20px;line-height:20px;font-size:1px;'>&#8202;</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-5' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='700'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='25%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-left: 15px; padding-right: 15px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#555555;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:14px;font-weight:700;line-height:120%;text-align:right;mso-line-height-alt:16.8px;'>
+																					<p style='margin: 0; word-break: break-word;'>2019 - 2023</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+																<td class='column column-2' width='75%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-left: 10px; padding-right: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#444a5b;direction:ltr;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:16px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:19.2px;'>
+																					<p style='margin: 0;'>Yasar University - Software Engineering</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-6' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='700'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='25%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-left: 15px; padding-right: 15px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#555555;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:14px;font-weight:700;line-height:120%;text-align:right;mso-line-height-alt:16.8px;'>
+																					<p style='margin: 0; word-break: break-word;'>2019 - 2023</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+																<td class='column column-2' width='75%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-left: 10px; padding-right: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#444a5b;direction:ltr;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:16px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:19.2px;'>
+																					<p style='margin: 0;'>Yasar University - Software Engineering</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-7' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='700'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='100%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<div class='spacer_block block-1' style='height:30px;line-height:30px;font-size:1px;'>&#8202;</div>
+																	<table class='paragraph_block block-2' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#2c3547;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:30px;line-height:120%;text-align:center;mso-line-height-alt:36px;'>
+																					<p style='margin: 0; word-break: break-word;'><span>Experience</span></p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<table class='divider_block block-3' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																		<tr>
+																			<td class='pad'>
+																				<div class='alignment' align='center'>
+																					<table border='0' cellpadding='0' cellspacing='0' role='presentation' width='10%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																						<tr>
+																							<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 2px solid #7179F6;'><span>&#8202;</span></td>
+																						</tr>
+																					</table>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<div class='spacer_block block-4' style='height:30px;line-height:30px;font-size:1px;'>&#8202;</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-8' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='700'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='33.333333333333336%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-right: 30px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#555555;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:16px;line-height:150%;text-align:right;mso-line-height-alt:24px;'>
+																					<p style='margin: 0; word-break: break-word;'><span>2020</span></p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+																<td class='column column-2' width='66.66666666666667%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; border-left: 8px solid #7179F6; padding-bottom: 5px; padding-left: 10px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad' style='padding-left:10px;padding-right:10px;padding-top:10px;'>
+																				<div style='color:#555555;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:16px;line-height:150%;text-align:left;mso-line-height-alt:24px;'>
+																					<p style='margin: 0; word-break: break-word;'><span><strong>Employer 1 Name</strong></span></p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<table class='paragraph_block block-2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;'>
+																				<div style='color:#555555;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:14px;line-height:150%;text-align:left;mso-line-height-alt:21px;'>
+																					<p style='margin: 0; word-break: break-word;'>&nbsp;</p>
+																					<p style='margin: 0; word-break: break-word;'><span style='color: #8d8d8d;'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque</span></p>
+																					<p style='margin: 0; word-break: break-word;'>&nbsp;</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-9' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='700'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='33.333333333333336%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-right: 30px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#555555;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:16px;line-height:150%;text-align:right;mso-line-height-alt:24px;'>
+																					<p style='margin: 0; word-break: break-word;'><span>2018 - 2020</span></p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+																<td class='column column-2' width='66.66666666666667%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; border-left: 8px solid #7179F6; padding-bottom: 5px; padding-left: 10px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad' style='padding-left:10px;padding-right:10px;padding-top:10px;'>
+																				<div style='color:#555555;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:16px;line-height:150%;text-align:left;mso-line-height-alt:24px;'>
+																					<p style='margin: 0; word-break: break-word;'><span><strong>Employer 2 Name</strong></span></p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<table class='paragraph_block block-2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;'>
+																				<div style='color:#555555;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:14px;line-height:150%;text-align:left;mso-line-height-alt:21px;'>
+																					<p style='margin: 0; word-break: break-word;'>&nbsp;</p>
+																					<p style='margin: 0; word-break: break-word;'><span style='color: #8d8d8d;'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque</span></p>
+																					<p style='margin: 0; word-break: break-word;'>&nbsp;</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-10' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='700'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='33.333333333333336%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-right: 30px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#555555;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:16px;line-height:150%;text-align:right;mso-line-height-alt:24px;'>
+																					<p style='margin: 0; word-break: break-word;'><span>2015- 2017</span></p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+																<td class='column column-2' width='66.66666666666667%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; border-left: 8px solid #7179F6; padding-bottom: 5px; padding-left: 10px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad' style='padding-left:10px;padding-right:10px;padding-top:10px;'>
+																				<div style='color:#555555;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:16px;line-height:150%;text-align:left;mso-line-height-alt:24px;'>
+																					<p style='margin: 0; word-break: break-word;'><span><strong>Employer 3 Name</strong></span></p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<table class='paragraph_block block-2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;'>
+																				<div style='color:#555555;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:14px;line-height:150%;text-align:left;mso-line-height-alt:21px;'>
+																					<p style='margin: 0; word-break: break-word;'>&nbsp;</p>
+																					<p style='margin: 0; word-break: break-word;'><span style='color: #8d8d8d;'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque</span></p>
+																					<p style='margin: 0; word-break: break-word;'>&nbsp;</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-11' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='700'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='33.333333333333336%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-right: 30px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#555555;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:16px;line-height:150%;text-align:right;mso-line-height-alt:24px;'>
+																					<p style='margin: 0; word-break: break-word;'><span>2020</span></p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+																<td class='column column-2' width='66.66666666666667%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; border-left: 8px solid #7179F6; padding-bottom: 5px; padding-left: 10px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad' style='padding-left:10px;padding-right:10px;padding-top:10px;'>
+																				<div style='color:#555555;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:16px;line-height:150%;text-align:left;mso-line-height-alt:24px;'>
+																					<p style='margin: 0; word-break: break-word;'><span><strong>Employer 4 Name</strong></span></p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<table class='paragraph_block block-2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;'>
+																				<div style='color:#555555;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:14px;line-height:150%;text-align:left;mso-line-height-alt:21px;'>
+																					<p style='margin: 0; word-break: break-word;'>&nbsp;</p>
+																					<p style='margin: 0; word-break: break-word;'><span style='color: #8d8d8d;'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque</span></p>
+																					<p style='margin: 0; word-break: break-word;'>&nbsp;</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-12' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='700'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='100%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<div class='spacer_block block-1' style='height:30px;line-height:30px;font-size:1px;'>&#8202;</div>
+																	<table class='paragraph_block block-2' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#2c3547;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:30px;line-height:120%;text-align:center;mso-line-height-alt:36px;'>
+																					<p style='margin: 0; word-break: break-word;'><span>Skills</span></p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<table class='divider_block block-3' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																		<tr>
+																			<td class='pad'>
+																				<div class='alignment' align='center'>
+																					<table border='0' cellpadding='0' cellspacing='0' role='presentation' width='10%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																						<tr>
+																							<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 2px solid #7179F6;'><span>&#8202;</span></td>
+																						</tr>
+																					</table>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<div class='spacer_block block-4' style='height:20px;line-height:20px;font-size:1px;'>&#8202;</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-13' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='700'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='25%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-left: 15px; padding-right: 15px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad' style='padding-bottom:5px;padding-left:15px;padding-right:10px;padding-top:5px;'>
+																				<div style='color:#555555;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:14px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;'>
+																					<p style='margin: 0; word-break: break-word;'>ASP.NET</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+																<td class='column column-2' width='75%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-left: 10px; padding-right: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='divider_block block-1' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																		<tr>
+																			<td class='pad'>
+																				<div class='alignment' align='left'>
+																					<table border='0' cellpadding='0' cellspacing='0' role='presentation' width='75%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																						<tr>
+																							<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 12px solid #7747FF;'><span>&#8202;</span></td>
+																						</tr>
+																					</table>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-14' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='700'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='100%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<div class='spacer_block block-1' style='height:0px;line-height:0px;font-size:1px;'>&#8202;</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-15' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='700'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='25%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-left: 15px; padding-right: 15px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad' style='padding-bottom:5px;padding-left:15px;padding-right:10px;padding-top:5px;'>
+																				<div style='color:#555555;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:14px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;'>
+																					<p style='margin: 0; word-break: break-word;'>Unity</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+																<td class='column column-2' width='75%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-left: 10px; padding-right: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='divider_block block-1' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																		<tr>
+																			<td class='pad'>
+																				<div class='alignment' align='left'>
+																					<table border='0' cellpadding='0' cellspacing='0' role='presentation' width='65%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																						<tr>
+																							<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 12px solid #7747FF;'><span>&#8202;</span></td>
+																						</tr>
+																					</table>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-16' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='700'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='100%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<div class='spacer_block block-1' style='height:0px;line-height:0px;font-size:1px;'>&#8202;</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-17' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='700'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='25%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-left: 15px; padding-right: 15px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad' style='padding-bottom:5px;padding-left:15px;padding-right:10px;padding-top:5px;'>
+																				<div style='color:#555555;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:14px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;'>
+																					<p style='margin: 0; word-break: break-word;'>Machine Leraning</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+																<td class='column column-2' width='75%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-left: 10px; padding-right: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='divider_block block-1' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																		<tr>
+																			<td class='pad'>
+																				<div class='alignment' align='left'>
+																					<table border='0' cellpadding='0' cellspacing='0' role='presentation' width='50%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																						<tr>
+																							<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 12px solid #7747FF;'><span>&#8202;</span></td>
+																						</tr>
+																					</table>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-18' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='700'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='100%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<div class='spacer_block block-1' style='height:25px;line-height:25px;font-size:1px;'>&#8202;</div>
+																	<table class='paragraph_block block-2' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#2c3547;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:30px;line-height:120%;text-align:center;mso-line-height-alt:36px;'>
+																					<p style='margin: 0; word-break: break-word;'><span>Certificates</span></p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<table class='divider_block block-3' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																		<tr>
+																			<td class='pad'>
+																				<div class='alignment' align='center'>
+																					<table border='0' cellpadding='0' cellspacing='0' role='presentation' width='10%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																						<tr>
+																							<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 2px solid #7179F6;'><span>&#8202;</span></td>
+																						</tr>
+																					</table>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<div class='spacer_block block-4' style='height:20px;line-height:20px;font-size:1px;'>&#8202;</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-19' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='1100'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='25%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-left: 15px; padding-right: 15px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#555555;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:14px;font-weight:700;line-height:120%;text-align:right;mso-line-height-alt:16.8px;'>
+																					<p style='margin: 0; word-break: break-word;'>2019 - 2023</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+																<td class='column column-2' width='25%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-left: 10px; padding-right: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#444a5b;direction:ltr;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:16px;font-weight:700;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:19.2px;'>
+																					<p style='margin: 0;'>Udemy</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+																<td class='column column-3' width='50%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#444a5b;direction:ltr;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:16px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:19.2px;'>
+																					<p style='margin: 0;'>Unity | Game Developing</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-20' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='700'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='25%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-left: 15px; padding-right: 15px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#555555;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:14px;font-weight:700;line-height:120%;text-align:right;mso-line-height-alt:16.8px;'>
+																					<p style='margin: 0; word-break: break-word;'>2023</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+																<td class='column column-2' width='25%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-left: 10px; padding-right: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#444a5b;direction:ltr;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:16px;font-weight:700;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:19.2px;'>
+																					<p style='margin: 0;'>Udemy</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+																<td class='column column-3' width='50%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#444a5b;direction:ltr;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:16px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:19.2px;'>
+																					<p style='margin: 0;'>Python | Machine Learning</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-21' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='700'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='50%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<div class='spacer_block block-1' style='height:25px;line-height:25px;font-size:1px;'>&#8202;</div>
+																	<table class='paragraph_block block-2' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#2c3547;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:30px;line-height:120%;text-align:center;mso-line-height-alt:36px;'>
+																					<p style='margin: 0; word-break: break-word;'><span>Languages</span></p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<table class='divider_block block-3' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																		<tr>
+																			<td class='pad'>
+																				<div class='alignment' align='center'>
+																					<table border='0' cellpadding='0' cellspacing='0' role='presentation' width='10%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																						<tr>
+																							<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 2px solid #7179F6;'><span>&#8202;</span></td>
+																						</tr>
+																					</table>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<div class='spacer_block block-4' style='height:20px;line-height:20px;font-size:1px;'>&#8202;</div><!--[if mso]><style>#list-r20c0m4 ul{margin: 0 !important; padding: 0 !important;} #list-r20c0m4 ul li{mso-special-format: bullet;}#list-r20c0m4 .levelOne li {margin-top: 0 !important;} #list-r20c0m4 .levelOne {margin-left: -20px !important;}#list-r20c0m4 .levelTwo li {margin-top: 0 !important;} #list-r20c0m4 .levelTwo {margin-left: 10px !important;}#list-r20c0m4 .levelThree li {margin-top: 0 !important;} #list-r20c0m4 .levelThree {margin-left: 40px !important;}</style><![endif]-->
+																	<table class='list_block block-5' id='list-r20c0m4' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div class='levelOne' style='margin-left: 0;'>
+																					<ul class='leftList' start='1' style='margin-top: 0; margin-bottom: 0; padding: 0; padding-left: 20px; color: #101218; direction: ltr; font-family: Roboto,Tahoma,Verdana,Segoe,sans-serif; font-size: 16px; font-weight: 400; letter-spacing: 0; line-height: 120%; text-align: left; mso-line-height-alt: 19.2px; list-style-type: disc;'>
+																						<li style='margin-bottom: 0; text-align: left;'>English</li>
+																						<li style='margin-bottom: 0; text-align: left;'>Turkish</li>
+																					</ul>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+																<td class='column column-2' width='50%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<div class='spacer_block block-1' style='height:25px;line-height:25px;font-size:1px;'>&#8202;</div>
+																	<table class='paragraph_block block-2' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#2c3547;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:30px;line-height:120%;text-align:center;mso-line-height-alt:36px;'>
+																					<p style='margin: 0; word-break: break-word;'><span>Contact</span></p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<table class='divider_block block-3' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																		<tr>
+																			<td class='pad'>
+																				<div class='alignment' align='center'>
+																					<table border='0' cellpadding='0' cellspacing='0' role='presentation' width='10%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																						<tr>
+																							<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 2px solid #7179F6;'><span>&#8202;</span></td>
+																						</tr>
+																					</table>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<div class='spacer_block block-4' style='height:20px;line-height:20px;font-size:1px;'>&#8202;</div><!--[if mso]><style>#list-r20c1m4 ul{margin: 0 !important; padding: 0 !important;} #list-r20c1m4 ul li{mso-special-format: bullet;}#list-r20c1m4 .levelOne li {margin-top: 0 !important;} #list-r20c1m4 .levelOne {margin-left: -20px !important;}#list-r20c1m4 .levelTwo li {margin-top: 0 !important;} #list-r20c1m4 .levelTwo {margin-left: 10px !important;}#list-r20c1m4 .levelThree li {margin-top: 0 !important;} #list-r20c1m4 .levelThree {margin-left: 40px !important;}</style><![endif]-->
+																	<table class='list_block block-5' id='list-r20c1m4' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div class='levelOne' style='margin-left: 0;'>
+																					<ul class='leftList' start='1' style='margin-top: 0; margin-bottom: 0; padding: 0; padding-left: 20px; color: #101218; direction: ltr; font-family: Roboto,Tahoma,Verdana,Segoe,sans-serif; font-size: 16px; font-weight: 400; letter-spacing: 0; line-height: 120%; text-align: left; mso-line-height-alt: 19.2px; list-style-type: disc;'>
+																						<li style='margin-bottom: 0; text-align: left;'>https://www.linkedin.com/in/emir-morali-267a5b242/</li>
+																						<li style='margin-bottom: 0; text-align: left;'>instagram</li>
+																						<li style='margin-bottom: 0; text-align: left;'>github</li>
+																					</ul>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-22' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #7179f6; color: #000; width: 1100px; margin: 0 auto;' width='700'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='100%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<div class='spacer_block block-1' style='height:20px;line-height:20px;font-size:1px;'>&#8202;</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class='row row-23' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+										<tbody>
+											<tr>
+												<td>
+													<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #7179f6; color: #000; width: 1100px; margin: 0 auto;' width='700'>
+														<tbody>
+															<tr>
+																<td class='column column-1' width='25%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='text_block block-1' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='font-family: sans-serif'>
+																					<div class style='font-size: 14px; font-family: Roboto, Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 16.8px; color: #ffffff; line-height: 1.2;'>
+																						<p style='margin: 0; font-size: 14px; mso-line-height-alt: 16.8px;'><strong>E-Mail</strong></p>
+																					</div>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<table class='paragraph_block block-2' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#e1e1e1;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:14px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;'>
+																					<p style='margin: 0; word-break: break-word;'>example@gmail.com</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+																<td class='column column-2' width='25%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#ffffff;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:14px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;'>
+																					<p style='margin: 0; word-break: break-word;'><strong>Phone</strong></p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<table class='paragraph_block block-2' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#e1e1e1;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:14px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;'>
+																					<p style='margin: 0; word-break: break-word;'>05123515353</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+																<td class='column column-3' width='33.333333333333336%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#ffffff;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:14px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;'>
+																					<p style='margin: 0; word-break: break-word;'><strong>Address</strong></p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<table class='paragraph_block block-2' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+																		<tr>
+																			<td class='pad'>
+																				<div style='color:#e1e1e1;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;font-size:14px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;'>
+																					<p style='margin: 0; word-break: break-word;'>Maltepe mah sokak falan numara da var böyle uzun</p>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<div class='spacer_block block-3' style='height:10px;line-height:10px;font-size:1px;'>&#8202;</div>
+																	<div class='spacer_block block-4' style='height:10px;line-height:10px;font-size:1px;'>&#8202;</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table><!-- End -->
+				</body>
+
+			</html>
+
+
+
+	</div>
+		</div><!-- End Left side columns -->
+		<!-- Right side columns -->
+		<div class='col-lg-3'>
+
+
+
+
+
+
+			@{
+				var shareCode = user.ShareCode;
+			}
+
+			<div class='pt-4 d-flex flex-column align-items-center'>
+				<form method='post' action='/Dashboard/DownloadPdf?shareCode=@shareCode'>
+
+					<button class='btn btn-success rounded-pill btn-lg m-1' style='width:15rem;'>Download CV</button>
+				</form>
+
+				<a class='btn btn-warning rounded-pill btn-lg m-1' id="copyLinkButton" style='width:15rem;'>
+					<i class="ri-file-copy-fill"></i> Copy Link
+				</a>
+			</div>
+
+
+
+
+
+
+		</div><!-- End Right side columns -->
+
+	</div>
