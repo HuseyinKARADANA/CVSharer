@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6FLkxJ5QCqQm8NmLP7leqiorH3S2DrG7MUv9yjleums=",
+  "Hash": "+JllwJGzWF9ngTSza+eRZCALkEMWfPI278nbcMnOC+k=",
   "Source": "CVSharer",
   "BasePath": "_content/CVSharer",
   "Mode": "Default",
@@ -136,12 +136,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\card.jpg"
     },
     {
-      "Identity": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\default_template.jpg",
+      "Identity": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\default_template_new.jpg",
       "SourceId": "CVSharer",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\",
       "BasePath": "_content/CVSharer",
-      "RelativePath": "assets/img/default_template.jpg",
+      "RelativePath": "assets/img/default_template_new.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -150,7 +150,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\default_template.jpg"
+      "OriginalItemSpec": "wwwroot\\assets\\img\\default_template_new.jpg"
     },
     {
       "Identity": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\favicon.png",
@@ -612,12 +612,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\slides-3.png"
     },
     {
-      "Identity": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\template2.jpg",
+      "Identity": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\template2_new.jpg",
       "SourceId": "CVSharer",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\",
       "BasePath": "_content/CVSharer",
-      "RelativePath": "assets/img/template2.jpg",
+      "RelativePath": "assets/img/template2_new.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -626,7 +626,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\template2.jpg"
+      "OriginalItemSpec": "wwwroot\\assets\\img\\template2_new.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\template4.jpg",
+      "SourceId": "CVSharer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\",
+      "BasePath": "_content/CVSharer",
+      "RelativePath": "assets/img/template4.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\template4.jpg"
     },
     {
       "Identity": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\templates_ss.png",

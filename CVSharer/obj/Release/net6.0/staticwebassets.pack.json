@@ -17,8 +17,8 @@
       "PackagePath": "staticwebassets\\assets\\img\\card.jpg"
     },
     {
-      "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\default_template.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\default_template.jpg"
+      "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\default_template_new.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\default_template_new.jpg"
     },
     {
       "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\favicon.png",
@@ -129,8 +129,12 @@
       "PackagePath": "staticwebassets\\assets\\img\\slides-3.png"
     },
     {
-      "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\template2.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\template2.jpg"
+      "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\template2_new.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\template2_new.jpg"
+    },
+    {
+      "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\template4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\template4.jpg"
     },
     {
       "Id": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\assets\\img\\templates_ss.png",
