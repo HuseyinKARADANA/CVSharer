@@ -558,16 +558,19 @@
 				var shareCode = user.ShareCode;
 			}
 
-		<div class='pt-4 d-flex flex-column align-items-center'>
-			<form method='post' action='/Dashboard/DownloadPdf?shareCode=@shareCode'>
+			@if (shareCode != "aaaaaaaa")
+			{
+			<div class='pt-4 d-flex flex-column align-items-center'>
+				<form method='post' action='/Dashboard/DownloadPdf?shareCode=@shareCode'>
 
-				<button class='btn btn-success rounded-pill btn-lg m-1' style='width:15rem;'>Download CV</button>
-			</form>
+					<button class='btn btn-success rounded-pill btn-lg m-1' style='width:15rem;'>Download CV</button>
+				</form>
 
-			<a class='btn btn-warning rounded-pill btn-lg m-1' id='copyLinkButton' style='width:15rem;'>
-				<i class='ri-file-copy-fill'></i> Copy Link
-			</a>
-		</div>
+				<a class='btn btn-warning rounded-pill btn-lg m-1' id="copyLinkButton" style='width:15rem;'>
+					<i class="ri-file-copy-fill"></i> Copy Link
+				</a>
+			</div>
+			}
 
 
 

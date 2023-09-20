@@ -1034,6 +1034,8 @@
 				var shareCode = user.ShareCode;
 			}
 
+			@if (shareCode != "aaaaaaaa")
+			{
 			<div class='pt-4 d-flex flex-column align-items-center'>
 				<form method='post' action='/Dashboard/DownloadPdf?shareCode=@shareCode'>
 
@@ -1044,6 +1046,7 @@
 					<i class="ri-file-copy-fill"></i> Copy Link
 				</a>
 			</div>
+			}
 
 
 
