@@ -715,7 +715,7 @@ namespace CVSharer.Controllers
 			var links = _linkService.GetLinksByUserId(userId);
 
 			var fileName = user.Name + " " + user.Surname + " CV.pdf";
-			string url = "https://www.cvsharer.com/Pdf/" + user.MainTemplate + "?ShareCode=" + user.ShareCode;
+			string url = "https://localhost:7150/Pdf/" + user.MainTemplate + "?ShareCode=" + user.ShareCode;
             string htmlContent="";
 			// HTTP isteği gönderin ve yanıtı alın
 			using (HttpClient client = new HttpClient())

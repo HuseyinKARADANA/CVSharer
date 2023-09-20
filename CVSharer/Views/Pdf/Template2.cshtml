@@ -23,444 +23,662 @@
     var languages = _languageService.GetLanguagesByUserId(userId);
     var links = _linkService.GetLinksByUserId(userId);
 }
+
 <html>
-<head>
-
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>CVSharer</title>
-
-    <meta content="" name="description">
-    <meta content="CV Share" name="keywords">
-
-
-
-    <!-- Favicons -->
-    <link href="~/assets/img/logo.png" rel="icon">
-
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-
-
-    <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-
-    <link href="~/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="~/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="~/assets/vendor/quill/quill.snow.css" rel="stylesheet">
-    <link href="~/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-    <link href="~/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="~/assets/vendor/simple-datatables/style.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="~/assets/css/style.css" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            transition: 0.35s ease;
-        }
-
-        .rela-block {
-            display: block;
-            position: relative;
-            margin: auto;
-            top:;
-            left:;
-            right:;
-            bottom:;
-        }
-
-        .rela-inline {
-            display: inline-block;
-            position: relative;
-            margin: auto;
-            top:;
-            left:;
-            right:;
-            bottom:;
-        }
-
-        .floated {
-            display: inline-block;
-            position: relative;
-            margin: false;
-            top:;
-            left:;
-            right:;
-            bottom:;
-            float: left;
-        }
-
-        .abs-center {
-            display: false;
-            position: absolute;
-            margin: false;
-            top: 50%;
-            left: 50%;
-            right: false;
-            bottom: false;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            width: 88%;
-        }
-
-
-
-
-
-        .caps {
-            text-transform: uppercase;
-        }
-
-        .justified {
-            text-align: justify;
-        }
-
-        p.light {
-            color: #777;
-        }
-
-        h2 {
-            font-size: 30px;
-            letter-spacing: 5px;
-            font-weight: 600;
-            line-height: 40px;
-            color: #000;
-        }
-
-        h3 {
-            font-size: 21px;
-            letter-spacing: 1px;
-            font-weight: 600;
-            line-height: 28px;
-            color: #000;
-        }
-
-        .page {
-            width: 90%;
-            min-height: 1300px;
-            margin: 80px auto;
-            background-color: #fff;
-            box-shadow: 6px 10px 28px 0px rgba(0,0,0,0.4);
-        }
-
-        .top-bar {
-            height: 220px;
-            background-color: #848484;
-            color: #fff;
-        }
-
-        .name {
-            display: false;
-            position: absolute;
-            margin: false;
-            top: false;
-            left: calc(350px + 5%);
-            right: 0;
-            bottom: 0;
-            height: 120px;
-            text-align: center;
-            font-size: 58px;
-            letter-spacing: 8px;
-            font-weight: 100;
-            line-height: 60px;
-        }
-
-            .name div {
-                width: 94%;
-            }
-
-        .side-bar {
-            display: false;
-            position: absolute;
-            margin: false;
-            top: 60px;
-            left: 5%;
-            right: false;
-            bottom: 0;
-            width: 350px;
-            background-color: #f7e0c1;
-            padding: 320px 30px 50px;
-        }
-
-        .mugshot {
-            display: false;
-            position: absolute;
-            margin: false;
-            top: 50px;
-            left: 70px;
-            right: false;
-            bottom: false;
-            width: 210px;
-        }
-
-            .mugshot .logo {
-                margin: -23px;
-            }
-
-
-
-        .logo .logo-svg {
-            height: 100%;
-            width: 100%;
-            stroke: #000;
-            cursor: pointer;
-        }
-
-        .logo .logo-text {
-            display: false;
-            position: absolute;
-            margin: false;
-            top: 58%;
-            left:;
-            right: 16%;
-            bottom:;
-            cursor: pointer;
-            font-size: 55px;
-            letter-spacing: 0px;
-            font-weight: 400;
-            line-height: 58.333333333333336px;
-        }
-
-        .social {
-            padding-left: 60px;
-            margin-bottom: 20px;
-            cursor: pointer;
-        }
-
-            .social:before {
-                content: "";
-                display: false;
-                position: absolute;
-                margin: false;
-                top: -4px;
-                left: 10px;
-                right: false;
-                bottom: false;
-                height: 35px;
-                width: 35px;
-                background-size: cover !important;
-            }
-
-            .social.twitter:before {
-                background: url("https://cdn3.iconfinder.com/data/icons/social-media-2026/60/Socialmedia_icons_Twitter-07-128.png") center no-repeat;
-            }
-
-            .social.pinterest:before {
-                background: url("https://cdn3.iconfinder.com/data/icons/social-media-2026/60/Socialmedia_icons_Pinterest-23-128.png") center no-repeat;
-            }
-
-            .social.linked-in:before {
-                background: url("https://cdn3.iconfinder.com/data/icons/social-media-2026/60/Socialmedia_icons_LinkedIn-128.png") center no-repeat;
-            }
-
-        .side-header {
-            font-size: 18px;
-            letter-spacing: 4px;
-            font-weight: 600;
-            line-height: 28px;
-            margin: 60px auto 10px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #888;
-        }
-
-        .list-thing {
-            padding-left: 25px;
-            margin-bottom: 10px;
-        }
-
-        .content-container {
-            margin-right: 0;
-            width: calc(95% - 350px);
-            padding: 25px 40px 50px;
-        }
-
-            .content-container > * {
-                margin: 0 auto 25px;
-            }
-
-            .content-container > h3 {
-                margin: 0 auto 5px;
-            }
-
-            .content-container > p.long-margin {
-                margin: 0 auto 50px;
-            }
-
-        .title {
-            width: 80%;
-            text-align: center;
-        }
-
-        .separator {
-            width: 240px;
-            height: 2px;
-            background-color: #999;
-        }
-
-        .greyed {
-            background-color: #ddd;
-            width: 100%;
-            max-width: 580px;
-            text-align: center;
-            font-size: 18px;
-            letter-spacing: 6px;
-            font-weight: 600;
-            line-height: 28px;
-        }
-
-    </style>
-</head>
-<body>
-    <!-- partial:index.partial.html -->
-    <!-- FONTS -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-
-    <!-- PAGE STUFF -->
-    <div class="rela-block page">
-        <div class="rela-block top-bar">
-            <div class="caps name"><div class="abs-center">@user.Name @user.Surname</div></div>
-        </div>
-        <div class="side-bar">
-            <div class="mugshot">
-                @{
-                    var path = "https://cvsharer.com/ProfileImg/" + user.Photo;
-                }
-                <img src="@path" alt="" width="200px">
-            </div>
-
-            <p class="m-1">  @user.Email</p>
-            @if (user.Address != null)
-            {
-
-                <p class="m-1">@user.Address</p>
-            }
-
-            @if (user.Phone != null)
-            {
-                <p class="m-1"><strong> </strong>@user.Phone</p>
-            }
-            @if (user.Instagram != null || user.Linkedin != null || user.YouTube != null || user.GitHub != null || links.Count > 0)
-            {
-                <br />
-                @if (user.Instagram != null)
-                {
-                    <h6><a href="@user.Instagram" style="color:black"><i class="ri-instagram-line"></i>@user.Instagram</a></h6>
-                }
-                @if (user.Linkedin != null)
-                {
-                    <h6><a href="@user.Linkedin" style="color:black"><i class="ri-linkedin-box-fill"></i>@user.Linkedin</a></h6>
-                }
-                @if (user.GitHub != null)
-                {
-                    <h6><a href="@user.GitHub" style="color:black"><i class="ri-github-fill"></i>@user.GitHub</a></h6>
-                }
-                @if (user.YouTube != null)
-                {
-                    <h6><a href="@user.YouTube" style="color:black"><i class="ri-youtube-fill"></i>@user.YouTube</a></h6>
-                }
-                @if (links != null)
-                {
-                    @foreach (var link in links)
-                    {
-                        <h6><a href="@link.LUrl" style="color:black"><i class="ri-links-fill"></i>@link.LUrl</a></h6>
-                    }
-                }
-            }
-
-
-
-
-            @if (skills.Count > 0)
-            {
-                <p class="rela-block caps side-header">Skills</p>
-                @foreach (var skill in skills)
-                {
-                    <div class="rela-block list-thing align-items-center">
-
-                        <div class="col-lg-12 col-md-4 progress" style="height:2rem">
-                            <div class="progress-bar " role="progressbar" style="width: @skill.SPercentage%"
-                                 aria-valuenow="@skill.SPercentage" aria-valuemin="0" aria-valuemax="100">
-                                @skill.SName
-                            </div>
-                        </div>
-                    </div>
-                }
-
-            }
-            @if (languages.Count > 0)
-            {
-                <p class="rela-block caps side-header">Languages</p>
-                @foreach (var language in languages)
-                {
-                    <div class="rela-block list-thing align-items-center">
-
-                        <div class="col-lg-12 col-md-4 progress" style="height:2rem">
-                            <div class="progress-bar " role="progressbar" style="width: @language.LangPercentage%"
-                                 aria-valuenow="@language.LangPercentage" aria-valuemin="0" aria-valuemax="100">
-                                @language.LangName
-                            </div>
-                        </div>
-                    </div>
-
-                }
-            }
-            @if (hobbies.Count > 0)
-            {
-                <p class="rela-block caps side-header">Hobbies</p>
-                @foreach (var hobby in hobbies)
-                {
-                    <p class="rela-block list-thing">@hobby.HName</p>
-
-                }
-            }
-
-
-        </div>
-        <div class="rela-block content-container">
-            <h2 class="rela-block caps title">@user.Position</h2>
-            <div class="rela-block separator"></div>
-            <div class="rela-block caps greyed">Profile</div>
-            <p class="long-margin">@user.Description </p>
-            @if (educations.Count > 0)
-            {
-                <div class="rela-block caps greyed">Education</div>
-                @foreach (var education in educations)
-                {
-                    <h3>@education.EName</h3>
-                    <p class="light">@education.StartDate.ToShortDateString() @(education.EndDate != null ? "- " + education.EndDate.Value.ToShortDateString() : "")</p>
-
-                }
-            }
-            @if (experiences.Count > 0)
-            {
-                <div class="rela-block caps greyed">Experience</div>
-                @foreach (var experience in experiences)
-                {
-                    <h3>@experience.ExName</h3>
-                    <p class="light">@experience.StartDate.ToShortDateString() @(experience.EndDate != null ? "- " + experience.EndDate.Value.ToShortDateString() : "")</p>
-
-                }
-            }
-            @if (certificates.Count > 0)
-            {
-                <div class="rela-block caps greyed">Certificates</div>
-                @foreach (var certificate in certificates)
-                {
-                    <p class="light">@certificate.StartDate.ToShortDateString() @(certificate.EndDate != null ? "- " + certificate.EndDate.Value.ToShortDateString() : "")<br /><a href='@certificate.Url' target='_blank' style='text-decoration: underline; color: #6133d5;' rel='noopener'>@certificate.Institution - @certificate.CName</a> </p>
-
-
-                }
-            }
-        </div>
-    </div>
 
-
+<body style='background-color: #f9f9f9; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;'>
+	<table class='nl-container' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f9f9f9;'>
+		<tbody>
+			<tr>
+				<td>
+					<table class='row row-2' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+						<tbody>
+							<tr>
+								<td>
+									<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; ; color: #000; width: 1100px; margin: 0 auto;' width='1100'>
+										<tbody>
+											<tr>
+												<td class='column column-1' width='33.333333333333336%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+													<table class='empty_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+														<tr>
+															<td class='pad'>
+																<div></div>
+															</td>
+														</tr>
+													</table>
+												</td>
+												<td class='column column-2' width='33.333333333333336%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+													<table class='empty_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+														<tr>
+															<td class='pad'>
+																<div></div>
+															</td>
+														</tr>
+													</table>
+												</td>
+												<td class='column column-3' width='33.333333333333336%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+													<table class='image_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+														<tr>
+															<td class='pad' style='padding-bottom:10px;width:100%;padding-right:0px;padding-left:0px;'>
+																<div class='alignment' align='center' style='line-height:10px'><img src='https://f432a44714.imgdist.com/public/users/Integrators/BeeProAgency/1046008_1031170/logo.png' style='display: block; height: auto; border: 0; max-width: 68px; width: 100%;' width='68'></div>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class='row row-2' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+						<tbody>
+							<tr>
+								<td>
+									<table class='row-content' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ea5256; color: #000; width: 1100px; margin: 0 auto;' width='550'>
+										<tbody>
+											<tr>
+												<td class='column column-1' width='33.333333333333336%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+													<div class='spacer_block block-1' style='height:40px;line-height:40px;font-size:1px;'>&#8202;</div>
+													<table class='image_block block-2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+														<tr>
+
+															@{
+																var path = "https://cvsharer.com/ProfileImg/" + user.Photo;
+															}
+															<td class='pad' style='padding-left:20px;width:100%;'>
+																<div class='alignment' align='center' style='line-height:10px'><img src='@path' style='display: block; height: auto; border: 0; max-width: 183.33333333333331px; width: 100%;' width='183.33333333333331'></div>
+															</td>
+														</tr>
+													</table>
+													<div class='spacer_block block-3' style='height:30px;line-height:30px;font-size:1px;'>&#8202;</div>
+												</td>
+												<td class='column column-2' width='66.66666666666667%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+													<div class='spacer_block block-1' style='height:50px;line-height:50px;font-size:1px;'>&#8202;</div>
+													<table class='paragraph_block block-2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+														<tr>
+															<td class='pad' style='padding-bottom:10px;padding-top:10px;'>
+
+																<div style='color:#ffffff;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:35px;font-weight:700;line-height:120%;text-align:center;mso-line-height-alt:42px;'>
+																	<p style='margin: 0; word-break: break-word;'><span><strong>@user.Name @user.Surname</strong></span></p>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class='paragraph_block block-3' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+														<tr>
+															<td class='pad'>
+																<div align='center' style='color:#ffffff;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:20px;font-weight:700;line-height:120%;text-align:center;mso-line-height-alt:24px;'>
+																	<p style='margin: 0; word-break: break-word;'><span>@user.Position</span></p>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<div class='spacer_block block-4' style='height:30px;line-height:30px;font-size:1px;'>&#8202;</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class='row row-3' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+						<tbody>
+							<tr>
+								<td>
+									<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ea5256; color: #000; width: 1100px; margin: 0 auto;' width='550'>
+										<tbody>
+											<tr>
+												<td class='column column-1' width='33%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+													<table class='paragraph_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+														<tr>
+															<td class='pad' style='padding-left:10px;padding-right:10px;padding-top:10px;'>
+																<div style='color:#ffffff;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:18px;font-weight:700;line-height:120%;text-align:center;mso-line-height-alt:21.599999999999998px;'>
+																	<p style='margin: 0; word-break: break-word;'>Email</p>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class='divider_block block-2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+														<tr>
+															<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;'>
+																<div class='alignment' align='center'>
+																	<table border='0' cellpadding='0' cellspacing='0' role='presentation' width='60%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																		<tr>
+																			<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #dddddd;'><span>&#8202;</span></td>
+																		</tr>
+																	</table>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class='paragraph_block block-3' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+														<tr>
+															<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;'>
+																<div align='center' style='color:#ffffff;font-family:Arial, ' Helvetica Neue', Helvetica, sans-serif;font-size:16px;font-weight:400;line-height:120%;text-align:center;mso-line-height-alt:19.2px;'>
+																	<p style='margin: 0; word-break: break-word;'>@user.Email</p>
+																</div>
+															</td>
+														</tr>
+													</table>
+												</td>
+												@if (user.Phone != null)
+												{
+													<td class='column column-2' width='33%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+														<table class='paragraph_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+															<tr>
+																<td class='pad' style='padding-left:10px;padding-right:10px;padding-top:10px;'>
+																	<div style='color:#ffffff;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:18px;font-weight:700;line-height:120%;text-align:center;mso-line-height-alt:21.599999999999998px;'>
+																		<p style='margin: 0; word-break: break-word;'><span>Phone</span></p>
+																	</div>
+																</td>
+															</tr>
+														</table>
+														<table class='divider_block block-2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+															<tr>
+																<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;'>
+																	<div class='alignment' align='center'>
+																		<table border='0' cellpadding='0' cellspacing='0' role='presentation' width='60%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																			<tr>
+																				<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #dddddd;'><span>&#8202;</span></td>
+																			</tr>
+																		</table>
+																	</div>
+																</td>
+															</tr>
+														</table>
+														<table class='paragraph_block block-3' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+															<tr>
+																<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;'>
+																	<div align='center' style='color:#ffffff;font-family:Arial, ' Helvetica Neue', Helvetica, sans-serif;font-size:16px;font-weight:400;line-height:120%;text-align:center;mso-line-height-alt:19.2px;'>
+																		<p style='margin: 0;'>@user.Phone</p>
+																	</div>
+																</td>
+															</tr>
+														</table>
+													</td>
+												}
+												@if (user.Address != null)
+												{
+													<td class='column column-1' width='33%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+														<table class='paragraph_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+															<tr>
+																<td class='pad' style='padding-left:10px;padding-right:10px;padding-top:10px;'>
+																	<div style='color:#ffffff;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:18px;font-weight:700;line-height:120%;text-align:center;mso-line-height-alt:21.599999999999998px;'>
+																		<p style='margin: 0; word-break: break-word;'><strong>Address</strong></p>
+																	</div>
+																</td>
+															</tr>
+														</table>
+														<table class='divider_block block-2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+															<tr>
+																<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;'>
+																	<div class='alignment' align='center'>
+																		<table border='0' cellpadding='0' cellspacing='0' role='presentation' width='30%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																			<tr>
+																				<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #dddddd;'><span>&#8202;</span></td>
+																			</tr>
+																		</table>
+																	</div>
+																</td>
+															</tr>
+														</table>
+														<table class='paragraph_block block-3' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+															<tr>
+																<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;'>
+																	<div align='center' style='color:#ffffff;font-family:Arial, ' Helvetica Neue', Helvetica, sans-serif;font-size:16px;font-weight:400;line-height:120%;text-align:center;mso-line-height-alt:19.2px;'>
+																		<p style='margin: 0; word-break: break-word;'>@user.Address</p>
+																	</div>
+																</td>
+															</tr>
+														</table>
+													</td>
+												}
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table class='row row-5' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+						<tbody>
+							<tr>
+								<td>
+									<table class='row-content stack' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ea5256; color: #000; width: 1100px; margin: 0 auto;' width='550'>
+										<tbody>
+											<tr>
+												<td class='column column-1' width='100%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+													<div class='spacer_block block-1' style='height:5px;line-height:5px;font-size:1px;'>&#8202;</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class='row row-6' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+						<tbody>
+							<tr>
+								<td>
+									<table class='row-content' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='550'>
+										<tbody>
+											<tr>
+												<td class='column column-1' width='100%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 15px; padding-top: 15px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+													<table class='paragraph_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+														<tr>
+															<td class='pad' style='padding-bottom:10px;padding-left:25px;padding-right:25px;padding-top:10px;'>
+																<div style='color:#101112;direction:ltr;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:16px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:19.2px;'>
+																	<p style='margin: 0;'>@user.Description &nbsp;</p>
+																</div>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class='row row-7' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+						<tbody>
+							<tr>
+								<td>
+									<table class='row-content' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='550'>
+										<tbody>
+											<tr>
+												@if (educations.Count > 0)
+												{
+													<td class='column column-1' width='100%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+														<table class='heading_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+															<tr>
+																<td class='pad' style='padding-left:10px;padding-right:10px;padding-top:10px;text-align:center;width:100%;'>
+																	<h3 style='margin: 0; color: #000000; direction: ltr; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; font-size: 18px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;'><span class='tinyMce-placeholder'>Education</span></h3>
+																</td>
+															</tr>
+														</table>
+														<table class='divider_block block-2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+															<tr>
+																<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;'>
+																	<div class='alignment' align='center'>
+																		<table border='0' cellpadding='0' cellspacing='0' role='presentation' width='40%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																			<tr>
+																				<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #000000;'><span>&#8202;</span></td>
+																			</tr>
+																		</table>
+																	</div>
+																</td>
+															</tr>
+														</table>
+														<table class='paragraph_block block-3' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+															<tr>
+																<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;'>
+																	<div style='color:#101112;direction:ltr;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:16px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:19.2px;'>
+																		@foreach (var education in educations)
+																		{
+																			<p style='margin: 0; margin-bottom: 16px;'><strong>@education.StartDate.ToShortDateString() @(education.EndDate != null ? "- " + education.EndDate.Value.ToShortDateString() : "")</strong></p>
+																			<p style='margin: 0; margin-bottom: 16px;'>@education.EName</p>
+																			<p style='margin: 0;'>&nbsp;</p>
+																		}
+																	</div>
+																</td>
+															</tr>
+														</table>
+													</td>
+												}
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class='row row-8' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+						<tbody>
+							<tr>
+								<td>
+									<table class='row-content' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='550'>
+										<tbody>
+											<tr>
+
+												@if (experiences.Count > 0)
+												{
+													<td class='column column-1' width='100%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+														<table class='heading_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+															<tr>
+																<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;text-align:center;width:100%;'>
+																	<h3 style='margin: 0; color: #000000; direction: ltr; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; font-size: 18px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;'>Experience</h3>
+																</td>
+															</tr>
+														</table>
+														<table class='divider_block block-2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+															<tr>
+																<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;'>
+																	<div class='alignment' align='center'>
+																		<table border='0' cellpadding='0' cellspacing='0' role='presentation' width='40%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																			<tr>
+																				<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #000000;'><span>&#8202;</span></td>
+																			</tr>
+																		</table>
+																	</div>
+																</td>
+															</tr>
+														</table>
+														<table class='paragraph_block block-3' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+															<tr>
+																<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;'>
+																	<div style='color:#101112;direction:ltr;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:16px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:19.2px;'>
+																		@foreach (var experience in experiences)
+																		{
+																			<p style='margin: 0; margin-bottom: 16px;'><strong>@experience.StartDate.ToShortDateString() @(experience.EndDate != null ? "- " + experience.EndDate.Value.ToShortDateString() : "")</strong></p>
+																			<p style='margin: 0; margin-bottom: 16px;'>@experience.ExName</p>
+																			<p style='margin: 0;'>&nbsp;</p>
+																		}
+																	</div>
+																</td>
+															</tr>
+														</table>
+													</td>
+												}
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class='row row-9' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+						<tbody>
+							<tr>
+								<td>
+									<table class='row-content' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='550'>
+										<tbody>
+											<tr>
+												@if (skills.Count > 0)
+												{
+													<td class='column column-1' width='50%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+														<table class='paragraph_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+															<tr>
+																<td class='pad' style='padding-left:10px;padding-right:10px;padding-top:10px;'>
+																	<div style='color:#232323;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:18px;line-height:120%;text-align:center;mso-line-height-alt:21.599999999999998px;'>
+																		<p style='margin: 0; word-break: break-word;'><strong>Skills</strong></p>
+																	</div>
+																</td>
+															</tr>
+														</table>
+														<table class='divider_block block-2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+															<tr>
+																<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;'>
+																	<div class='alignment' align='center'>
+																		<table border='0' cellpadding='0' cellspacing='0' role='presentation' width='50%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																			<tr>
+																				<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #000000;'><span>&#8202;</span></td>
+																			</tr>
+																		</table>
+																	</div>
+																</td>
+															</tr>
+														</table><!--[if mso]><style>#list-r8c0m2 ul{margin: 0 !important; padding: 0 !important;} #list-r8c0m2 ul li{mso-special-format: bullet;}#list-r8c0m2 .levelOne li {margin-top: 0 !important;} #list-r8c0m2 .levelOne {margin-left: -20px !important;}</style><![endif]-->
+														<table class='list_block block-3' id='list-r8c0m2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+															<tr>
+																<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;'>
+																	<div class='levelOne' style='margin-left: 0;'>
+																		<ul class='leftList' start='1' style='margin-top: 0; margin-bottom: 0; padding: 0; padding-left: 20px; color: #101112; direction: ltr; font-family: Montserrat,Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif; font-size: 16px; font-weight: 400; letter-spacing: 0; line-height: 120%; text-align: left; mso-line-height-alt: 19.2px; list-style-type: square;'>
+																			@foreach (var skill in skills)
+																			{
+																				<li style='margin-bottom: 0; text-align: left;'>@skill.SName</li>
+																			}
+																		</ul>
+																	</div>
+																</td>
+															</tr>
+														</table>
+													</td>
+												}
+												@if (certificates.Count > 0)
+												{
+													<td class='column column-2' width='50%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+														<table class='paragraph_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+															<tr>
+																<td class='pad' style='padding-left:10px;padding-right:10px;padding-top:10px;'>
+																	<div style='color:#232323;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:18px;line-height:120%;text-align:center;mso-line-height-alt:21.599999999999998px;'>
+																		<p style='margin: 0; word-break: break-word;'>Certificates</p>
+																	</div>
+																</td>
+															</tr>
+														</table>
+														<table class='divider_block block-2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+															<tr>
+																<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;'>
+																	<div class='alignment' align='center'>
+																		<table border='0' cellpadding='0' cellspacing='0' role='presentation' width='50%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																			<tr>
+																				<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #000000;'><span>&#8202;</span></td>
+																			</tr>
+																		</table>
+																	</div>
+																</td>
+															</tr>
+														</table><!--[if mso]><style>#list-r8c1m2 ul{margin: 0 !important; padding: 0 !important;} #list-r8c1m2 ul li{mso-special-format: bullet;}#list-r8c1m2 .levelOne li {margin-top: 0 !important;} #list-r8c1m2 .levelOne {margin-left: -20px !important;}</style><![endif]-->
+														<table class='list_block block-3' id='list-r8c1m2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+															<tr>
+																<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;'>
+																	<div class='levelOne' style='margin-left: 0;'>
+																		<ul class='leftList' start='1' style='margin-top: 0; margin-bottom: 0; padding: 0; padding-left: 20px; color: #101112; direction: ltr; font-family: Montserrat,Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif; font-size: 16px; font-weight: 400; letter-spacing: 0; line-height: 120%; text-align: left; mso-line-height-alt: 19.2px; list-style-type: square;'>
+																			@foreach (var certificate in certificates)
+																			{
+
+																				<li style='margin-bottom: 0; text-align: left;'>
+																					<p>@certificate.StartDate.ToShortDateString() @(certificate.EndDate != null ? "- " + certificate.EndDate.Value.ToShortDateString() : "")<br /><a href='@certificate.Url' target='_blank' style='text-decoration: underline; color: #6133d5;' rel='noopener'>@certificate.Institution @certificate.CName</a> </p>
+
+																				</li>
+																			}
+																		</ul>
+																	</div>
+																</td>
+															</tr>
+														</table>
+													</td>
+												}
+
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table class='row row-11' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+
+
+						<tbody>
+							<tr>
+								<td>
+									<table class='row-content' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='550'>
+
+										<tbody>
+											<tr>
+												@if (hobbies.Count > 0)
+												{
+													<td class='column column-1' width='50%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+														<table class='paragraph_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+															<tr>
+																<td class='pad' style='padding-left:10px;padding-right:10px;padding-top:10px;'>
+																	<div style='color:#232323;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:18px;line-height:120%;text-align:center;mso-line-height-alt:21.599999999999998px;'>
+																		<p style='margin: 0; word-break: break-word;'><strong>Hobbies</strong></p>
+																	</div>
+																</td>
+															</tr>
+														</table>
+														<table class='divider_block block-2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+															<tr>
+																<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;'>
+																	<div class='alignment' align='center'>
+																		<table border='0' cellpadding='0' cellspacing='0' role='presentation' width='50%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																			<tr>
+																				<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #000000;'><span>&#8202;</span></td>
+																			</tr>
+																		</table>
+																	</div>
+																</td>
+															</tr>
+														</table><!--[if mso]><style>#list-r9c0m2 ul{margin: 0 !important; padding: 0 !important;} #list-r9c0m2 ul li{mso-special-format: bullet;}#list-r9c0m2 .levelOne li {margin-top: 0 !important;} #list-r9c0m2 .levelOne {margin-left: -20px !important;}#list-r9c0m2 .levelTwo li {margin-top: 0 !important;} #list-r9c0m2 .levelTwo {margin-left: 10px !important;}</style><![endif]-->
+														<table class='list_block block-3' id='list-r9c0m2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+															<tr>
+																<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;'>
+																	<div class='levelOne' style='margin-left: 0;'>
+																		<ul class='leftList' start='1' style='margin-top: 0; margin-bottom: 0; padding: 0; padding-left: 20px; color: #101112; direction: ltr; font-family: Montserrat,Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif; font-size: 16px; font-weight: 400; letter-spacing: 0; line-height: 120%; text-align: left; mso-line-height-alt: 19.2px; list-style-type: square;'>
+																			@foreach (var hobby in hobbies)
+																			{
+																				<li style='margin-bottom: 0; text-align: left;'>@hobby.HName</li>
+																			}
+																		</ul>
+																	</div>
+																</td>
+															</tr>
+														</table>
+													</td>
+												}
+												@if (languages.Count > 0)
+												{
+													<td class='column column-2' width='50%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+														<table class='paragraph_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+															<tr>
+
+																<td class='pad' style='padding-left:10px;padding-right:10px;padding-top:10px;'>
+																	<div style='color:#232323;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:18px;line-height:120%;text-align:center;mso-line-height-alt:21.599999999999998px;'>
+																		<p style='margin: 0; word-break: break-word;'><strong>Languages</strong></p>
+																	</div>
+																</td>
+															</tr>
+														</table>
+														<table class='divider_block block-2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+															<tr>
+																<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;'>
+																	<div class='alignment' align='center'>
+																		<table border='0' cellpadding='0' cellspacing='0' role='presentation' width='50%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																			<tr>
+																				<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #000000;'><span>&#8202;</span></td>
+																			</tr>
+																		</table>
+																	</div>
+																</td>
+															</tr>
+														</table><!--[if mso]><style>#list-r9c1m2 ul{margin: 0 !important; padding: 0 !important;} #list-r9c1m2 ul li{mso-special-format: bullet;}#list-r9c1m2 .levelOne li {margin-top: 0 !important;} #list-r9c1m2 .levelOne {margin-left: -20px !important;}</style><![endif]-->
+														<table class='list_block block-3' id='list-r9c1m2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+															<tr>
+																<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;'>
+																	<div class='levelOne' style='margin-left: 0;'>
+																		<ul class='leftList' start='1' style='margin-top: 0; margin-bottom: 0; padding: 0; padding-left: 20px; color: #101112; direction: ltr; font-family: Montserrat,Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif; font-size: 16px; font-weight: 400; letter-spacing: 0; line-height: 120%; text-align: left; mso-line-height-alt: 19.2px; list-style-type: square;'>
+																			@foreach (var language in languages)
+																			{
+																				<li style='margin-bottom: 0; text-align: left;'>@language.LangName</li>
+																			}
+																		</ul>
+																	</div>
+																</td>
+															</tr>
+														</table>
+													</td>
+												}
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class='row row-11' align='center' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+
+
+						<tbody>
+							<tr>
+								<td>
+									<table class='row-content' align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; width: 1100px; margin: 0 auto;' width='550'>
+
+										<tbody>
+											<tr>
+												@if (user.Instagram != null || user.Linkedin != null || user.YouTube != null || user.GitHub != null || links.Count > 0)
+												{
+													<td class='column column-1' width='100%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
+														<table class='paragraph_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+															<tr>
+
+																<td class='pad' style='padding-left:10px;padding-right:10px;padding-top:10px;'>
+																	<div style='color:#232323;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:18px;line-height:120%;text-align:center;mso-line-height-alt:21.599999999999998px;'>
+																		<p style='margin: 0; word-break: break-word;'><strong>Contact</strong></p>
+																	</div>
+																</td>
+															</tr>
+														</table>
+														<table class='divider_block block-2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+															<tr>
+																<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;'>
+																	<div class='alignment' align='center'>
+																		<table border='0' cellpadding='0' cellspacing='0' role='presentation' width='30%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+																			<tr>
+																				<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #000000;'><span>&#8202;</span></td>
+																			</tr>
+																		</table>
+																	</div>
+																</td>
+															</tr>
+														</table><!--[if mso]><style>#list-r10c0m2 ul{margin: 0 !important; padding: 0 !important;} #list-r10c0m2 ul li{mso-special-format: bullet;}#list-r10c0m2 .levelOne li {margin-top: 0 !important;} #list-r10c0m2 .levelOne {margin-left: -20px !important;}#list-r10c0m2 .levelTwo li {margin-top: 0 !important;} #list-r10c0m2 .levelTwo {margin-left: 10px !important;}</style><![endif]-->
+														<table class='list_block block-3' id='list-r10c0m2' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
+															<tr>
+																<td class='pad' style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;'>
+																	<div class='levelOne' style='margin-left: 0;'>
+																		<ul class='leftList' start='1' style='margin-top: 0; margin-bottom: 0; padding: 0; padding-left: 20px; color: #101112; direction: ltr; font-family: Montserrat,Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif; font-size: 16px; font-weight: 400; letter-spacing: 0; line-height: 120%; text-align: left; mso-line-height-alt: 19.2px; list-style-type: square;'>
+																			@if (user.Linkedin != null)
+																			{
+																				<p style='margin: 0; margin-bottom: 16px;'><a href='@user.Linkedin' target='_blank' style='text-decoration: underline; color: #7747FF;' rel='noopener'>@user.Linkedin</a></p>
+																			}
+																			@if (user.GitHub != null)
+																			{
+																				<p style='margin: 0; margin-bottom: 16px;'><a href='@user.GitHub' target='_blank' style='text-decoration: underline; color: #7747FF;' rel='noopener'>@user.GitHub</a></p>
+																			}
+																			@if (user.Instagram != null)
+																			{
+																				<p style='margin: 0; margin-bottom: 16px;'><a href='@user.Instagram' target='_blank' style='text-decoration: underline; color: #7747FF;' rel='noopener'>@user.Instagram</a></p>
+																			}
+																			@if (user.YouTube != null)
+																			{
+																				<p style='margin: 0; margin-bottom: 16px;'><a href='@user.YouTube' target='_blank' style='text-decoration: underline; color: #7747FF;' rel='noopener'>@user.YouTube</a></p>
+																			}
+																			@if (links != null)
+																			{
+																				@foreach (var link in links)
+																				{
+																					<p style='margin: 0; margin-bottom: 16px;'><a href='@link.LUrl' target='_blank' style='text-decoration: underline; color: #7747FF;' rel='noopener'>@link.LUrl</a></p>
+																				}
+																			}
+																		</ul>
+																	</div>
+																</td>
+															</tr>
+														</table>
+													</td>
+												}
+
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</td>
+			</tr>
+		</tbody>
+	</table><!-- End -->
 </body>
+
 </html>
