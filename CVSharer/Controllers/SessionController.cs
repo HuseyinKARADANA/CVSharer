@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using AspNetCoreHero.ToastNotification.Abstractions;
 using Microsoft.AspNetCore.Authorization;
+using CVSharer.Services;
+using System.IO;
 
 namespace CVSharer.Controllers
 {
@@ -90,7 +92,18 @@ namespace CVSharer.Controllers
             {
                 try
                 {
-                    if (BCrypt.Net.BCrypt.Verify(loginDTO.Password, user.Password) && user.Email == loginDTO.Email)
+                    //Read key from file
+                    string key;
+
+                    using (StreamReader sr = new StreamReader("wwwroot/Keys/" + user.ShareCode + ".txt"))
+                    {
+                        key = sr.ReadLine();
+                    }
+
+                    //Decrypt email
+                    string decryptedEmail = AESCryptography.Decrypt(user.Email, key);
+
+                    if (BCrypt.Net.BCrypt.Verify(loginDTO.Password, user.Password) && decryptedEmail == loginDTO.Email)
                     {
                         isCredentialsValid = true;
                         validUser = user;
@@ -172,23 +185,42 @@ namespace CVSharer.Controllers
         [HttpPost]
         public IActionResult VerifyAccount(VerifyDTO verifyDTO)
         {
-            string shareCode = RandomString(6);
+            string shareCode = RandomString(8);
+
+            //Check if the sharecode is unique
+            while(_userService.GetListAll().Any(x => x.ShareCode == shareCode))
+            {
+                shareCode = RandomString(8);
+            }
+
+            //Create cryptography key for AES algorithm
+            string key = RandomString(16);
 
             var model = JsonConvert.DeserializeObject<VerifyDTO>(TempData["MyUser"] as string);
+
             if (model.verifyCode == verifyDTO.userCode)
             {
+                //Encrypt all user data
                 string hashedPassword = BCrypt.Net.BCrypt.HashPassword(model.registerDTO.Password);
-                _userService.Insert(new User()
+
+                User encrypted = new User()
                 {
-                    Name = model.registerDTO.Name,
-                    Surname = model.registerDTO.Surname,
-                    Email = model.registerDTO.Email,
-                    Photo= "717ea7ab-aaf3-4081-89cb-51f4c8068308.png",
+                    Name = AESCryptography.Encrypt(model.registerDTO.Name, key),
+                    Surname = AESCryptography.Encrypt(model.registerDTO.Surname, key),
+                    Email = AESCryptography.Encrypt(model.registerDTO.Email, key),
+                    Photo = "717ea7ab-aaf3-4081-89cb-51f4c8068308.png",
                     Password = hashedPassword,
                     IsActive = true,
                     MainTemplate = "BaseTemplate",
                     ShareCode = shareCode,
-                });
+                };
+
+                _userService.Insert(encrypted);
+
+                using (StreamWriter sw = new StreamWriter("wwwroot/Keys/" + shareCode + ".txt", true))
+                {
+                    sw.WriteLine(key);
+                }
 
                 _toast.Success("Register Successful.");
 
@@ -198,6 +230,7 @@ namespace CVSharer.Controllers
             {
                 _toast.Error("Codes do not match.");
                 //TempData["MyUser"] = null;
+
                 return RedirectToAction("Register","Session");
             }
         }

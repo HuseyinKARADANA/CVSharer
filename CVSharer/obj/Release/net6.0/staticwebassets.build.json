@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WhulYFv63VGc2kzWvU4sYOWpYuc+Fso8Bis84lxllnc=",
+  "Hash": "PIdcVd7EvC5dANmwH71h1U+VtrwDr+CZFo59oh53cbw=",
   "Source": "CVSharer",
   "BasePath": "_content/CVSharer",
   "Mode": "Default",
@@ -8277,6 +8277,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\tinymce\\tinymce.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\Keys\\wnbpTlxJ.txt",
+      "SourceId": "CVSharer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\",
+      "BasePath": "_content/CVSharer",
+      "RelativePath": "Keys/wnbpTlxJ.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Keys\\wnbpTlxJ.txt"
     },
     {
       "Identity": "C:\\Users\\moral\\OneDrive\\Belgeler\\GitHub\\CVSharer\\CVSharer\\wwwroot\\ProfileImg\\717ea7ab-aaf3-4081-89cb-51f4c8068308.png",
