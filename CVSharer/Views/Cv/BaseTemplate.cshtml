@@ -1,6 +1,7 @@
 ﻿@using BusinessLayer.Abstract;
 @using EntityLayer.Concrete;
 @using EntityLayer.DTOs;
+@using CVSharer.Services;
 @inject IUserService _userService;
 @inject ISkillService _skillService;
 @inject ICertificateService _certificateService;
@@ -24,6 +25,7 @@
 	var hobbies = _hobbyService.GetHobbiesByUserId(userId);
 	var languages = _languageService.GetLanguagesByUserId(userId);
 	var links = _linkService.GetLinksByUserId(userId);
+
 }
 
 				
@@ -171,21 +173,37 @@
 																			</td>
 																		</tr>
 																	</table>
+																	@{
+																		string key;
+
+																		using (StreamReader sr = new StreamReader("wwwroot/Keys/" + user.ShareCode + ".txt"))
+																		{
+																			key = sr.ReadLine();
+																		}
+
+																			//Decrypt email
+																		string decryptedEmail = AESCryptography.Decrypt(user.Email, key);
+																		
+																	}
 																	<table class='paragraph_block block-2' width='100%' border='0' cellpadding='10' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
 																		<tr>
 																			<td class='pad'>
 																				<div style='color:#101112;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:14px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;'>
 																					<p style='margin: 0; margin-bottom: 16px;'><strong>Email:</strong></p>
-																					<p style='margin: 0; margin-bottom: 16px;'><span style='font-family: inherit;'>@user.Email</span></p>
+																					<p style='margin: 0; margin-bottom: 16px;'>
+																						<span style='font-family: inherit;'>
+																							@decryptedEmail
+																						</span>
+																					</p>
 																					@if (user.Phone != null)
 																					{
 																						<p style='margin: 0; margin-bottom: 16px;'><strong>Phone:</strong></p>
-																						<p style='margin: 0; margin-bottom: 16px;'><strong> </strong>@user.Phone</p>
+																						<p style='margin: 0; margin-bottom: 16px;'><strong> </strong>@(user.Phone!=null?AESCryptography.Decrypt(user.Phone,key):"")</p>
 																					}
 																					@if (user.Address != null)
 																					{
 																						<p style='margin: 0; margin-bottom: 16px;'><strong><span style='font-family: inherit;'>Address:</span></strong></p>
-																						<p style='margin: 0;'>@user.Address</p>
+																						<p style='margin: 0;'>@(user.Address != null ? AESCryptography.Decrypt(user.Address, key) : "")</p>
 																					}
 
 
@@ -288,9 +306,10 @@
 																<td class='column column-2' width='66.66666666666667%' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;'>
 																	<table class='paragraph_block block-1' width='100%' border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;'>
 																		<tr>
+																			
 																			<td class='pad' style='padding-bottom:10px;padding-left:20px;padding-right:20px;padding-top:10px;'>
 																				<div style='color:#784a3b;direction:ltr;font-family:Georgia, Times, 'Times New Roman', serif;font-size:35px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:42px;'>
-																					<h2 style='margin: 0;'><em>@user.Name @user.Surname</em></h2>
+																					<h2 style='margin: 0;'><em>@AESCryptography.Decrypt(user.Name, key) @AESCryptography.Decrypt(user.Surname, key)</em></h2>
 																				</div>
 																			</td>
 																		</tr>
@@ -299,7 +318,7 @@
 																		<tr>
 																			<td class='pad'>
 																				<div style='color:#d56533;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:20px;font-weight:400;letter-spacing:5px;line-height:120%;text-align:left;mso-line-height-alt:24px;'>
-																					<p style='margin: 0;'>@user.Position</p>
+																					<p style='margin: 0;'>@(user.Position != null ? AESCryptography.Decrypt(user.Position, key) : "")</p>
 																				</div>
 																			</td>
 																		</tr>
@@ -308,7 +327,7 @@
 																		<tr>
 																			<td class='pad' style='padding-bottom:30px;padding-left:10px;padding-top:10px;'>
 																				<div style='color:#393d47;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:14px;font-weight:400;letter-spacing:0px;line-height:150%;text-align:left;mso-line-height-alt:21px;'>
-																					<p style='margin: 0;'>&nbsp; &nbsp;@user.Description &nbsp;</p>
+																					<p style='margin: 0;'>&nbsp; &nbsp;@(user.Description != null ? AESCryptography.Decrypt(user.Description, key) : "") &nbsp;</p>
 																				</div>
 																			</td>
 																		</tr>
@@ -381,25 +400,25 @@
 																					<div style='color:#101112;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:16px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:19.2px;'>
 																						@if (user.Linkedin != null)
 																						{
-																							<p style='margin: 0; margin-bottom: 16px;'><a href='@user.Linkedin' target='_blank' style='text-decoration: underline; color: #7747FF;' rel='noopener'>@user.Linkedin</a></p>
+																							<p style='margin: 0; margin-bottom: 16px;'><a href='@(user.Linkedin != null ? AESCryptography.Decrypt(user.Linkedin, key) : "")' target='_blank' style='text-decoration: underline; color: #7747FF;' rel='noopener'>@(user.Linkedin != null ? AESCryptography.Decrypt(user.Linkedin, key) : "")</a></p>
 																						}
 																						@if (user.GitHub != null)
 																						{
-																							<p style='margin: 0; margin-bottom: 16px;'><a href='@user.GitHub' target='_blank' style='text-decoration: underline; color: #7747FF;' rel='noopener'>@user.GitHub</a></p>
+																							<p style='margin: 0; margin-bottom: 16px;'><a href='@(user.GitHub != null ? AESCryptography.Decrypt(user.GitHub, key) : "")' target='_blank' style='text-decoration: underline; color: #7747FF;' rel='noopener'>@(user.GitHub != null ? AESCryptography.Decrypt(user.GitHub, key) : "")</a></p>
 																						}
 																						@if (user.Instagram != null)
 																						{
-																							<p style='margin: 0; margin-bottom: 16px;'><a href='@user.Instagram' target='_blank' style='text-decoration: underline; color: #7747FF;' rel='noopener'>@user.Instagram</a></p>
+																							<p style='margin: 0; margin-bottom: 16px;'><a href='@(user.Instagram != null ? AESCryptography.Decrypt(user.Instagram, key) : "")' target='_blank' style='text-decoration: underline; color: #7747FF;' rel='noopener'>@(user.Instagram != null ? AESCryptography.Decrypt(user.Instagram, key) : "")</a></p>
 																						}
 																						@if (user.YouTube != null)
 																						{
-																							<p style='margin: 0; margin-bottom: 16px;'><a href='@user.YouTube' target='_blank' style='text-decoration: underline; color: #7747FF;' rel='noopener'>@user.YouTube</a></p>
+																							<p style='margin: 0; margin-bottom: 16px;'><a href='@(user.YouTube != null ? AESCryptography.Decrypt(user.YouTube, key) : "")' target='_blank' style='text-decoration: underline; color: #7747FF;' rel='noopener'>@(user.YouTube != null ? AESCryptography.Decrypt(user.YouTube, key) : "")</a></p>
 																						}
 																						@if (links != null)
 																						{
 																							@foreach (var link in links)
 																							{
-																								<p style='margin: 0; margin-bottom: 16px;'><a href='@link.LUrl' target='_blank' style='text-decoration: underline; color: #7747FF;' rel='noopener'>@link.LUrl</a></p>
+																								<p style='margin: 0; margin-bottom: 16px;'><a href='@(link.LUrl != null ? AESCryptography.Decrypt(link.LUrl, key) : "")' target='_blank' style='text-decoration: underline; color: #7747FF;' rel='noopener'>@(link.LUrl != null ? AESCryptography.Decrypt(link.LUrl, key) : "")</a></p>
 																							}
 																						}
 

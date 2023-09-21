@@ -1,6 +1,6 @@
 ﻿@using BusinessLayer.Abstract;
 @inject IUserService _userService;
-
+@using CVSharer.Services;
 <!DOCTYPE html>
 <html lang="en">
 
@@ -108,20 +108,35 @@
                 {
                     var userId = Context.Request.Cookies["UserId"];
                     var user = _userService.GetElementById(int.Parse(userId));
+                    //Read key from file
+                    string key;
 
+                    using (StreamReader sr = new StreamReader("wwwroot/Keys/" + user.ShareCode + ".txt"))
+                    {
+                        key = sr.ReadLine();
+                    }
+                    //Decrypt email
+                    string decryptedName = AESCryptography.Decrypt(user.Name, key);
+                    string decrptedSurname = AESCryptography.Decrypt(user.Surname, key);
+                    string decrptedPosition = "";
+                    if (user.Position != null)
+                    {
+                       decrptedPosition = AESCryptography.Decrypt(user.Position, key);
+                    }
+                    
                     <nav class="header-nav ms-auto">
                         <ul class="d-flex align-items-center">
                             <li class="nav-item dropdown pe-3">
 
                                 <a class="nav-link nav-profile d-flex align-items-center pe-0 m-1" href="#" data-bs-toggle="dropdown">
                                     <img src="~/ProfileImg/@user.Photo" alt="Profile" class="rounded-circle">
-                                    <span class="d-none d-md-block dropdown-toggle ps-2">@user.Name @user.Surname</span>
+                                    <span class="d-none d-md-block dropdown-toggle ps-2">@decryptedName @decrptedSurname</span>
                                 </a><!-- End Profile Image Icon -->
 
                                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                                     <li class="dropdown-header">
-                                        <h6>@user.Name @user.Surname</h6>
-                                        <span>@user.Position</span>
+                                        <h6>@decryptedName @decrptedSurname</h6>
+                                        <span>@decrptedPosition</span>
                                     </li>
                                     <li>
                                         <hr class="dropdown-divider">
