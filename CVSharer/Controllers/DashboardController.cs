@@ -105,10 +105,16 @@ namespace CVSharer.Controllers
                 return RedirectToAction("Index", "Dashboard");
             }
 
-            var userId = HttpContext.Request.Cookies["UserId"];
-            dto.UserId = int.Parse(userId);
-
+            var userIdString = HttpContext.Request.Cookies["UserId"];
+            dto.UserId = int.Parse(userIdString);
             User userForUpdate = _userService.GetElementById(dto.UserId);
+
+            string userkey;
+            using (StreamReader sr = new StreamReader("wwwroot/Keys/" + userForUpdate.ShareCode + ".txt"))
+            {
+                userkey = sr.ReadLine();
+            }
+
             if(dto.Photo != null)
             {
                 var extention=Path.GetExtension(dto.Photo.FileName);
@@ -119,17 +125,41 @@ namespace CVSharer.Controllers
                 userForUpdate.Photo = newImageName;
             }
 			
-           
-            userForUpdate.Name = dto.Name;
-            userForUpdate.Surname = dto.Surname;
-            userForUpdate.Description = dto.Description;
-            userForUpdate.Position = dto.Position;
-            userForUpdate.Phone = dto.Phone;
-            userForUpdate.Address = dto.Address;
-            userForUpdate.Linkedin = dto.Linkedin;
-            userForUpdate.Instagram = dto.Instagram;
-            userForUpdate.GitHub = dto.GitHub;
-            userForUpdate.YouTube = dto.YouTube;
+
+            userForUpdate.Name = AESCryptography.Encrypt(dto.Name, userkey);
+            userForUpdate.Surname = AESCryptography.Encrypt(dto.Surname, userkey);
+            if (dto.Description != null)
+                userForUpdate.Description = AESCryptography.Encrypt(dto.Description, userkey);
+            else
+                userForUpdate.Description = "";
+            if (dto.Position != null)
+                userForUpdate.Position = AESCryptography.Encrypt(dto.Position, userkey);
+            else
+                userForUpdate.Position = "";
+            if (dto.Phone != null)
+                userForUpdate.Phone = AESCryptography.Encrypt(dto.Phone, userkey);
+            else
+                userForUpdate.Phone = "";
+            if (dto.Address != null)
+                userForUpdate.Address = AESCryptography.Encrypt(dto.Address, userkey);
+            else
+                userForUpdate.Address = "";
+            if (dto.Linkedin != null)
+                userForUpdate.Linkedin = AESCryptography.Encrypt(dto.Linkedin, userkey);
+            else
+                userForUpdate.Linkedin = "";
+            if (dto.Instagram != null)
+                userForUpdate.Instagram = AESCryptography.Encrypt(dto.Instagram, userkey);
+            else
+                userForUpdate.Instagram = "";
+            if (dto.GitHub != null)
+                userForUpdate.GitHub = AESCryptography.Encrypt(dto.GitHub, userkey);
+            else
+                userForUpdate.GitHub = "";
+            if (dto.YouTube != null)
+                userForUpdate.YouTube = AESCryptography.Encrypt(dto.YouTube, userkey);
+            else
+                userForUpdate.YouTube = "";
 
             _userService.Update(userForUpdate);
 
@@ -635,12 +665,24 @@ namespace CVSharer.Controllers
         [HttpPost]
         public IActionResult AddLink(Link link)
         {
-            _linkService.Insert(new Link()
+            var userIdString = HttpContext.Request.Cookies["UserId"];
+            var userId = int.Parse(userIdString);
+            User user = _userService.GetElementById(userId);
+
+            string userkey;
+            using (StreamReader sr = new StreamReader("wwwroot/Keys/" + user.ShareCode + ".txt"))
+            {
+                userkey = sr.ReadLine();
+            }
+
+            Link encryptedLink = new Link()
             {
                 UserId = link.UserId,
-                LName = link.LName,
-                LUrl = link.LUrl,
-            });
+                LName = AESCryptography.Encrypt(link.LName, userkey),
+                LUrl = AESCryptography.Encrypt(link.LUrl, userkey)
+            };
+
+            _linkService.Insert(encryptedLink);
 
             _toast.Success("Link Added");
 
@@ -675,10 +717,10 @@ namespace CVSharer.Controllers
         [HttpGet]
         public IActionResult UpdateLink(int linkId)
         {
-            var link = _linkService.GetElementById(linkId);
-
             var userIdString = HttpContext.Request.Cookies["UserId"];
             var userId = int.Parse(userIdString);
+
+            var link = _linkService.GetElementById(linkId);
 
             if (userId != link.UserId)
             {
@@ -691,6 +733,19 @@ namespace CVSharer.Controllers
         [HttpPost]
         public IActionResult UpdateLink(Link link)
         {
+            var userIdString = HttpContext.Request.Cookies["UserId"];
+            var userId = int.Parse(userIdString);
+            User user = _userService.GetElementById(userId);
+
+            string userkey;
+            using (StreamReader sr = new StreamReader("wwwroot/Keys/" + user.ShareCode + ".txt"))
+            {
+                userkey = sr.ReadLine();
+            }
+
+            link.LName = AESCryptography.Encrypt(link.LName, userkey);
+            link.LUrl = AESCryptography.Encrypt(link.LUrl, userkey);
+
             _linkService.Update(link);
 
             _toast.Success("Link Updated");
@@ -714,7 +769,13 @@ namespace CVSharer.Controllers
 			var languages = _languageService.GetLanguagesByUserId(userId);
 			var links = _linkService.GetLinksByUserId(userId);
 
-			var fileName = user.Name + " " + user.Surname + " CV.pdf";
+            string userkey;
+            using (StreamReader sr = new StreamReader("wwwroot/Keys/" + user.ShareCode + ".txt"))
+            {
+                userkey = sr.ReadLine();
+            }
+
+            var fileName = AESCryptography.Decrypt(user.Name, userkey) + " " + AESCryptography.Decrypt(user.Surname, userkey) + " CV.pdf";
 			string url = "https://localhost:7150/Pdf/" + user.MainTemplate + "?ShareCode=" + user.ShareCode;
             string htmlContent="";
 			// HTTP isteği gönderin ve yanıtı alın

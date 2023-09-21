@@ -1,10 +1,21 @@
-﻿@model EntityLayer.Concrete.Link
+﻿@using BusinessLayer.Abstract;
+@using CVSharer.Services;
+@using EntityLayer.Concrete;
+@model EntityLayer.Concrete.Link
+@inject IUserService _userService;
 
 @{
     ViewData["Title"] = "UpdateLink";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
     var userId = Context.Request.Cookies["UserId"];
+    User user = _userService.GetElementById(int.Parse(userId));
+
+    string userkey;
+    using (StreamReader sr = new StreamReader("wwwroot/Keys/" + user.ShareCode + ".txt"))
+    {
+        userkey = sr.ReadLine();
+    }
 }
 
 <div class="container">
@@ -35,13 +46,13 @@
                                 <input hidden value="@int.Parse(userId)" name="UserId" />
 
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="LName" name="LName" value="@Model.LName" placeholder="Link Name" required>
+                                    <input type="text" class="form-control" id="LName" name="LName" value="@AESCryptography.Decrypt(Model.LName, userkey)" placeholder="Link Name" required>
                                     <label for="LName">Link Name</label>
                                     <div class="invalid-feedback">Please Enter a Link Name!</div>
                                 </div>
 
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="LUrl" name="LUrl" value="@Model.LUrl" placeholder="Link Url" required>
+                                    <input type="text" class="form-control" id="LUrl" name="LUrl" value="@AESCryptography.Decrypt(Model.LUrl, userkey)" placeholder="Link Url" required>
                                     <label for="LUrl">Link Url</label>
                                     <div class="invalid-feedback">Please Enter a Link Url!</div>
                                 </div>
