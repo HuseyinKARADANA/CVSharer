@@ -776,7 +776,7 @@ namespace CVSharer.Controllers
             }
 
             var fileName = AESCryptography.Decrypt(user.Name, userkey) + " " + AESCryptography.Decrypt(user.Surname, userkey) + " CV.pdf";
-			string url = "https://localhost:7150/Pdf/" + user.MainTemplate + "?ShareCode=" + user.ShareCode;
+			string url = "https://www.cvsharer.com/Pdf/" + user.MainTemplate + "?ShareCode=" + user.ShareCode;
             string htmlContent="";
 			// HTTP isteği gönderin ve yanıtı alın
 			using (HttpClient client = new HttpClient())
