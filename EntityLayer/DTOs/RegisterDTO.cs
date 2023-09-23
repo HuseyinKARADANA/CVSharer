@@ -25,5 +25,15 @@ namespace EntityLayer.DTOs
                 Password = registerDTO.Password,
             };
         }
+        public static implicit operator RegisterDTO(User user)
+        {
+            return new RegisterDTO
+            {
+                Name = user.Name,
+                Surname = user.Surname,
+                Email = user.Email,
+                Password = user.Password,
+            };
+        }
     }
 }
