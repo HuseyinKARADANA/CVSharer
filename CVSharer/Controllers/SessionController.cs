@@ -246,7 +246,7 @@ namespace CVSharer.Controllers
 
             message.From.Add(mailboxAddressFrom);
 
-            MailboxAddress mailboxAddressTo = new MailboxAddress(dto.Name, dto.Email);
+            MailboxAddress mailboxAddressTo = new MailboxAddress(dto.Name, dto.Email.ToLower());
             message.To.Add(mailboxAddressTo);
 
             var bodyBuilder = new BodyBuilder();

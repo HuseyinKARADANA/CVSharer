@@ -28,6 +28,12 @@ namespace CVSharer.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Faq()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Contact(MailDTO dto)
         {

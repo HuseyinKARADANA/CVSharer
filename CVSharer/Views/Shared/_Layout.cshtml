@@ -104,6 +104,7 @@
                 }
                 <a href="/Template/Index" class="btn btn-light rounded-pill m-1 hide-on-mobile">Templates</a>
                 <a href="/Home/Contact" class="btn btn-light rounded-pill m-1 hide-on-mobile">Contact</a>
+                <a href="/Home/Faq" class="btn btn-light rounded-pill m-1 hide-on-mobile">F.A.Q</a>
                 @if (Context.User.Identity.IsAuthenticated)
                 {
                     var userId = Context.Request.Cookies["UserId"];
@@ -241,6 +242,13 @@
                     <span>Contact</span>
                 </a>
             </li>
+            
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/Home/Faq">
+                    <i class="ri-questionnaire-line"></i>
+                    <span>F.A.Q</span>
+                </a>
+            </li>
 
         </ul>
 
@@ -255,7 +263,8 @@
             <div class="col-lg-2">
                 <img src="~/assets/img/logo.png" width="80rem" />
                 <h1 class=" font-weight-semi-bold ">CVSharer</h1>
-                <p class=""><a href="mailto:sharercv@gmail.com">sharercv@gmail.com</a></p>
+                <p class=""><a href="mailto:sharercv@gmail.com"><i class="ri-mail-fill"></i> sharercv@gmail.com</a></p>
+                <p class=""><a href="https://www.instagram.com/cv_sharer/"><i class="ri-instagram-fill"></i> CV_Sharer</a></p>
             </div>
             <br />
             <div class="col-lg-8 ">
@@ -265,6 +274,7 @@
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-dark mb-2" href="/Home/Index"><i class="fa fa-angle-right mr-2"></i>Home</a>
                             <a class="text-dark mb-2" href="/Template/Index"><i class="fa fa-angle-right mr-2"></i>Templates</a>
+                            <a class="text-dark mb-2" href="/Home/Faq"><i class="fa fa-angle-right mr-2"></i>F.A.Q</a>
                             <a class="text-dark mb-2" href="/Home/Privacy" target="_blank"><i class="fa fa-angle-right mr-2"></i>Privacy Policy</a>
                             <a class="text-dark" href="/Home/Terms" target="_blank"><i class="fa fa-angle-right mr-2"></i>Terms and Conditions</a>
                         </div>
